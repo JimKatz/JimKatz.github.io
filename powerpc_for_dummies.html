@@ -30,6 +30,8 @@
 
 <p style="text-align: center;"><font color="#808080" face="Rage Italic, sans-serif"><span style="font-size: 20px;">- Load Address into Register</span></font></p>
 
+<p style="text-align: center;"><font color="#808080" face="Rage Italic, sans-serif"><span style="font-size: 20px;">- Check if a .register holds a 32-bit value</span></font></p>
+
 <ul>
 	<li style="text-align: center;">&nbsp;</li>
 </ul>
@@ -293,11 +295,66 @@
 <p style="text-align: center;"><span style="font-size:20px;"><span style="color:#696969;"><font face="arial, helvetica, sans-serif"># This will load the address into register 0</font></span></span></p>
 
 <p style="text-align: center;"><span style="font-size:20px;"><span style="font-family:times new roman,times,serif;"><span style="color:#FFA500;">&nbsp; lis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r0, 0x8000</span><br />
-<span style="color:#FF0000;">&nbsp; ori&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r0, r0, 0x35FF</span></span><br />
-<br />
-<span style="color: rgb(105, 105, 105);"><font face="arial, helvetica, sans-serif"># This instruction isn&#39;t always needed, but you can add it. This will load the value stored at address 0x800035FF into register 0</font></span></span></p>
+<span style="color:#FF0000;">&nbsp; ori&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r0, r0, 0x35FF</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="height: 5px; width: 113px;" summary="r0 = 0x00000005">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">r0</span></td>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">800035FF</span></td>
+			<td style="text-align: center;"><font color="#ffffff">00000000</font></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align: center;"><br />
+<span style="font-size:20px;"><span style="color: rgb(105, 105, 105);"><font face="arial, helvetica, sans-serif"># This instruction isn&#39;t always needed, but you can add it. This will load the value stored at address 0x800035FF into register 0</font></span></span></p>
 
 <p style="text-align: center;"><span style="font-size:20px;"><span style="color:#0000FF;"><font face="arial, helvetica, sans-serif">lwz r0, 0(r0)</font></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 48px;"><span style="color: rgb(211, 211, 211);">Guide:</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 48px;"><span style="color: rgb(211, 211, 211);">Check if a register holds a 32-Bit value</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; font-size: 24px; text-align: center;">Example : Register 0 will be checked to see if it holds the value 0xFFFE5645</span></p>
+
+<p style="text-align: center;"><span style="font-size:18px;"><span style="color:#696969;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"># For explaining/example purposes, I will put an instruction that loads a 32 bit value into another register,&nbsp;you&#39;ll most likely just be comparing though.</span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:18px;"><span style="color:#696969;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"># This instruction requires the use of 2 different registers, one for the value, and one for comparing</span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:18px;"><span style="color:#696969;"><span style="font-family: arial, helvetica, sans-serif; text-align: center;"># This will put the value 0xFFFE5645 into Register 1</span></span></span></p>
+
+<p style="margin: 0px; text-align: center;"><span style="font-size:22px;"><span style="color:#FF8C00;">&nbsp; lis r1, 0xFFFE</span></span></p>
+
+<p style="margin: 0px; text-align: center;"><span style="font-size:22px;"><span style="color:#FF0000;">ori r1, r1, 0x5645</span></span></p>
+
+<p style="margin: 0px; text-align: center;">&nbsp;</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="height: 5px; width: 113px;" summary="r0 = 0x00000005">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">r1</span></td>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">00000000</span></td>
+			<td style="text-align: center;"><font color="#ffffff">FFFE5645</font></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="margin: 0px; text-align: center;">&nbsp;</p>
+
+<p style="margin: 0px; text-align: center;"><span style="color: rgb(105, 105, 105); font-family: arial, helvetica, sans-serif; font-size: 18px; text-align: center;"># This will check if Register 0 is equal to the value in Register 1 (If r0 = 0xFFFE5645)</span><br />
+&nbsp;</p>
+
+<p style="margin: 0px; text-align: center;"><span style="font-size:24px;"><span style="color:#00FF00;">cmpw r0, r1</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
 
 <p style="text-align: center;">&nbsp;</p>
 
