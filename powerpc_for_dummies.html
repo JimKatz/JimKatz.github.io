@@ -22,9 +22,37 @@
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">addis</font></span></p>
 
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">beq</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bne</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bgt</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">blt</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">ble</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bge</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bng</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bnl</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bso</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bns</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bun</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bnu</font></span></p>
+
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cmpwi</span></p>
 
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cmplwi</span></p>
+
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mr</span></font></p>
+
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mtctr</span></font></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mulli</span></font></p>
 
@@ -48,7 +76,7 @@
 
 <p style="text-align: center;"><span style="font-size:24px;"><span style="color: rgb(255, 255, 255);"><font face="Rage Italic, sans-serif">BIT</font></span></span></p>
 
-<p style="text-align: center;"><span style="font-size:24px;"><span style="color: rgb(255, 255, 255);"><font face="Rage Italic, sans-serif">FF</font></span></span></p>
+<p style="text-align: center;"><span style="font-size:24px;"><span style="color: rgb(255, 255, 255);"><font face="Rage Italic, sans-serif">F</font></span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -144,7 +172,7 @@
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Load Word Zero</span></span></p>
 
-<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">Whatever WORD, Address or Value&nbsp;is in Register B is loaded into Register A, The value in the middle is a pointer that adds onto the address</span></span></p>
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">The value stored at&nbsp;the address in Register C is Loaded into Register A. The middle value is a pointer that adds onto the address</span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -268,15 +296,203 @@
 	</tbody>
 </table>
 
-<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
 
-<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
 
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">beq</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Equal</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">If the value specified in a Compare Statement is equal to the value in a register. A branch is taken.</span></span></span></p>
+
 <p style="text-align: center;">&nbsp;</p>
 
+<p style="text-align: center;"><span style="font-size:26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:26px;"><span style="color:#FFFFFF;">cmpwi r0, 5</span></span></p>
+
+<p style="text-align: center;"><span style="color:#808080;"><span style="font-size:24px;"># If register 0&nbsp;holds the value 0x00000005, the following instruction will be executed</span></span></p>
+
+<p style="text-align: center;"><span style="color:#FF0000;"><span style="font-size:36px;">beq test</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128); font-size: 24px; text-align: center;"># The code will now jump to a function named &quot;test&quot; since the value in register 0&nbsp;was equal to the value in the compare instruction.</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bne</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Not Equal</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">If the value specified in a Compare Statement is not equal to the value in a register. A branch is taken.</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">cmpwi r0, 5</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128);"><span style="font-size: 24px;"># If register 0&nbsp;does not hold the value 0x00000005, the following instruction will be executed</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 36px;">bne&nbsp;test</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128); font-size: 24px;"># The code will now jump to a function named &quot;test&quot; since the value in register 0&nbsp;was not equal to the value in the compare instruction.</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bgt</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Greater Than</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">If the value specified in a Compare Statement is Greater than the value in a register. A branch is taken.</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">cmpwi r0, 5</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128);"><span style="font-size: 24px;"># If register 0&nbsp;holds a value greater than 0x00000005 the following instruction will be executed</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 36px;">bgt&nbsp;test</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128); font-size: 24px;"># The code will now jump to a function named &quot;test&quot; since the value in register 0&nbsp;was greater than the value in the&nbsp;compare instruction.</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">blt</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Less Than</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">If the value specified in a Compare Statement is Less than&nbsp;the value in a register. A branch is taken.</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">cmpwi r0, 5</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128);"><span style="font-size: 24px;"># If register 0&nbsp;holds a value less than 0x00000005&nbsp;the following instruction will be executed</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 36px;">blt&nbsp;test</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128); font-size: 24px;"># The code will now jump to a function named &quot;test&quot; since the value in register 0&nbsp;was less than the value in the&nbsp;compare instruction.</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">ble</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Less Than Or Equal To</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">If the value specified in a Compare Statement is Less than or equal to&nbsp;the value in a register. A branch is taken.</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">cmpwi r0, 5</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128);"><span style="font-size: 24px;"># If register 0&nbsp;holds a value less than or equal to 0x00000005&nbsp;the following instruction will be executed</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 36px;">ble&nbsp;test</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128); font-size: 24px;"># The code will now jump to a function named &quot;test&quot; since the value in register 0&nbsp;was either 5 or&nbsp;less than 5</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bge</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Greater Than Or Equal To</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">If the value specified in a Compare Statement is Greater than or equal to&nbsp;the value in a register. A branch is taken.</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">cmpwi r0, 5</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128);"><span style="font-size: 24px;"># If register 0&nbsp;holds a value less than or equal to&nbsp;0x00000005&nbsp;the following instruction will be executed</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 36px;">bge test</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(128, 128, 128); font-size: 24px;"># The code will now jump to a function named &quot;test&quot; since the value in register 0&nbsp;was either 5 or&nbsp;greater than&nbsp;5</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<div>
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bng</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Not Greater&nbsp;Than</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:72px;"><span style="color: rgb(255, 255, 255);">Use ble instead.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bnl</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Not Less Than</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255);">Use bge&nbsp;instead.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+</div>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bso</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Summary Overflow</span></span></p>
+
+<p style="text-align: center;"><span style="color:#666666;"><span style="font-size:72px;">Currently Unknown. To be added</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bns</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Not Summary Overflow</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(102, 102, 102);"><span style="font-size: 72px;">Currently Unknown. To be added</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bun</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Unordered</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(102, 102, 102);"><span style="font-size: 72px;">Currently Unknown. To be added</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bnu</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch If Not Unordered</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(102, 102, 102);"><span style="font-size: 72px;">Currently Unknown. To be added</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
 <p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">cmpwi</span></font></p>
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Compare Word </span></span><span style="color: rgb(255, 255, 255); font-size: 26px; text-align: center;">Immediate</span></p>
@@ -289,19 +505,48 @@
 
 <p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
 
-<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 20px;">cmpwi r0, 0x1234</span></p>
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 20px;">cmpwi r0, 0x1</span></p>
 
 <table align="center" border="1" cellpadding="1" cellspacing="1" style="height: 5px; width: 113px;" summary="r0 = 0x00000005">
 	<tbody>
 		<tr>
 			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">r0</span></td>
 			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">00000000</span></td>
-			<td style="text-align: center;"><font color="#ffffff">00001234</font></td>
+			<td style="text-align: center;"><font color="#ffffff">00000001</font></td>
 		</tr>
 	</tbody>
 </table>
 
 <p style="text-align: center;"><font color="#ffffff">The result would be TRUE.</font></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">cmplwi</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Compare Logical Word&nbsp;</span></span><span style="color: rgb(255, 255, 255); font-size: 26px;">Immediate</span></p>
+
+<p style="text-align: center;"><span style="font-size:20px;"><span style="color:#FFFFFF;">Checks to see if a register holds a value between &quot;-65537&quot;&nbsp;and &quot;65535&quot;</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 20px;">cmplwi r0, 0x0009</span></p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="height: 5px; width: 113px;" summary="r0 = 0x00000005">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">r0</span></td>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">00000000</span></td>
+			<td style="text-align: center;"><font color="#ffffff">00000009</font></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align: center;"><font color="#ffffff">The result would be TRUE.</font></p>
+
+<p style="text-align: center;"><span style="font-size:20px;"><font color="#ffffff">(I can&#39;t show a higher value because it would be in hex and make things confusing)</font></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -356,6 +601,31 @@
 </table>
 
 <p style="text-align: center;"><span style="color: rgb(255, 255, 255);">r0 = 0x</span><font color="#ffffff">0000000F</font></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<div style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">mtctr</span></font></div>
+
+<div>
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Move To Count Register</span></span></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:20px;">A value is loaded from a specified register, The value tells the code how many times you want something to happen. It is stored in a &quot;Count Register&quot;. Usually used <span style="font-size:24px;">alongside </span></span></span><span style="font-size:24px;"><span style="color:#B22222;">bdnz </span><span style="color:#FFFFFF;">and </span><span style="color:#800080;">stbu</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">SYNTAX :</span></span></p>
+
+<p style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size: 20px;"># Assume r0 = 0x00000004</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:36px;"><span style="color: rgb(255, 255, 255);">mtctr r0</span></span></p>
+
+<p style="text-align: center;"><span style="color:#808080;"><span style="font-size: 20px; text-align: center;">​# The amount of times a certain thing will happen in a code is now &quot;4&quot;</span></span></p>
+</div>
 
 <p style="text-align: center;">&nbsp;</p>
 
