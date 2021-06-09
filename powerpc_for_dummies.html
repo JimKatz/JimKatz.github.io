@@ -50,6 +50,8 @@
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cmplwi</span></p>
 
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cntlzw</span></p>
+
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mr</span></font></p>
 
 <p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mtctr</span></font></p>
@@ -61,6 +63,10 @@
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">ori</font></span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">rlwinm</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">slw</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">sraw</font></span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">xoris</font></span></p>
 
@@ -168,11 +174,11 @@
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
-<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">lwz</span></span></p>
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;"><a id="lwz" name="lwz"></a>lwz</span></span></p>
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Load Word Zero</span></span></p>
 
-<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">The value stored at&nbsp;the address in Register C is Loaded into Register A. The middle value is a pointer that adds onto the address</span></span></p>
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">The value stored at&nbsp;the address in Register B&nbsp;is Loaded into Register A. The middle value is a pointer that adds onto the address</span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -528,7 +534,9 @@
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Compare Logical Word&nbsp;</span></span><span style="color: rgb(255, 255, 255); font-size: 26px;">Immediate</span></p>
 
-<p style="text-align: center;"><span style="font-size:20px;"><span style="color:#FFFFFF;">Checks to see if a register holds a value between &quot;-65537&quot;&nbsp;and &quot;65535&quot;</span></span></p>
+<p style="text-align: center;"><span style="font-size:20px;"><span style="color:#FFFFFF;">Checks to see if a register holds a value up to&nbsp;&quot;65535&quot;.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
 
 <p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
 
@@ -547,6 +555,27 @@
 <p style="text-align: center;"><font color="#ffffff">The result would be TRUE.</font></p>
 
 <p style="text-align: center;"><span style="font-size:20px;"><font color="#ffffff">(I can&#39;t show a higher value because it would be in hex and make things confusing)</font></span></p>
+
+<p style="text-align: center;"><span style="color:#808080;"><span style="font-size:20px;">This instruction can&#39;t check for a negative value since it only deals with unsigned integers&nbsp;</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="cntlzw" name="cntlzw"></a>cntlzw</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Count Leading Zeros Word</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><span style="font-size: 36px;"><strong>Unofficial Definition:</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size:28px;"><span style="font-family:times new roman,times,serif;">Converts the value in a register to binary and checks how many bits are in said value. It will be any number between 0 and 32</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size:28px;"><span style="font-size:48px;"><span style="font-family:times new roman,times,serif;">Example to be added.</span></span></span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -609,7 +638,7 @@
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
-<div style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">mtctr</span></font></div>
+<div style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="mtctr" name="mtctr"></a>mtctr</span></font></div>
 
 <div>
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Move To Count Register</span></span></p>
@@ -799,6 +828,76 @@
 <p style="text-align: center;">&nbsp;</p>
 
 <p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="slw" name="slw"></a>slw</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Shift Left Word</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:48px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><strong>Unofficial Definition:</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:24px;"><span style="color:#FFFFFF;">The value in Register B will be doubled however many times the value in Register C specifies, the result is stored in Register A.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size: 20px;">* For the sake of simplicty, I will be using a different syntax&nbsp;</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 22px; text-align: center;">32 &lt;&lt; 1</span></p>
+
+<ul>
+	<li style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size: 22px; text-align: center;">32 = Value to be doubled</span></span></li>
+	<li style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size: 22px;">1 = Amount of times to double</span></span></li>
+</ul>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:22px;">&nbsp;The result would be &quot;64&quot;</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 22px; text-align: center;">32 &lt;&lt; 2</span></p>
+
+<ul>
+	<li style="text-align: center;"><span style="color: rgb(169, 169, 169);"><span style="font-size: 22px;">32 = Value to be doubled</span></span></li>
+	<li style="text-align: center;"><span style="color: rgb(169, 169, 169);"><span style="font-size: 22px;">2 = Amount of times to double</span></span><br />
+	&nbsp;</li>
+	<li style="text-align: center;"><font color="#ffffff"><span style="font-size: 22px;">The result would be &quot;128&quot;</span></font></li>
+	<li style="text-align: center;">&nbsp;</li>
+</ul>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="sraw" name="sraw"></a>sraw</span></font></p>
+
+<p style="text-align: center;"><span style="font-size:26px;"><span style="color:#FFFFFF;">Shift Right Algebraic Word</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 48px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><strong>Unofficial Definition:</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">The value in Register B will be halved however many times the value in Register C specifies, the result is stored in Register A.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(169, 169, 169);"><span style="font-size: 20px;">* For the sake of simplicty, I will be using a different syntax&nbsp;</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 22px;">32 &gt;&gt;&nbsp;1</span></p>
+
+<ul>
+	<li style="text-align: center;"><span style="color: rgb(169, 169, 169);"><span style="font-size: 22px;">32 = Value to be halved</span></span></li>
+	<li style="text-align: center;"><span style="color: rgb(169, 169, 169);"><span style="font-size: 22px;">1 = Amount of times to half</span></span></li>
+</ul>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255);"><span style="font-size: 22px;">&nbsp;The result would be &quot;16&quot;</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 22px;">32 &gt;&gt; 2</span></p>
+
+<ul>
+	<li style="text-align: center;"><span style="color: rgb(169, 169, 169);"><span style="font-size: 22px;">32 = Value to be halved</span></span></li>
+	<li style="text-align: center;"><span style="color: rgb(169, 169, 169);"><span style="font-size: 22px;">2 = Amount of times to half</span></span><br />
+	&nbsp;</li>
+	<li style="text-align: center;"><font color="#ffffff"><span style="font-size: 22px;">The result would be &quot;8&quot;</span></font></li>
+	<li style="text-align: center;">&nbsp;</li>
+</ul>
 
 <p style="text-align: center;">&nbsp;</p>
 
