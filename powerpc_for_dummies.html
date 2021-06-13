@@ -46,15 +46,25 @@
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bnu</font></span></p>
 
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bctr</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bctrl</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bdnz</font></span></p>
+
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cmpwi</span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cmplwi</span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cntlzw</span></p>
 
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">eieio</span></p>
+
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mr</span></font></p>
 
 <p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mtctr</span></font></p>
+
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mtspr</span></font></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">mulli</span></font></p>
 
@@ -499,6 +509,80 @@
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
+<p style="text-align: center;"><a id="bctr" name="bctr"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bctr</span></span></a></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch To Count Register</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:24px;"><span style="color:#FFFFFF;">The code will jump to the address stored in the register that you loaded into a count register with </span><span style="color:#DDA0DD;">mtctr</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#696969;"># Assume r10 = 0x80004508</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#EE82EE;">mtctr r10</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FF0000;">bctr</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#696969;"># The code would now jump to the instruction at 0x80004508</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><a id="bctrl" name="bctrl" style="background-color: black;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bctrl</span></span></a></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch To Count Register And Link</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FFFFFF;">The code will jump to the address stored in the register that you loaded into the count register with </span><span style="color:#EE82EE;">mtctr</span><span style="color:#FFFFFF;">, once it does, it returns to the function where this instruction was in and continues on with the next instruction down.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(105, 105, 105);"># Assume r10 = 0x80004508</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(238, 130, 238);">mtctr r10</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(255, 0, 0);">bctrl</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(105, 105, 105);"># The code would now jump to the instruction at 0x80004508, after that, it would return to the function where this instruction is and move to the next one down.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><a id="bdnz" name="bdnz" style="background-size: 16px;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bdnz</span></span></a></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:26px;">Branch if Decremented Count Register Not Zero</span></span></p>
+
+<p style="text-align: center;"><font color="#ffffff"><span style="font-size: 20px;">A function in your code will loop over and over again until The Count Register reaches 0.</span></font></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><font color="#ffffff"><span style="font-size: 20px;">Example:</span></font></p>
+
+<p style="text-align: center;"><span style="color:#D3D3D3;"><span style="font-size: 20px;">The loop amount depends on the length set in the Count Register beforehand.</span></span></p>
+
+<p style="text-align: center;"><span style="color:#D3D3D3;"><span style="font-size: 20px;">If you set the length in the count register to be &quot;4&quot; for instance, the function would be ran 4 times</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:26px;"><span style="color:#FF8C00;">li </span><span style="color:#FFFFFF;">r5, 4 </span><span style="color:#696969;"># 4 = Amount of times for function to be ran</span><br />
+<span style="color:#EE82EE;">mtctr</span><span style="color:#FFFFFF;"> r5 </span><span style="color:#696969;"># Register 5 is moved to the count register</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:26px;"><span style="color:#FFFFFF;">function_2:</span><br />
+<span style="color:#0000FF;">subi </span><span style="color:#FFFFFF;">r6, r6, 2 #</span><span style="color:#696969;"> This will subtract 2 from the value in Register 6 every time it gets executed, in this case, it will happen 4 times.</span><br />
+<span style="color:#B22222;">bdnz </span><span style="color:#FFFFFF;">function_2<span style="color:#696969;"> </span></span><span style="font-size:22px;"><span style="color:#696969;"># This will make &quot;function_2&quot;&nbsp;run&nbsp;4 times, this instruction subtracts 1 from the count register every time it&#39;s ran, so after 4 times, it will stop as it will then equal 0.</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
 <p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">cmpwi</span></font></p>
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Compare Word </span></span><span style="color: rgb(255, 255, 255); font-size: 26px; text-align: center;">Immediate</span></p>
@@ -571,11 +655,24 @@
 
 <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><span style="font-size: 36px;"><strong>Unofficial Definition:</strong></span></span></span></p>
 
-<p style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size:28px;"><span style="font-family:times new roman,times,serif;">Converts the value in a register to binary and checks how many 0&#39;s come before the first instance of the number 1</span></span></span></p>
+<p style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size:28px;"><span style="font-family:times new roman,times,serif;">Converts the value in a register to binary and checks how zeros come before the first instance of the number 1 in the value.</span></span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
 <p style="text-align: center;"><span style="color:#A9A9A9;"><span style="font-size:28px;"><span style="font-size:48px;"><span style="font-family:times new roman,times,serif;">Example to be added.</span></span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="eieio" name="eieio"></a>eieio</span></font></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:26px;">Enforce In-Order Execution of I/O</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><span style="font-size: 36px;"><strong>Unofficial Definition:</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:28px;"><span style="color:#808080;">None of the instructions that store values will be executed until the instructions that load values that were apart of the functions that were running when this instruction was executed finish loading values.... I think....</span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -654,6 +751,25 @@
 <p style="text-align: center;"><span style="font-size:36px;"><span style="color: rgb(255, 255, 255);">mtctr r0</span></span></p>
 
 <p style="text-align: center;"><span style="color:#808080;"><span style="font-size: 20px; text-align: center;">​# The amount of times a certain thing will happen in a code is now &quot;4&quot;</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><a id="mtspr" name="mtspr" style="background-size: 16px; background-color: black;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">mtspr</span></span></a></p>
+
+<p style="text-align: center;"><font color="#ffffff"><span style="font-size: 26px;">Move To Special Purpose Register</span></font></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:24px;">Stores whatever address is in the register you specify in a Link Register called &quot;SPR&quot; (Special Purpose Register)</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(238, 130, 238);">mtspr&nbsp;r10</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(105, 105, 105); font-size: 22px; text-align: center;"># r10 is now stored in the SPR</span></p>
 </div>
 
 <p style="text-align: center;">&nbsp;</p>
@@ -963,6 +1079,96 @@
 <p style="text-align: center;"><span style="color: rgb(255, 255, 255);">r0 = 0x</span><span style="color: rgb(255, 255, 255); text-align: center;">A55553F4</span></p>
 
 <p style="text-align: center;"><span style="text-align: center; color: rgb(255, 255, 255);">r5&nbsp;= 0x</span><span style="color: rgb(255, 255, 255); text-align: center;">A55553F4</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><br />
+&nbsp;</p>
+
+<hr />
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="color:#00FF00;"><span style="font-size:72px;"><span style="font-family: &quot;MV Boli&quot;;"><span style="background-color:#000000;"><a id="fpi" name="fpi"></a>Floating Point Instructions</span></span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:28px;"><font color="#ffffff">Instructions that affect floating point registers and preform opperations. With some instructions being unique to the Wii.</font></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">psq_add</span></font></p>
+
+<p style="text-align: center;"><span style="font-size:26px;"><span style="color:#FFFFFF;">Paired Single Quantized Add</span></span></p>
+
+<p style="text-align: center;"><span style="text-align: center; font-size: 20px;"><span style="color: rgb(255, 255, 255);">The floats in Floating Point Register B&nbsp;and Floating Point Register C&nbsp;are added together. The resulting value is added to whatever is in&nbsp;</span></span><span style="color: rgb(255, 255, 255); font-size: 20px; text-align: center;">Floating Point Register A</span><span style="text-align: center; font-size: 20px;"><span style="color: rgb(255, 255, 255);">&nbsp;</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">psq_sub</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Paired Single Quantized Subtract</span></span></p>
+
+<p style="text-align: center;"><font color="#ffffff"><span style="font-size: 20px;">The float in&nbsp;</span></font><span style="color: rgb(255, 255, 255); font-size: 20px; text-align: center;">Floating Point Register B&nbsp;is subtracted by the float in&nbsp;Floating Point Register C. The resulting value is subtracted from Whatever is in Floating Point Register A.</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">psq_mul</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Paired Single Quantized Multiply</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">The floats in Floating Point Register B and&nbsp;</span></span><span style="color: rgb(255, 255, 255); font-size: 20px;">Floating Point Register C&nbsp;are multiplied together and stored in&nbsp;Floating Point Register A</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">psq_div</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Paired Single Quantized Divide</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">The float&nbsp;in Floating Point Register A&nbsp;is divided by the amount of times the floats in&nbsp;</span></span><span style="color: rgb(255, 255, 255); font-size: 20px;">Floating Point Register B and&nbsp;Floating Point Register C divided together equal.</span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<div>
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="fsel" name="fsel"></a>fsel</span></font></p>
+
+<p style="text-align: center;"><span style="font-size:28px;"><span style="font-size:26px;"><span style="color: rgb(255, 255, 255);">Floating Select</span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FFFFFF;">If Floating Point Register A is 0, or greater than 0, The value in Floating Point Register D is copied to Floating Point Register C. </span></span>&nbsp;<span style="font-size:22px;"><span style="color:#FFFFFF;">If Floating Point A is less than 0, The value in Floating Point Register B is copied to Floating Point Register D.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<div>&nbsp;</div>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
 
 <p style="text-align: center;">&nbsp;</p>
 
