@@ -18,9 +18,17 @@
 
 <p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">lwz</span></font></p>
 
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 20px;">lmw</span></font></p>
+
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">addi</font></span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">addis</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">b</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bl</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">blr</font></span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">beq</font></span></p>
 
@@ -52,6 +60,14 @@
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bdnz</font></span></p>
 
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">bdnzt</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px; text-align: center;">bdnzf</span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px; text-align: center;">bdz</span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px; text-align: center;">cmp</span></p>
+
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cmpwi</span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif; font-size: 20px;">cmplwi</span></p>
@@ -77,6 +93,8 @@
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">slw</font></span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">sraw</font></span></p>
+
+<p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">stwu</font></span></p>
 
 <p style="font-family: &quot;Times New Roman&quot;; font-size: medium; text-align: center;"><span style="font-size: 20px;"><font color="#ffffff" face="Rage Italic, sans-serif">xoris</font></span></p>
 
@@ -230,6 +248,15 @@
 
 <p>&nbsp;</p>
 
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;"><a id="lmw" name="lmw"></a>lmw</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Load Multiple Words</span></span></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:22px;">Whatever value is in Register A up until Register 31 is loaded into Register B, the data will then be put into all Registers starting at Register B up until Register 31, for each register, 0x4 is added to the value being loaded. The value in the middle is an optional pointer.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
 <p>&nbsp;</p>
 
 <hr />
@@ -268,8 +295,6 @@
 		</tr>
 	</tbody>
 </table>
-
-<p>&nbsp;</p>
 
 <p>&nbsp;</p>
 
@@ -314,7 +339,36 @@
 
 <p>&nbsp;</p>
 
-<p>&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;"><a id="b" name="b"></a>b</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">Your code will jump (branch) to a specific place in memory.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;"><a id="bl" name="bl"></a>bl</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch And Link</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">Your code will jump to the start of a function, the instructions of&nbsp;said function will be executed until a&nbsp;</span><strong><span style="color: rgb(255, 0, 0);">blr&nbsp;</span></strong><span style="color: rgb(255, 255, 255);">statement is reached, once it&#39;s reached, the code will jump back to the bl&nbsp;instruction and execute every instruction below it.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;"><a id="blr" name="blr"></a>blr</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Branch To Link Register</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">Your code will jump to whatever address is held in the link register.</span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -580,10 +634,44 @@
 
 <p style="text-align: center;">&nbsp;</p>
 
+<hr />
+<p style="text-align: center;"><a id="bdnzt" name="bdnzt" style="background-size: 16px;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bdnzt</span></span></a></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255);"><span style="font-size: 26px;">Branch if Decremented Count Register Not Zero And If Condition True</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FFFFFF;">Same as </span><span style="color:#800080;"><strong>bdnz</strong>, </span><span style="color:#FFFFFF;">except the loop will stop if a compare statment returns true (equal)</span></span></p>
+
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
-<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">cmpwi</span></font></p>
+<p style="text-align: center;"><a id="bdnzf" name="bdnzf" style="background-size: 16px;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bdnzf</span></span></a></p>
+
+<p style="text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 26px; text-align: center;">Branch if Decremented Count Register Not Zero And If Condition False</span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(255, 255, 255);">Same as&nbsp;</span><span style="color: rgb(128, 0, 128);"><strong>bdnz</strong>,&nbsp;</span><span style="color: rgb(255, 255, 255);">except the loop will stop if a compare statment returns false (not equal)</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><a id="bdz" name="bdz" style="background-size: 16px;"><span style="font-size: 72px;"><span style="color: rgb(255, 255, 255); font-family: &quot;Rage Italic&quot;, sans-serif;">bdz</span></span></a></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:26px;">Branch if Decremented Count Register Zero</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:20px;"><span style="color:#FFFFFF;">A function in your code will loop as long as The Count Register holds the value &quot;0&quot;</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="cmp" name="cmp"></a>cmp</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Compare</span></span></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:20px;">Checks To See If 2 registers are equal to the same value, or 0.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><a id="cmpwi" name="cmpwi"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">cmpwi</span></font></a></p>
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Compare Word </span></span><span style="color: rgb(255, 255, 255); font-size: 26px; text-align: center;">Immediate</span></p>
 
@@ -614,7 +702,7 @@
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
-<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">cmplwi</span></font></p>
+<p style="text-align: center;"><a id="cmplwi" name="cmplwi"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">cmplwi</span></font></a></p>
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Compare Logical Word&nbsp;</span></span><span style="color: rgb(255, 255, 255); font-size: 26px;">Immediate</span></p>
 
@@ -679,7 +767,7 @@
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
-<div style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">mr</span></font></div>
+<div style="text-align: center;"><a id="mr" name="mr"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">mr</span></font></a></div>
 
 <div>
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Move Register</span></span></p>
@@ -933,11 +1021,9 @@
 
 <p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">The Swiss Army Knife of the PowerPC Instruction Set.</span></span></p>
 
-<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FFFFFF;">To be added. Seriously.... this is one of the most complicated instructions in the set.</span></span></p>
+<p style="text-align: center;"><span style="color:#808080;"><span style="font-size:22px;">To be added.&nbsp;</span></span></p>
 
-<p style="text-align: center;">&nbsp;</p>
-
-<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FFFFFF;">Seriously.... this is one of the most complicated instructions in the set.</span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -949,8 +1035,6 @@
 <p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="slw" name="slw"></a>slw</span></font></p>
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Shift Left Word</span></span></p>
-
-<p style="text-align: center;"><span style="font-size:48px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><strong>Unofficial Definition:</strong></span></span></span></p>
 
 <p style="text-align: center;"><span style="font-size:24px;"><span style="color:#FFFFFF;">The value in Register B will be doubled however many times the value in Register C specifies, the result is stored in Register A.</span></span></p>
 
@@ -986,8 +1070,6 @@
 
 <p style="text-align: center;"><span style="font-size:26px;"><span style="color:#FFFFFF;">Shift Right Algebraic Word</span></span></p>
 
-<p style="text-align: center;"><span style="font-size: 48px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><strong>Unofficial Definition:</strong></span></span></span></p>
-
 <p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">The value in Register B will be halved however many times the value in Register C specifies, the result is stored in Register A.</span></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
@@ -1013,12 +1095,26 @@
 	&nbsp;</li>
 	<li style="text-align: center;"><font color="#ffffff"><span style="font-size: 22px;">The result would be &quot;8&quot;</span></font></li>
 	<li style="text-align: center;">&nbsp;</li>
+	<li style="text-align: center;">&nbsp;</li>
+</ul>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="stwu" name="stwu"></a>stwu</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Store Word And Update</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 48px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(211, 211, 211);"><strong>Unofficial Definition:</strong></span></span></span></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:26px;">Pushes Data into a Stack frame to allow&nbsp;the use of Registers that normally can&#39;t be used for operations.</span></span></p>
+
+<ul>
+	<li style="text-align: center;">&nbsp;</li>
 </ul>
 
 <p style="text-align: center;">&nbsp;</p>
 
 <hr />
-<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">xoris</span></font></p>
+<p style="text-align: center;"><a id="xoris" name="xoris"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">xoris</span></font></a></p>
 
 <p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">XOR Immediate Shift</span></span></p>
 
@@ -1082,8 +1178,24 @@
 
 <p style="text-align: center;">&nbsp;</p>
 
-<p style="text-align: center;"><br />
-&nbsp;</p>
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size:122px;"><a id="." name="."></a>.</span></font></p>
+
+<p style="text-align: center;"><span style="font-size:48px;"><span style="color: rgb(255, 255, 255);">&nbsp; &nbsp; Dot Operand</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">This is not an instruction, but rather an operand. It can be added to the end of certain instructions.</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">&nbsp; &nbsp;</span><span style="color:#FF0000;">It checks to see if the very first register specified in the instruction is equal to 0. </span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(255, 255, 255);">This is why you will often see branch statements with no matching compare statement.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
 
 <hr />
 <p style="text-align: center;">&nbsp;</p>
@@ -1150,25 +1262,6 @@
 
 <p style="text-align: center;">&nbsp;</p>
 </div>
-
-<div>&nbsp;</div>
-
-<div>&nbsp;</div>
-
-<div>&nbsp;</div>
-
-<div>&nbsp;</div>
-
-<p style="text-align: center;">&nbsp;</p>
-
-<p style="text-align: center;">&nbsp;</p>
-
-<hr />
-<div>&nbsp;</div>
-
-<p style="text-align: center;">&nbsp;</p>
-
-<p style="text-align: center;">&nbsp;</p>
 
 <p style="text-align: center;">&nbsp;</p>
 
