@@ -48,6 +48,7 @@
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style=font-size:20px><font color=#ffffff face="Rage Italic, sans-serif">ori</font></span></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style=font-size:20px><font color=#ffffff face="Rage Italic, sans-serif">rlwinm</font></span></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style=font-size:20px><font color=#ffffff face="Rage Italic, sans-serif">slw</font></span></p>
+<p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style=font-size:20px><font color=#ffffff face="Rage Italic, sans-serif">slwi</font></span></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style=font-size:20px><font color=#ffffff face="Rage Italic, sans-serif">sraw</font></span></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style=font-size:20px><font color=#ffffff face="Rage Italic, sans-serif">stwu</font></span></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style=font-size:20px><font color=#ffffff face="Rage Italic, sans-serif">xoris</font></span></p>
@@ -648,6 +649,23 @@
 <li style=text-align:center><span style=color:#a9a9a9><span style=font-size:22px>2 = Amount of times to double</span></span><br />
 &nbsp;</li>
 <li style=text-align:center><font color=#ffffff><span style=font-size:22px>The result would be &quot;128&quot;</span></font></li>
+<li style=text-align:center>&nbsp;</li>
+</ul>
+<p style=text-align:center>&nbsp;</p>
+<hr />
+<p style=text-align:center><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:72px><a id=slwi name=slwi></a>slwi</span></font></p>
+<p style=text-align:center><span style=color:#FFFFFF><span style=font-size:26px>Shift Left Word Immediate</span></span></p>
+<p style=text-align:center><span style=color:#FFFFFF><span style=font-size:20px>This can do many different things depending on what the value you specify is.</span></span></p>
+<p style=text-align:center>&nbsp;</p>
+<p style=text-align:center><span style=font-size:22px><span style=color:#808080>If the value is &quot;8&quot;<br />
+- The Code will move a byte to the the upper half of a halfword in the lower half of a register (0xFFFFFF01 -&gt; 0xFFFF0100)</span></span></p>
+<p style=text-align:center><span style=font-size:22px><span style=color:#808080>If the value is &quot;16&quot;<br />
+- The Code will move a halfword from the lower half of a register to the upper half. (0xFFFF1111 -&gt; 0x11110000)</span></span></p>
+<p style=text-align:center><span style=font-size:22px><span style=color:#808080>If the value is &quot;24&quot;<br />
+- The code will clear the value in the register. (0x11110000 -&gt; 0x00000000)</span></span></p>
+<p style=text-align:center><span style=font-size:24px><span style=color:#FFFFFF>The value is taken from Register B and Stored in Register A&nbsp;</span></span></p>
+<p style=text-align:center>&nbsp;</p>
+<ul>
 <li style=text-align:center>&nbsp;</li>
 </ul>
 <p style=text-align:center>&nbsp;</p>
