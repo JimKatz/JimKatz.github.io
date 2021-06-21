@@ -3,7 +3,7 @@
 <head>
 <title>PowerPC For Dummies</title>
 </head>
-<body style=background-color:black>
+<body data-gr-ext-installed data-new-gr-c-s-check-loaded=14.1016.0 style=background-color:black>
 <p><strong style=color:#f00><span style=font-size:72px><span style="font-family:&quot;Edwardian Script ITC&quot;,sans-serif">PowerPC for Dummies</span></span></strong></p>
 <p><span style=color:#FFFFFF><em><span style=font-size:26px><strong><span style="font-family:&quot;Bradley Hand ITC&quot;,sans-serif">By&nbsp; &nbsp;Jimmy Kaz</span></strong></span></em></span></p>
 <p>&nbsp;</p>
@@ -41,6 +41,8 @@
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style="color:#fff;font-family:&quot;Rage Italic&quot;,sans-serif;font-size:20px">cntlzw</span></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style="color:#fff;font-family:&quot;Rage Italic&quot;,sans-serif;font-size:20px">eieio</span></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:20px>mr</span></font></p>
+<p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:20px>mflr</span></font></p>
+<p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:20px>mtlr</span></font></p>
 <p style=text-align:center><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:20px>mtctr</span></font></p>
 <p style=text-align:center><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:20px>mtspr</span></font></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:20px>mulli</span></font></p>
@@ -490,6 +492,23 @@
 </table>
 <p style=text-align:center><span style=color:#fff>r0 = 0x</span><font color=#ffffff>0000000F</font></p>
 <p style=text-align:center>&nbsp;</p>
+<hr />
+<div style=text-align:center><a id=mflr name=mflr style=background-size:16px><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:72px>mflr</span></font></a></div>
+<div>
+<p style=text-align:center><span style=font-size:26px><span style=color:#fff>Move From Link Register</span></span></p>
+<p style=text-align:center><span style=font-size:20px><span style=color:#fff><span style=font-size:22px>This pretty much just allows you to use the &quot;bl&quot; instruction and other &quot;link&quot; instruction types. The register can be pretty much anything.</span></span></span></p>
+<p style=text-align:center><span style=font-size:20px><span style=color:#fff>It backs up whatever address is&nbsp;in the register you specify</span></span></p>
+<p style=text-align:center>&nbsp;</p>
+<hr />
+<p style=text-align:center>&nbsp;</p>
+<div style=text-align:center><a id=mtlr name=mtlr style=background-size:16px><font color=#ffffff face="Rage Italic, sans-serif"><span style=font-size:72px>mtlr</span></font></a></div>
+<div>
+<p style=text-align:center><span style=font-size:26px><span style=color:#fff>Move To Link Register</span></span></p>
+<p style=text-align:center><span style=font-size:28px><span style=color:#fff>If your code has a branch + link instruction of any kind, this is needed before the blr instruction in the exit function.</span></span></p>
+<p style=text-align:center><span style=font-size:20px><span style=color:#fff>This restores whatever value was in the register before the execution of the </span><span style=color:#DDA0DD>mflr </span><span style=color:#FFFFFF>instruction</span><font color=#dda0dd>.</font></span></p>
+</div>
+</div>
+<p style=text-align:center>&nbsp;</p>
 <p style=text-align:center>&nbsp;</p>
 <p style=text-align:center>&nbsp;</p>
 <hr />
@@ -663,7 +682,7 @@
 - The Code will move a halfword from the lower half of a register to the upper half. (0xFFFF1111 -&gt; 0x11110000)</span></span></p>
 <p style=text-align:center><span style=font-size:22px><span style=color:#808080>If the value is &quot;24&quot;<br />
 - The code will clear the value in the register. (0x11110000 -&gt; 0x00000000)</span></span></p>
-<p style=text-align:center><span style=font-size:24px><span style=color:#FFFFFF>The value is taken from Register B and Stored in Register A&nbsp;</span></span></p>
+<p style=text-align:center><span style=font-size:22px><span style=color:#808080>The value is taken from Register B and Stored in Register A&nbsp;</span></span></p>
 <p style=text-align:center>&nbsp;</p>
 <ul>
 <li style=text-align:center>&nbsp;</li>
