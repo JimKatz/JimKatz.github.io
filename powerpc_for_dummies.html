@@ -127,25 +127,25 @@
 
 <p style="text-align:center"><span style="font-size:24px"><span style="color:#fff"><font face="Rage Italic, sans-serif">BIT</font></span></span></p>
 
-<p style="text-align:center"><span style="font-size:24px"><span style="color:#fff"><font face="Rage Italic, sans-serif">F</font></span></span></p>
+<p style="text-align:center"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 24px;">0</span></font></p>
 
 <p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center"><span style="font-size:36px"><span style="color:#FFFFFF"><font face="Rage Italic, sans-serif">BYTE</font></span></span></p>
 
-<p style="text-align:center"><span style="font-size:36px"><span style="color:#FFFFFF"><font face="Rage Italic, sans-serif">FF</font></span></span></p>
+<p style="text-align:center"><span style="font-size:36px"><span style="color:#FFFFFF"><font face="Rage Italic, sans-serif">00</font></span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center"><span style="font-size:48px"><span style="color:#fff"><font face="Rage Italic, sans-serif">HALFWORD</font></span></span></p>
 
-<p style="text-align:center"><span style="font-size:48px"><span style="color:#fff"><font face="Rage Italic, sans-serif">FFFF</font></span></span></p>
+<p style="text-align:center"><span style="font-size:48px"><span style="color:#fff"><font face="Rage Italic, sans-serif">0000</font></span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center"><span style="font-size:89px"><font color="#ffffff" face="Rage Italic, sans-serif">WORD</font></span></p>
 
-<p style="text-align:center"><span style="font-size:89px"><span style="color:#fff"><font face="Rage Italic, sans-serif">FFFFFFFF</font></span></span></p>
+<p style="text-align:center"><span style="font-size:89px"><span style="color:#fff"><font face="Rage Italic, sans-serif">00000000</font></span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -186,7 +186,7 @@
 
 <p style="text-align:center"><span style="color:#fff;font-size:36px;text-align:center">The following operations convert the values in registers to binary.</span></p>
 
-<p style="text-align:center"><font color="#ffffff"><span style="font-size:36px">The &quot;check&quot; is done by checking the very last binary number to see if it is either 1 or 0</span></font></p>
+<p style="text-align:center"><font color="#ffffff"><span style="font-size:36px">The &quot;check&quot; is done by checking each bit to see if the number is 1&nbsp;or 0</span></font></p>
 
 <p style="text-align:center"><span style="font-size:36px"><font color="#ffffff">In this context,</font><span style="color:#00FF00"> &quot;true&quot;</span><font color="#ffffff"> is the value &quot;1&quot; and </font><span style="color:#FF0000">&quot;false&quot;</span><font color="#ffffff"> is the value &quot;0&quot;</font></span></p>
 
@@ -236,7 +236,9 @@
 
 <p style="text-align:center"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size:48px"><b>XAND</b></span></font></p>
 
-<p style="text-align:center"><font color="#ffffff"><span style="font-size:36px">The exact same thing as XNOR.</span></font></p>
+<p style="text-align:center"><font color="#ffffff"><span style="font-size:36px">Same thing as XNOR.</span></font></p>
+
+<p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -281,13 +283,23 @@
 
 <p style="text-align:center"><span style="color:#fff;font-family:&quot;Rage Italic&quot;,sans-serif;font-size:72px">Instruction List:</span></p>
 
-<p style="text-align:center"><span style="font-size:26px"><span style="color:#696969"><span style="font-family:&quot;Rage Italic&quot;,sans-serif">If any of this is wrong, contact me on discord </span></span><span style="color:#FF8C00"><span style="font-family:&quot;Rage Italic&quot;,sans-serif">&quot;JimmyK#2848&quot;</span></span></span></p>
+<p style="text-align:center"><span style="font-size:36px;"><span style="color:#696969"><span style="font-family:&quot;Rage Italic&quot;,sans-serif">If any of this is wrong, contact me on discord </span></span><span style="color:#FF8C00"><span style="font-family:&quot;Rage Italic&quot;,sans-serif">&quot;JimmyK#2848&quot;</span></span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
-<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center"><span style="font-size:28px;"><span style="color:#FF0000;"><span style="text-align: center;"><span style="font-family: &quot;Rage Italic&quot;, sans-serif;"><span style="background-color:#000000;">Yes, I know that the order of registers is usually &quot;rD, rA&quot; etc.</span></span></span></span></span></p>
 
-<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center"><span style="font-size:28px;"><span style="color:#FF0000;"><font face="Rage Italic, sans-serif"><span style="background-color:#000000;">For simplicity,</span></font><font face="Rage Italic, sans-serif"><span style="background-color:#000000;">&nbsp;I&#39;m listing it in &quot;order of instance&quot; for each&nbsp;instruction.</span></font></span></span></p>
+
+<p style="text-align:center"><font color="#ff0000" face="Rage Italic, sans-serif"><span style="font-size: 28px;">EXAMPLE:</span></font></p>
+
+<p style="text-align:center"><font color="#ff0000" face="Rage Italic, sans-serif"><span style="font-size: 28px;">or&nbsp;r1, r2, r3</span></font></p>
+
+<p style="text-align:center"><font color="#ff0000" face="Rage Italic, sans-serif"><span style="font-size: 28px;">r1&nbsp;= Register A&nbsp;</span></font></p>
+
+<p style="text-align:center"><font color="#ff0000" face="Rage Italic, sans-serif"><span style="font-size: 28px;">r2&nbsp;= Register B</span></font></p>
+
+<p style="text-align:center"><font color="#ff0000" face="Rage Italic, sans-serif"><span style="font-size: 28px;">r3&nbsp;= Register C</span></font></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -717,7 +729,7 @@
 
 <p style="text-align:center"><span style="font-size:26px"><span style="color:#fff">Branch To Count Register</span></span></p>
 
-<p style="text-align:center"><span style="font-size:24px"><span style="color:#FFFFFF">The code will jump to the address stored in the register that you loaded into a count register with </span><span style="color:#DDA0DD">mtctr</span></span></p>
+<p style="text-align:center"><span style="font-size:24px"><span style="color:#FFFFFF">Your code will jump to the address that you&nbsp;stored in the count register.</span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -729,7 +741,7 @@
 
 <p style="text-align:center"><span style="font-size:22px"><span style="color:#FF0000">bctr</span></span></p>
 
-<p style="text-align:center"><span style="font-size:22px"><span style="color:#696969"># The code would now jump to the instruction at 0x80004508</span></span></p>
+<p style="text-align:center"><span style="font-size:22px"><span style="color:#696969"># The code would now jump to the address 0x80004508</span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -740,7 +752,7 @@
 
 <p style="text-align:center"><span style="font-size:26px"><span style="color:#fff">Branch To Count Register And Link</span></span></p>
 
-<p style="text-align:center"><span style="font-size:22px"><span style="color:#FFFFFF">The code will jump to the address stored in the register that you loaded into the count register with </span><span style="color:#EE82EE">mtctr</span><span style="color:#FFFFFF">, once it does, it returns to the function where this instruction was in and continues on with the next instruction down.</span></span></p>
+<p style="text-align:center"><span style="color: rgb(255, 255, 255); font-size: 24px; text-align: center;">Your code will jump to the address that you</span><span style="color: rgb(255, 255, 255); font-size: 24px; text-align: center;">&nbsp;stored in the count register. The code will jump back to it&#39;s original function when a </span><span style="color:#FF0000;"><span style="font-size: 24px; text-align: center;">blr</span></span><span style="color: rgb(255, 255, 255); font-size: 24px; text-align: center;"> instruction is reached. Once it&#39;s reached, the very next instruction is executed</span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -748,13 +760,17 @@
 
 <p style="text-align:center"><span style="font-size:22px"><span style="color:#696969"># Assume r10 = 0x80004508</span></span></p>
 
+<p style="text-align:center"><span style="color:#FFFFFF;"><span style="font-size:22px">function:</span></span></p>
+
 <p style="text-align:center"><span style="font-size:22px"><span style="color:#ee82ee">mtctr r10</span></span></p>
 
 <p style="text-align:center"><span style="font-size:22px"><span style="color:#f00">bctrl</span></span></p>
 
-<p style="text-align:center"><span style="font-size:22px"><span style="color:#696969"># The code would now jump to the instruction at 0x80004508, after that, it would return to the function where this instruction is and move to the next one down.</span></span></p>
+<p style="text-align:center"><span style="color:#FFFFFF;"><span style="font-size: 22px;">function_at_address_80004508:</span></span></p>
 
-<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center"><font color="#ff0000"><span style="font-size: 22px;">blr</span></font><span style="color:#696969;"><span style="font-size: 22px;"> </span></span></p>
+
+<p style="text-align:center"><span style="color: rgb(105, 105, 105); font-size: 22px; text-align: center;"># When the blr is reached,</span><span style="color:#696969;"><span style="font-size: 22px;"> the code will jump back to &quot;function&quot; and move on to the &quot;li&quot; instruction</span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -763,7 +779,7 @@
 
 <p style="text-align:center"><span style="color:#FFFFFF"><span style="font-size:26px">Branch if Decremented Count Register Not Zero</span></span></p>
 
-<p style="text-align:center"><font color="#ffffff"><span style="font-size:20px">A function in your code will loop over and over again until The Count Register reaches 0.</span></font></p>
+<p style="text-align:center"><span style="font-size:24px;"><font color="#ffffff">A function in your code will loop over and over again until The Count Register reaches 0.</font></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -816,7 +832,7 @@
 
 <p style="text-align:center"><span style="font-size:26px"><span style="color:#fff">Compare</span></span></p>
 
-<p style="text-align:center"><span style="color:#FFFFFF"><span style="font-size:20px">Checks To See If 2 registers are equal to the same value, or 0.</span></span></p>
+<p style="text-align:center"><span style="color:#FFFFFF"><span style="font-size:20px">Checks to see if 2 registers are equal to the same value, or 0.</span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -858,6 +874,8 @@
 
 <p style="text-align:center"><span style="font-size:20px"><span style="color:#FFFFFF">Checks to see if a register holds a value up to&nbsp;&quot;65535&quot;.</span></span></p>
 
+<p style="text-align:center"><span style="color: rgb(128, 128, 128); font-size: 20px; text-align: center;">This instruction can&#39;t check for a negative value since it only deals with unsigned integers&nbsp;</span></p>
+
 <p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center"><span style="font-size:20px"><span style="color:#fff">EXAMPLE :</span></span></p>
@@ -877,8 +895,6 @@
 <p style="text-align:center"><font color="#ffffff">The result would be TRUE.</font></p>
 
 <p style="text-align:center"><span style="font-size:20px"><font color="#ffffff">(I can&#39;t show a higher value because it would be in hex and make things confusing)</font></span></p>
-
-<p style="text-align:center"><span style="color:#808080"><span style="font-size:20px">This instruction can&#39;t check for a negative value since it only deals with unsigned integers&nbsp;</span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -959,7 +975,7 @@
 		<tr>
 			<td style="text-align:center"><span style="color:#fff">r1</span></td>
 			<td style="text-align:center"><span style="color:#fff">00000000</span></td>
-			<td style="text-align:center"><span style="color:#fff">00000000</span></td>
+			<td style="text-align:center"><span style="color:#fff">0000000F</span></td>
 		</tr>
 	</tbody>
 </table>
@@ -974,7 +990,7 @@
 <div>
 <p style="text-align:center"><span style="font-size:26px"><span style="color:#fff">Move From Link Register</span></span></p>
 
-<p style="text-align:center"><span style="font-size:20px"><span style="color:#fff"><span style="font-size:22px">This pretty much just allows you to use the &quot;bl&quot; instruction and other &quot;link&quot; instruction types. The register can be pretty much anything.</span></span></span></p>
+<p style="text-align:center"><span style="font-size:28px;"><span style="color:#fff">This pretty much just allows you to use the</span><span style="color:#FF0000;"> &quot;bl&quot;</span><span style="color:#fff"> instruction and other &quot;link&quot; instruction types. The register can be pretty much anything.</span></span></p>
 
 <p style="text-align:center"><span style="font-size:20px"><span style="color:#fff">It backs up whatever address is&nbsp;in the register you specify</span></span></p>
 
@@ -1006,7 +1022,7 @@
 <div>
 <p style="text-align:center"><span style="font-size:26px"><span style="color:#fff">Move To Count Register</span></span></p>
 
-<p style="text-align:center"><span style="color:#FFFFFF"><span style="font-size:20px">A value is loaded from a specified register, The value tells the code how many times you want something to happen. It is stored in a &quot;Count Register&quot;. Usually used <span style="font-size:24px">alongside </span></span></span><span style="font-size:24px"><span style="color:#B22222">bdnz </span><span style="color:#FFFFFF">and </span><span style="color:#800080">stbu</span></span></p>
+<p style="text-align:center"><span style="color:#FFFFFF"><span style="font-size:20px">A value is loaded from a specified register, The value tells the code how many times you want something to happen. It is stored in a &quot;Count Register&quot;. Usually used <span style="font-size:24px">alongside </span></span></span><span style="font-size:24px"><span style="color:#B22222">bdnz </span><span style="color:#FFFFFF">and </span><span style="color:#800080">stbu/stwu</span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -1255,9 +1271,9 @@
 - The Code will move a halfword from the lower half of a register to the upper half. (0xFFFF1111 -&gt; 0x11110000)</span></span></p>
 
 <p style="text-align:center"><span style="font-size:22px"><span style="color:#808080">If the value is &quot;32&quot;<br />
-- The code will clear the value in the register. (0x11110000 -&gt; 0x00000000)</span></span></p>
+- The code will clear the value in the register. (0x11111111&nbsp;-&gt; 0x00000000)</span></span></p>
 
-<p style="text-align:center"><span style="font-size:22px"><span style="color:#808080">The value is taken from Register B and Stored in Register A&nbsp;</span></span></p>
+<p style="text-align:center"><span style="color:#FFFFFF;"><span style="font-size:22px">The value is taken from Register B and Stored in Register A&nbsp;</span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -1400,7 +1416,7 @@
 <hr />
 <p style="text-align: center;"><a id="Operation_Instructions" name="Operation_Instructions" style="background-size: 16px; background-color: rgb(0, 0, 0); text-align: center;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 72px;"><span style="font-family: &quot;MV Boli&quot;;">Operation Instructions</span></span></span></a></p>
 
-<p style="text-align: center;"><span style="font-size: 28px;"><font color="#ffffff">I&#39;ll try not to go into too much technical detail with these.&nbsp;I had a very hard time simplifying these.</font></span></p>
+<p style="text-align: center;"><span style="font-size: 28px;"><font color="#ffffff">I&#39;ll try not to go into too much technical detail with these.&nbsp;I had a very hard time understanding these at first.</font></span></p>
 
 <p style="text-align: center;">&nbsp;</p>
 
@@ -1587,13 +1603,15 @@ A compare statement below checks to see if both registers are equal to the value
 
 <p style="text-align:center"><span style="color:#FF0000"><span style="font-size:72px"><span style="font-family:Pristina,sans-serif">Special Thanks</span></span></span></p>
 
-<p style="text-align:center"><span style="color:#FFFFFF"><span style="font-family:tahoma,geneva,sans-serif"><span style="font-size:28px">Kiwi515</span></span></span></p>
+<p style="text-align:center"><strong><span style="color:#FFFFFF"><span style="font-family:tahoma,geneva,sans-serif"><span style="font-size:28px">Kiwi515</span></span></span></strong></p>
 
 <p style="text-align:center"><span style="color:#FFFFFF"><span style="font-family:tahoma,geneva,sans-serif;font-size:28px;text-align:center">GibHaltmannKill</span></span></p>
 
 <p style="text-align:center"><span style="color:#FFFFFF"><span style="font-family:tahoma,geneva,sans-serif;font-size:28px">Paniaal</span></span></p>
 
 <p style="text-align:center"><span style="font-size:28px"><em><span style="font-family:comic sans ms,cursive"><font color="#ff0000">Adamcrossing</font></span></em></span></p>
+
+<p style="text-align:center"><span style="color:#FFFFFF;"><span style="font-size:26px;"><b style="color: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; font-size: 36px; text-align: center;">TheLordScruffy</b></span></span></p>
 
 <p style="text-align:center"><font color="#ffffff" face="arial, helvetica, sans-serif"><span style="font-size: 36px;"><b>JoshuaMK</b></span></font></p>
 
