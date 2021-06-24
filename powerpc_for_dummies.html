@@ -1397,11 +1397,72 @@
 
 <p style="text-align:center">&nbsp;</p>
 
+<hr />
+<p style="text-align: center;"><a id="Operation_Instructions" name="Operation_Instructions" style="background-size: 16px; background-color: rgb(0, 0, 0); text-align: center;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 72px;"><span style="font-family: &quot;MV Boli&quot;;">Operation Instructions</span></span></span></a></p>
+
+<p style="text-align: center;"><span style="font-size: 28px;"><font color="#ffffff">I&#39;ll try not to go into too much technical detail with these.&nbsp;I had a very hard time simplifying these.</font></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">OR</span></font></p>
+
+<p style="text-align: center;"><font color="#ffffff"><span style="font-size: 26px;">OR Operation</span></font></p>
+
+<div>
+<p style="text-align: center;"><span style="font-size:26px;"><span style="color:#FFFFFF;">This checks to see if at least one register is equal to a value you specify, The specified value is placed in Register A.<br />
+A compare statement below checks to see if at least one register is equal to the value you specified.</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="color:#696969;"><span style="font-size:22px;"># Assume that Register 0 = 0x1</span></span></p>
+
+<p style="text-align: center;"><span style="color:#696969;"><span style="font-size:22px;"># Assume that&nbsp;</span></span><span style="color: rgb(105, 105, 105); font-size: 22px; text-align: center;">Register 1</span><span style="color:#696969;"><span style="font-size:22px;">&nbsp;= 0x3</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FFA07A;"><span style="font-size:20px;">or r2, r0, r1</span></span><span style="color:#FFFFFF;"><span style="font-size:20px;"> </span></span><span style="font-size:18px;"><span style="color:#808080;"># To put it simply, this places the value you&#39;re checking the registers for in Register 2</span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#00FF00;"><span style="font-size:20px;">cmpwi r2, 3</span></span><span style="color:#FFFFFF;"><span style="font-size:20px;"> </span></span><span style="color:#696969;"><span style="font-size:20px;"># This checks to see if at least one of the Registers is equal to your specified value, which in this case is &quot;3&quot; </span></span><span style="color:#A52A2A;"><span style="font-size:20px;">(the cmpwi instruction can&#39;t compare 2 registers, this is just comparing the value in r2 to the value of the result of the OR operation, which is the value you&#39;re checking the registers for)</span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size:22px;"><span style="color:#FF0000;"><span style="font-size:20px;">beq</span></span><span style="color:#FFFFFF;"><span style="font-size:20px;"> function2 </span></span><span style="color:#696969;"><span style="font-size:20px;"># Since the result returned true and one of the registers was equal to 3, the code will branch to &quot;function2&quot;</span></span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
+
+<hr />
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;">AND</span></font></p>
+
+<p style="text-align: center;"><font color="#ffffff"><span style="font-size: 26px;">AND Operation</span></font></p>
+
+<div>
+<p style="text-align: center;"><span style="color:#FFFFFF;"><span style="font-size:26px;">This checks to see if both registers are equal to a value you specify, The specified value is placed in Register A.<br />
+A compare statement below checks to see if both registers are equal to the value you specified</span></span></p>
+
+<p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(105, 105, 105);"><span style="font-size: 22px;"># Assume that Register&nbsp;0 = 0x3</span></span></p>
+
+<p style="text-align: center;"><span style="color: rgb(105, 105, 105);"><span style="font-size: 22px;"># Assume that&nbsp;</span></span><span style="color: rgb(105, 105, 105); font-size: 22px;">Register 1</span><span style="color: rgb(105, 105, 105);"><span style="font-size: 22px;">&nbsp;= 0x3</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(255, 160, 122);"><span style="font-size: 20px;">and r2, r0, r1</span></span><span style="color: rgb(255, 255, 255);"><span style="font-size: 20px;">&nbsp;</span></span><span style="font-size: 18px;"><span style="color: rgb(128, 128, 128);"># To put it simply, this places the value you&#39;re checking the registers for in Register 2</span></span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(0, 255, 0);"><span style="font-size: 20px;">cmpwi r2, 3</span></span></span><span style="font-size: 22px; text-align: center; color: rgb(255, 255, 255);"><span style="font-size: 20px;">&nbsp;</span></span><span style="font-size: 22px; text-align: center; color: rgb(105, 105, 105);"><span style="font-size: 20px;"># This checks to see if both Register 0 and Register 1 are equal to your specified value, which in this case is &quot;3&quot;&nbsp;</span></span><span style="font-size: 22px; text-align: center; color: rgb(165, 42, 42);"><span style="font-size: 20px;">(the cmpwi instruction can&#39;t compare 2 registers, this is just comparing the value in r2 to the value of the result of the AND&nbsp;operation, which is the value you&#39;re checking the registers&nbsp;for)</span></span></p>
+
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 20px;">beq</span></span><span style="color: rgb(255, 255, 255);"><span style="font-size: 20px;">&nbsp;function2&nbsp;</span></span><span style="color: rgb(105, 105, 105);"><span style="font-size: 20px;"># Since the result returned true and both registers were equal to &quot;3&quot; the code will jump to &quot;function2&quot;</span></span></span></p>
+</div>
+
+<p style="text-align:center">&nbsp;</p>
+
 <p style="text-align:center">&nbsp;</p>
 
 <hr />
-<p style="text-align:center">&nbsp;</p>
-
 <p style="text-align:center">&nbsp;</p>
 
 <p style="text-align:center"><span style="color:#00FF00"><span style="font-size:72px"><span style="font-family:&quot;MV Boli&quot;"><span style="background-color:#000000"><a id="fpi" name="fpi"></a>Floating Point Instructions</span></span></span></span></p>
