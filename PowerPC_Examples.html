@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<title></title>
+</head>
+<body>
+<table style="font-family: sans-serif;">
+	<tbody>
+		<tr>
+			<td id="navigation" style="vertical-align: top;">
+			<div class="row" style="color: rgb(34, 34, 34); padding: 0px; margin: 0px; width: 174px; font-size: 9pt; border: 1px solid rgb(208, 208, 208); background: rgb(255, 255, 255); clear: both;" title="ARCentral.net">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>
+			</td>
+			<td style="vertical-align: top;">
+			<div class="list" style="float: left; padding: 0px 0px 10px; display: inline; font-size: 10pt; margin: 20px 0px 10px 10px; border-width: 3px; border-style: solid; border-color: rgb(25, 176, 233); background: rgb(255, 255, 255); min-height: 125px;">
+			<div class="title" style="clear: both; width: 800px; text-align: center; padding: 7px 0px; margin: 0px 0px 10px; color: rgb(255, 255, 255); background: rgb(25, 176, 233); font-size: 14pt; font-weight: bold; overflow: hidden; height: 25px;">PowerPC For Dummies - Examples Page</div>
+
+			<table class="codetypes" style="width: 800px; margin: 0px; padding: 0px; border: 0px; border-collapse: collapse;">
+				<tbody>
+					<tr>
+						<td colspan="2" style="vertical-align: top; padding-right: 15px;">
+						<div class="ctsmall" style="margin: -5px 0px 5px 10px; padding: 0px; font-size: 8pt;"><span style="font-size:16px;"><strong>Written by Jimmy Kaz</strong></span></div>
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align: top; padding-right: 15px;">
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">The Basics</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Load An Address into a Register<a id="LoadAddressIntoRegister" name="LoadAddressIntoRegister"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><strong>lis r0, 0x8000<br />
+						ori r0, r0, 0xFFFF</strong>
+
+						<hr /><br style="font-size: 13.3333px;" />
+						This will load address&nbsp;<strong>0x8000FFFF</strong>&nbsp;into register 0<br style="font-size: 13.3333px;" />
+						<br style="font-size: 13.3333px;" />
+						<span style="font-size: 13.3333px;">You might be thinking &quot;why not just use&nbsp;<strong>li</strong>&nbsp;for the bottom half of the register?&quot;</span></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><strong>&quot;li&quot;&nbsp;</strong><span style="font-size: 13.3333px;">can only load values up to 0x7FFF into a register, whereas</span><strong>&nbsp;&quot;ori&quot;</strong><span style="font-size: 13.3333px;">&nbsp;can load values up to 0xFFFF</span></div>
+
+						<div class="ctlinks" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border: 0px; margin: 8px 0px 0px; padding: 0px 0px 8px; text-align: right;">&nbsp;</div>
+						</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;"><a id="ReplaceAddressValue" name="ReplaceAddressValue" style="background-size: 16px;">Replace A Value at an Address</a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">
+						<p><span style="font-size: 13.3333px;">This type of code requires 2 registers.</span></p>
+
+						<p><span style="color: rgb(255, 0, 0);">&nbsp; # Assume that you want to replace the value at the address 0x8000FFFF<br />
+						&nbsp; # First, you need to load it into a register.<br />
+						&nbsp; # Let&#39;s load it into Register 0&nbsp;as an example.</span></p>
+
+						<p><strong>&nbsp; lis&nbsp; &nbsp; &nbsp; &nbsp;r0, 0x8000<br />
+						&nbsp; ori&nbsp; &nbsp; &nbsp; &nbsp;r0, r0,&nbsp;0xFFFF</strong></p>
+
+						<p><strong><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp; # Register 0 now holds the address 0x8000FFFF</span></strong></p>
+
+						<p><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp; # Next, you need to load the value you want to replace at the address&nbsp; &nbsp; &nbsp; you loaded into register 0</span></p>
+
+						<p><span style="color: rgb(255, 0, 0);">&nbsp; # Assume that the value you want to replace at 0x8000FFFF is &quot;0x5&quot;&nbsp;</span></p>
+
+						<p><strong>&nbsp; li r1, 0x5</strong></p>
+
+						<p><strong><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp;# Register 0 now holds the address 0x8000FFFF</span></strong></p>
+
+						<p><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp;# Finally, you have to store the value into the address</span></p>
+
+						<p><strong>&nbsp; stw r1, 0x0(r0)</strong></p>
+
+						<p style="text-align: center;"><strong><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp;# This basically tells the code &quot;Whatever value is register 1 will be stored into the address held in register 0</span></strong></p>
+
+						<hr />
+						<p>The value at address&nbsp;<strong>0x8000FFFF</strong>&nbsp;is now&nbsp;<strong>&quot;0x5&quot;</strong></p>
+						</div>
+						</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">Branches</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Branch<a id="Branch" name="Branch"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">When your code reaches this instruction, it will jump to wherever you specify.
+						<p><span style="color:#000000;"><strong><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">EXAMPLE:</span></strong></span></p>
+
+						<p><strong>li r0, 1<br />
+						b <span style="color:#0000FF;">function2</span></strong></p>
+
+						<p><strong><span style="color:#0000FF;">function2:</span><br />
+						li r0, 2</strong></p>
+
+						<p><span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># After the execution of the li instruction, the code will execute the &quot;b&quot; instruction, this will cause the code to jump to &quot;function2&quot; and start executing every instruction in that function</span></p>
+
+						<hr />
+						<p><span style="font-family: sans-serif; font-size: 13.3333px; text-align: right;">&nbsp;</span><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">This is equivalent to a &quot;goto&quot; statement.</span></p>
+						</div>
+						</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Branch And Link<a id="BranchAndLink" name="BranchAndLink"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">This is basically an instruction that tells your code to execute a specific function and then return to where it originally branched from.
+						<p>This instruction type requires the mflr and mtlr instruction types, I haven&#39;t been able&nbsp;to simplify the explanation for how those 2 instruction work yet.</p>
+
+						<p>Example will be added as soon as I can simplify this.</p>
+						</div>
+						</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Branch To Link Register<a id="BranchToLinkRegister" name="BranchToLinkRegister"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">This instruction causes your code to branch to whatever address is held in the <strong>Link Register.</strong></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">Example will be added as soon as I can simplify the process.</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+						</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">Advanced Operations</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Specify the amount of times you want something to happen in a code<a id="MoveToCountRegister" name="MoveToCountRegister"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">There are 2 parts to this. Specifying the amount, and the code itself.</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">
+						<p><span style="color:#FF0000;"># The value of &quot;X&quot; in the li instruction is the amount of times your code will loop</span></p>
+
+						<p><strong>li r0, 4<br />
+						mtctr r0</strong></p>
+
+						<p><span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Register 0 now countains the amount of times the code will loop, which in this case is &quot;4&quot;</span></p>
+
+						<p><span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Now for the actual code.</span></p>
+
+						<p><strong><span style="color:#0000FF;">function:</span><br />
+						addi r1, r1, 0x1<br />
+						bdnz <span style="color:#0000FF;">function</span></strong></p>
+
+						<p><strong><span style="color:#000000;">b</span><span style="color:#0000FF;"> loop_has_stopped</span></strong></p>
+
+						<p>&nbsp;</p>
+						</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># The instruction </span><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong style="">&quot;bdnz&quot; </strong></span><span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">subtracts 1 from the Count Register (The value in Register 0) each time it&#39;s ran, when the value in the Count Register is 0, the loop stops.</span></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="color:#FF0000;"># In this context, the code above will add &quot;1&quot; to the value in register 1, This will happen 4 times, After the 4th time, the count register will have the value &quot;0&quot; and the loop will stop. The code will then branch to the next function named</span><strong><span style="color:#0000FF;"> &quot;<strong style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">loop_has_stopped&quot;</strong></span></strong></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+						</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Load The CPU Clock into a Register<a id="TimeBaseLow" name="TimeBaseLow"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">This is a trick that most, if not all randomization codes use.</span></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">I&#39;m mostly listing it here because it isn&#39;t doccumented anywhere, at least to my knowledge.</span><br />
+						&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; color: rgb(255, 0, 0); background-color: rgb(240, 240, 240);"># Let&#39;s move the CPU Clock into a register.</span></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><strong>mftbl r0</strong></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="color:#FF0000;"># r0 now contains the CPU Clock</span></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; color: rgb(255, 0, 0); background-color: rgb(240, 240, 240);"># That&#39;s all for the instruction. I can&#39;t give a randomization example just yet, it involves many different variables.</span><br />
+						&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+						</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Create a Stack Frame<a id="StackFrameMake" name="StackFrameMake"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">
+						<p>I tried testing the following code below in dolphin, but even without a stack frame replacing r0-r3 didn&#39;t crash the game, I don&#39;t know if I did it wrong but I can&#39;t simplify it myself yet.<br />
+						<br />
+						<strong>So here is kiwi515&#39;s explanation of it</strong><br />
+						<br />
+						&nbsp;</p>
+
+						<p><span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Update r1 (By subtracting 0x80, we now effectively &quot;own&quot; 0x80 bytes)</span><br />
+						<strong>stwu sp, -0x80 (sp)</strong><br />
+						<br />
+						<span style="color:#FF0000;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Backup r3 through r31 into this new area</span></span><br />
+						<strong>stmw r3, 0x8 (sp)</strong></p>
+
+						<p><strong><span style="color:#000000;"># Do whatever with the registers here</span></strong><br />
+						<br />
+						<span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Restore the backups to r3 through r31</span><br />
+						<strong>lmw r3, 0x8 (sp)</strong><br />
+						<br />
+						<span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Update r1 (By adding 0x80, we effectively &quot;give back&quot; the memory that we once owned)</span><br />
+						<strong>addi sp, sp, 0x80&nbsp;</strong></p>
+						</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+						</div>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<p>&nbsp;</p>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+
+						<div class="cttitle b4 c4" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">&nbsp;</div>
+						</td>
+						<td class="ctnav" style="vertical-align: top; padding: 0px 0px 0px 5px; width: 180px; margin: 0px; border: 0px; background: rgb(25, 176, 233);">
+						<div style="margin: 0px; padding: 0px 0px 0px 2px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(255, 255, 255); font-weight: bold;">The Basics</div>
+						<a href="https://4" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Load An Address into a Register</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Replace a Value at an Address</a>
+
+						<div style="font-family: sans-serif; font-size: 13.3333px; margin: 0px; padding: 0px 0px 0px 2px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(255, 255, 255); font-weight: bold;">Branches</div>
+						<a href="https://codes.rc24.xyz/index.php?arsenal=1#20" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Branch</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#22" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Branch And Link</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#24" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Branch To Link Register</a>
+
+						<div style="font-family: sans-serif; font-size: 13.3333px; margin: 0px; padding: 0px 0px 0px 2px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(255, 255, 255); font-weight: bold;">Advanced Operations</div>
+						<a href="https://codes.rc24.xyz/index.php?arsenal=1#20" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Specify the amount of times you<br />
+						want something to happen in<br />
+						a code</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#24" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Load The CPU Clock into a&nbsp;<br />
+						Register</a><a href="https://4" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Create a Stack Frame</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#24" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a>
+
+						<div style="font-family: sans-serif; font-size: 13.3333px; margin: 0px; padding: 0px 0px 0px 2px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(255, 255, 255); font-weight: bold;">TBD</div>
+						<a href="https://codes.rc24.xyz/index.php?arsenal=1#20" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a><a href="https://codes.rc24.xyz/index.php?arsenal=1#22" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a><a href="https://codes.rc24.xyz/index.php?arsenal=1#24" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a></td>
+					</tr>
+					<tr>
+						<td colspan="2" style="vertical-align: top; padding-right: 15px;">
+						<div class="cttitle" style="margin: 0px 0px 15px 15px; text-align: center; border-width: 0px 0px 2px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: rgb(232, 125, 33); color: rgb(232, 125, 33); font-size: 12pt; font-weight: bolder;">Original Description - Hex</div>
+
+						<div class="ct" style="margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Codetypes in depth<a name="CodetypeDetail" style="display: inline; color: rgb(0, 0, 204); white-space: nowrap; margin-left: 20px;"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">A hex digit actually represents 4 bits, and you need to look at the underlying bits to understand why the code types are defined the way they are. Normally, we refer to a 32 1018 -bit RAM write as an &quot;04 code type&quot;, but this is actually a misnomer. It misleadingly implies that the 8 bits belonging to the two hex digits &quot;04&quot; are the code type, when the actual code type only has 7 bits! The 8th bit belongs to the address, which creates the &quot;05&quot; code type. People also think that the address is only comprised of 24 bits (the other 6 hex digits), when the address is actually 25 bits (the other 6 hex digits + the last bit of the second digit).<br />
+						<br />
+						A picture may help; Here&#39;s the binary breakdown of the first&nbsp;
+						<div class="info" style="display: inline; margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: dotted; border-bottom-color: rgb(232, 125, 33);" title="32 bits, 8 hex digits">word</div>
+						&nbsp;of a code.<br />
+						<br />
+						Hex&nbsp;Digit&nbsp;&nbsp;|
+						<div style="display: inline; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: teal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Second&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: lightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Third&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: lightblue;">&nbsp;&nbsp;&nbsp;Fourth&nbsp;...</div>
+						<br />
+						Bit#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+						<div style="display: inline; background: red;">&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: pink;">&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: teal;">&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: lightblue;">&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: lightblue;">&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;10&nbsp;&nbsp;11&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: lightblue;">&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+						<br />
+						is&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+						<div style="display: inline; background: red;">&nbsp;&nbsp;&nbsp;Code&nbsp;Type&nbsp;&nbsp;&nbsp;</div>
+						|
+
+						<div style="display: inline; background: pink;">&nbsp;ba/po&nbsp;</div>
+						|
+
+						<div style="display: inline; background: teal;">&nbsp;Code&nbsp;Sub&nbsp;Type&nbsp;</div>
+						|
+
+						<div style="display: inline; background: lightblue;">&nbsp;&nbsp;address&nbsp;..............................</div>
+						<br />
+						<br />
+						&nbsp;</div>
+
+						<div class="ctlinks" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border: 0px; margin: 8px 0px 0px; padding: 0px 0px 8px; text-align: right;"><a href="https://codes.rc24.xyz/index.php?hacker=dcx2" style="text-decoration-line: none; display: inline; color: rgb(0, 0, 204); white-space: nowrap; margin: 0px 15px 0px 0px;" title="This entry from dcx2">dcx2</a>&nbsp;<a href="https://codes.rc24.xyz/index.php?arsenal=1#" style="text-decoration-line: none; display: inline; color: rgb(0, 0, 204); white-space: nowrap; margin: 0px 15px 0px 0px;">Top</a></div>
+
+						<div>&nbsp;</div>
+						</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
