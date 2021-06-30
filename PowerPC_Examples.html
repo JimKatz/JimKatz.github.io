@@ -36,11 +36,9 @@
 				<tbody>
 					<tr>
 						<td colspan="2" style="vertical-align: top; padding-right: 15px;">
-						<div class="ctsmall" style="margin: -5px 0px 5px 10px; padding: 0px; font-size: 8pt;"><span style="font-size:24px;"><strong>Written by Jimmy Kaz.</strong></span></div>
-
 						<div class="ctsmall" style="margin: -5px 0px 5px 10px; padding: 0px; font-size: 8pt;">&nbsp;</div>
 
-						<div class="ctsmall" style="margin: -5px 0px 5px 10px; padding: 0px;"><span style="font-size:24px;"><b>If any of this is wrong, or if you&#39;re still confused..</b></span></div>
+						<div class="ctsmall" style="margin: -5px 0px 5px 10px; padding: 0px;"><span style="font-size:24px;"><b>If any of this is wrong, or if you&#39;re still confused about something...</b></span></div>
 
 						<div class="ctsmall" style="margin: -5px 0px 5px 10px; padding: 0px;"><span style="font-size:24px;"><b>check the <a href="https://jimkatz.github.io/powerpc_for_dummies">main page,</a> or contact me on discord <span style="color:#FF0000;">&quot;JimmyK#2848</span></b></span></div>
 						</td>
@@ -92,9 +90,9 @@
 
 						<p><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp;# Finally, you have to store the value into the address</span></p>
 
-						<p><strong>&nbsp; stw r1, 0x0(r0)</strong></p>
+						<p><strong style="font-family: monospace; font-size: 13.3333px; text-align: center; background-color: rgb(240, 240, 240);"><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp;# This instruction below basically tells the code &quot;Whatever value is in&nbsp; &nbsp; &nbsp;register 1&nbsp;will be stored into the address held in register 0&quot;</span></strong></p>
 
-						<p style="text-align: center;"><strong><span style="color: rgb(255, 0, 0); font-size: 13.3333px;">&nbsp;# This basically tells the code &quot;Whatever value is register 1 will be stored into the address held in register 0</span></strong></p>
+						<p><strong>&nbsp; stw r1, 0x0(r0)</strong></p>
 
 						<hr />
 						<p>The value at address&nbsp;<strong>0x8000FFFF</strong>&nbsp;is now&nbsp;<strong>&quot;0x5&quot;</strong></p>
@@ -182,9 +180,11 @@
 						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
 						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Load The CPU Clock into a Register<a id="TimeBaseLow" name="TimeBaseLow"></a></div>
 
-						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">This is a trick that most, if not all randomization codes use.</span></div>
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">This is a trick that most, if not all randomization codes use. I don&#39;t know if there is any other way to make one besides using a game&#39;s rng seed though.</span></div>
 
-						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">I&#39;m mostly listing it here because it isn&#39;t doccumented anywhere, at least to my knowledge.</span><br />
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">I&#39;m mostly just listing the mftbl (Move From Time Base Low) instruction here because it isn&#39;t doccumented anywhere, at least to my knowledge.</span><br />
 						&nbsp;</div>
 
 						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;"><span style="font-family: monospace; font-size: 13.3333px; color: rgb(255, 0, 0); background-color: rgb(240, 240, 240);"># Let&#39;s move the CPU Clock into a register.</span></div>
@@ -209,9 +209,11 @@
 						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">Create a Stack Frame<a id="StackFrameMake" name="StackFrameMake"></a></div>
 
 						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">
-						<p>I tried testing the following code below in dolphin, but even without a stack frame replacing r0-r3 didn&#39;t crash the game, I don&#39;t know if I did it wrong but I can&#39;t simplify it myself yet.<br />
+						<p>To put it simply, if you don&#39;t make one of these, the game you&#39;re making a code for will crash if you try and replace a value in Registers 0 - 4.</p>
+
+						<p>It&#39;s going to take a while for me to be able to simplfy the whole process of it.<br />
 						<br />
-						<strong>So here is kiwi515&#39;s explanation of it</strong><br />
+						<strong>So for now, here is kiwi515&#39;s explanation of it</strong><br />
 						&nbsp;</p>
 
 						<p><span style="color: rgb(255, 0, 0); font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Update r1 (By subtracting 0x80, we now effectively &quot;own&quot; 0x80 bytes)</span><br />
@@ -230,6 +232,123 @@
 						</div>
 
 						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+						</div>
+
+						<div class="ct bg1 b8" style="font-family: sans-serif; font-size: 13.3333px; margin: 0px 0px 30px 15px; padding: 0px; background: rgb(240, 240, 240); border: 1px solid rgb(208, 208, 208);">
+						<div class="title b3 c3 bg5" style="width: auto; padding: 0px 0px 0px 2px; margin: 0px; color: rgb(25, 176, 233); background: rgb(255, 255, 255); font-size: 11pt; font-weight: bolder; overflow: hidden; height: auto; border-width: 1px; border-color: rgb(25, 176, 233); border-style: none none solid;">AND, OR, XOR<a id="ANDORXOR" name="ANDORXOR"></a></div>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">
+						<p><strong><span style="font-size:20px;">Oh man, It was an absolute mindfuck trying to understand how these worked. I had to do a ton of testing.</span></strong></p>
+
+						<p><strong><span style="font-size:20px;">I&#39;m 90% sure this is wrong, but these are the results I got while testing these instructions in dolphin.&nbsp;<br />
+						<br />
+						These instructions work in a very oddly specific way.</span></strong><br />
+						&nbsp;</p>
+
+						<p><span style="font-size:48px;"><span style="color:#DAA520;"><strong><span style="font-family:arial,helvetica,sans-serif;">AND</span></strong></span></span><br />
+						<span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">AND means &quot;If both values are true (equal), the result is true&quot;.</span></p>
+
+						<p><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">AND takes the values from Register B and C and compares them, the result of the operation is put in Register A</span></p>
+
+						<p><strong><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">EXAMPLE:</span></strong></p>
+
+						<p><strong><span style="color:#FF0000;"><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"># Assume that Register 0 and Register 1 both hold&nbsp;the value &quot;3&quot;</span></span></strong></p>
+
+						<p><span style="color:#000000;"><strong><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">and r2, r0, r1</span><br />
+						cmpwi r2, 3<br />
+						beq </strong></span><span style="color:#0000FF;"><strong>function2</strong></span></p>
+
+						<p><strong><span style="color:#FF0000;"># This code will compare the values of Registers 0 and 1 to see if they are both equal to 3, in this case they are, so the code jumps to</span></strong> <strong><span style="color:#0000FF;">&quot;function2&quot;</span></strong></p>
+
+						<ul>
+							<li>If both the values are the same, the resulting value is the same as the&nbsp;intial value<br />
+							&nbsp;</li>
+							<li>If one value is different than the other, the resulting value is<br />
+							<strong><span style="color:#FF0000;">0&nbsp;(false)</span></strong></li>
+						</ul>
+
+						<p>&nbsp;</p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><span style="color:#0000FF;"><span style="font-size: 48px;"><strong><span style="font-family: arial, helvetica, sans-serif;">OR</span></strong></span></span><br />
+						<span style="font-size: 13.3333px;">OR means &quot;If at least one value is true (equal), the result is true.</span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><span style="font-size: 13.3333px;">OR takes the&nbsp;values from Register B and C and compares them, the result of the operation is put in Register A</span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong>EXAMPLE:</strong></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong><span style="color: rgb(255, 0, 0);"><span style="font-size: 13.3333px;"># Assume that Register 0 holds the value &quot;2&quot; and Register 1 holds the value &quot;3&quot;</span></span></strong></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong><span style="font-size: 13.3333px;">or&nbsp;r2, r0, r1</span><br />
+						cmpwi r2, 3</strong><br />
+						<strong style="font-family: monospace; font-size: 13.3333px;">beq&nbsp;</strong><span style="font-family: monospace; font-size: 13.3333px; color: rgb(0, 0, 255);"><strong>function2</strong></span><br />
+						<strong style="font-family: monospace; font-size: 13.3333px;">cmpwi r2, 5</strong><br />
+						<strong>beq&nbsp;</strong><span style="color: rgb(0, 0, 255);"><strong>function2</strong></span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><span style="color: rgb(255, 0, 0);"><strong># You might be wondering why the resulting register is being checked for the value &quot;5&quot;.</strong></span><br />
+						<br />
+						<span style="font-size:18px;"><span style="color:#000000;"><strong>#&nbsp;If only one of the values is&nbsp;&quot;true&quot;, the resulting value is made up of both values added together, which in this case would be &quot;5&quot;</strong></span></span><br />
+						<br />
+						<span style="color: rgb(255, 0, 0);"><strong># The code checks to see if either 1 value was &quot;true&quot; (if r2 = 0x5),<br />
+						or if both of them were (if r2 = 0x3). If one of those conditions are met, the code jumps to&nbsp;</strong></span><strong><span style="color: rgb(0, 0, 255);">&quot;function2&quot;</span></strong><br />
+						&nbsp;</p>
+
+						<ul style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">
+							<li>If both the values are the same, the resulting value is the intial value<br />
+							<br />
+							</li>
+							<li>If 1 value is different, the resulting value is the sum of both values&nbsp;added together</li>
+						</ul>
+
+						<p>&nbsp;</p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><span style="font-family:verdana,geneva,sans-serif;"><span style="color:#000000;"><span style="font-size: 48px;"><strong>XOR</strong></span></span></span><br />
+						<span style="font-size: 13.3333px;">XOR means &quot;Only one value can be true, otherwise the result is false&quot;.</span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><span style="font-size: 13.3333px;">XOR takes the values from Register B and C and compares them, the result of the operation is put in Register A</span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong>EXAMPLE:</strong></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong style="font-family: monospace; font-size: 13.3333px;"><span style="color: rgb(255, 0, 0);"># Assume that Register 0 holds the value &quot;2&quot; and Register 1 holds the value &quot;3&quot;</span></strong></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong><span style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">xor r2, r0, r1</span><br />
+						cmpwi r2, 5<br />
+						beq&nbsp;</strong><span style="color: rgb(0, 0, 255);"><strong>function2</strong></span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong><span style="color:#FF0000;"># Assume that you&nbsp;want your code to jump to </span><span style="color:#0000FF;">&quot;function2&quot;</span><span style="color:#FF0000;"> if only 1 of the values in Register 0 and Register 1 is &quot;true&quot;</span></strong></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong><span style="color:#FF0000;"><span style="font-size:18px;"># I can&#39;t think of a good way to explain this.....</span></span></strong><br />
+						<br />
+						<span style="font-size:22px;"><span style="color:#000000;"><strong># Basically, the xor instruction adds both values from both registers together if one of them is different from the other.</strong></span></span></p>
+
+						<hr />
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><br />
+						<span style="font-size:22px;"><span style="color:#000000;"><strong><span style="font-size:28px;"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:22px;"># Let&#39;s assume that in this context, you wanted to check to see if Register 0 or Register 1 held the value &quot;2&quot;, as the code above shows.<br />
+						<br />
+						# Register 0 holds the value &quot;2&quot;, and Register 1 holds the value &quot;3&quot;</span></span></span></strong></span></span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:28px;"><strong style="font-family: monospace; font-size: 22px; background-color: rgb(240, 240, 240);"># The resulting value is &quot;5&quot;, and the operation result was &quot;true&quot;</strong></span></span></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:28px;"><strong style="font-family: monospace; font-size: 22px; background-color: rgb(240, 240, 240);"># Do you know why the result was&nbsp;true?</strong></span></span><br />
+						<br />
+						<strong style="font-family: monospace; font-size: 22px; background-color: rgb(240, 240, 240);"><span style="font-size: 36px;"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:48px;">#Because &quot;2&quot; was one of the values that was needed to make the result value.</span></span></span></strong></p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">&nbsp;</p>
+
+						<p style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);"><strong style="font-family: monospace; font-size: 22px; background-color: rgb(240, 240, 240);"><span style="font-size: 36px;"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:48px;">That&#39;s the best way I can possibly explain it.</span></span></span></strong></p>
+
+						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
+
+						<ul style="font-family: monospace; font-size: 13.3333px; background-color: rgb(240, 240, 240);">
+							<li><span style="font-size:22px;">If both the values are the same, the resulting value is <strong><span style="color:#FF0000;">0 (false)</span></strong></span><br />
+							<br />
+							</li>
+							<li><span style="font-size:22px;">If 1 value is different, the resulting value is the sum of both values&nbsp;added together</span></li>
+						</ul>
+
+						<p>&nbsp;</p>
+						</div>
 
 						<div class="ctinfo" style="margin: 4px 0px 0px; padding: 0px 0px 0px 10px; border: 0px; font-family: monospace;">&nbsp;</div>
 						</div>
@@ -287,10 +406,10 @@
 						<a href="https://jimkatz.github.io/PowerPC_Examples#MoveToCountRegister" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Specify the amount of times you<br />
 						want something to happen in<br />
 						a code</a><a href="https://jimkatz.github.io/PowerPC_Examples#TimeBaseLow" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Load The CPU Clock into a&nbsp;<br />
-						Register</a><a href="https://jimkatz.github.io/PowerPC_Examples#StackFrameMake" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Create a Stack Frame</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#02" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://codes.rc24.xyz/index.php?arsenal=1#24" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a>
+						Register</a><a href="https://jimkatz.github.io/PowerPC_Examples#StackFrameMake" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">Create a Stack Frame</a><a href="https://jimkatz.github.io/PowerPC_Examples#ANDORXOR" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">AND, OR, XOR</a><a href="https://jimkatz.github.io" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://jimkatz.github.io" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://jimkatz.github.io" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a><a href="https://jimkatz.github.io" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);">TBD</a>
 
 						<div style="font-family: sans-serif; font-size: 13.3333px; margin: 0px; padding: 0px 0px 0px 2px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(255, 255, 255); font-weight: bold;">TBD</div>
-						<a href="https://codes.rc24.xyz/index.php?arsenal=1#20" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a><a href="https://codes.rc24.xyz/index.php?arsenal=1#22" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a><a href="https://codes.rc24.xyz/index.php?arsenal=1#24" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a></td>
+						<a href="https://jimkatz.github.io" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a><a href="https://jimkatz.github.io" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a><a href="https://jimkatz.github.io" style="font-family: sans-serif; font-size: 13.3333px; text-decoration-line: none; display: block; color: rgb(0, 0, 0); white-space: nowrap; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 2px; border: 1px solid rgb(208, 208, 208); background: rgb(240, 240, 240);"><strong>TBD</strong></a></td>
 					</tr>
 					<tr>
 						<td colspan="2" style="vertical-align: top; padding-right: 15px;">
