@@ -1,0 +1,348 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+	<title></title>
+	<style type='text/css' media='all'>
+pre.cppcode
+{
+	background: #000000;
+	color: #DEDEDE;;
+	font: 10pt "Consolas";
+}
+.cpp00{
+	color: #A8C5FF;
+}
+.cpp01{
+	color: #007F00;
+}
+.cpp02{
+	color: #007F00;
+}
+.cpp03{
+	color: #3F703F;
+}
+.cpp04{
+	color: #22C0FF;
+}
+.cpp05{
+	color: #FFFFA0;
+}
+.cpp06{
+	color: #FF2020;
+}
+.cpp07{
+	color: #FF2020;
+}
+.cpp08{
+	color: #804080;
+}
+.cpp09{
+	color: #FFCFAF;
+	font-weight: bold;
+}
+.cpp10{
+	font-weight: bold;
+}
+.cpp12{
+	background: #E0C0E0;
+	color: #000000;
+}
+.cpp13{
+	background: #E0FFE0;
+	color: #007F00;
+}
+.cpp14{
+	background: #E0F0FF;
+	color: #3F7F3F;
+}
+.cpp15{
+	color: #3F703F;
+}
+.cpp16{
+	color: #B00040;
+}
+.cpp17{
+	color: #3060A0;
+}
+.cpp18{
+	color: #804020;
+}
+.cpp32{
+}
+.cpp33{
+	color: #999999;
+}
+.cpp34{
+	color: #0000EE;
+	font-weight: bold;
+}
+.cpp35{
+	color: #EE0000;
+	font-weight: bold;
+}
+.cpp36{
+	color: #808080;
+}
+.cpp37{
+	color: #282828;
+}
+	</style>
+</head>
+<body>
+<pre class='cppcode'><span class='cpp00'>
+
+</span><span class='cpp09'># Welcome to Hope's Peak Academy! Firstly, we'd like to explain the basic controls. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># You can use the left stick to adjust your aim. You can also tap the touch screen to place the reticle.
+</span><span class='cpp00'>
+</span><span class='cpp09'># If you aim at an object you can interact with, you can press the X button or tap the screen... And presto! You'll investigate that object. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Use the directional buttons or the L and R buttons to adjust your viewpoint. Why don't you try looking around the classroom?
+</span><span class='cpp00'>
+</span><span class='cpp09'># Use the left stick to move through the hallway. Hold down the Circle button while moving to run.
+</span><span class='cpp00'>
+</span><span class='cpp09'># Also, you can press the Triangle button to bring up a map. Press the Triangle button again to close the map. How convenient!
+</span><span class='cpp00'>
+
+
+
+</span>_____________________________________________________________________________________________________________________________________<span class='cpp00'>
+
+
+
+
+
+
+</span><span class='cpp09'># Aim at a student and press the X button to talk to them. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Each conversation is important to the overall story, so keep track of how they go.
+</span><span class='cpp00'>
+
+
+
+
+
+</span>_____________________________________________________________________________________________________________________________________<span class='cpp00'>
+
+
+
+
+
+
+</span><span class='cpp09'># Okay, time for some more tutorial action!
+</span><span class='cpp00'>
+</span><span class='cpp09'># You can press the Triangle button to observe the room you're in. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Observing will display what people and objects you can interact with. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Sorry for the late notice!
+</span><span class='cpp00'>
+
+
+
+
+
+
+</span>_____________________________________________________________________________________________________________________________________<span class='cpp00'>
+
+
+
+
+
+
+</span><span class='cpp09'># You now have access to the Handbook Menu. You can use this to check a variety of information as you play. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Open the Handbook Menu by pressing the Square button. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># You can use this menu to check the School Regulations, and character info in the Report Card section.
+</span><span class='cpp00'>
+</span><span class='cpp09'># At certain points, Map and Truth Bullets may not be available. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># You can also save and load game data under the System section.
+</span><span class='cpp00'>
+</span><span class='cpp09'># Finally, press the SELECT button to review the Transcript. This records all pertinent info, so use this to review comments from everyone involved.
+</span><span class='cpp00'>
+
+
+
+
+
+
+
+</span>_____________________________________________________________________________________________________________________________________<span class='cpp00'>
+
+
+
+
+
+
+</span><span class='cpp02'>// Reactions are basically a small mechanic in which you can change a conversation's direction by pushing Triangle to select the 
+// purple words in a sentence, then pressing X to continue the conversation. In practice however, Reactions don't affect the
+// conversations that much because there's basically no reason not to React to every instance that they show up. In fact,
+// sometimes you MUST React to something to progress the story.
+</span><span class='cpp00'>
+</span><span class='cpp02'>// They are used more heavily in the beginning of the game to demonstrate the feature, but most of what is said in a Reaction 
+// conversation is stuff you could have learned even if you skip the Reaction. They're harmless enough, but I'm not a big fan of
+// them. The writers could have accomplished what Reactions do by just writing the conversations a little better.
+</span><span class='cpp00'>
+
+
+
+
+
+</span>_____________________________________________________________________________________________________________________________________<span class='cpp00'>
+
+
+
+
+
+
+</span><span class='cpp09'># For anyone who just haaates walking around the school, we've got some good news! You can now teleport using the &quot;Map&quot;
+# section of the Handbook Menu. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># It's as simple as opening the Map Menu and choosing where you want to go! However, you can only teleport to hallways and marked waypoints. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Plus, you can't teleport to places you haven't been, or places that are blocked off. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># And depending on certain story moments, there will be times when you won't be able to teleport at all. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Finally, try not to teleport inside any walls. There's a chance you could get lost. Forever. Well then...good luck, and have fun!
+</span><span class='cpp00'>
+
+
+
+
+</span>_____________________________________________________________________________________________________________________________________<span class='cpp00'>
+
+
+
+
+
+
+
+
+
+</span><span class='cpp09'># You're about to have your first experience with Free Time. 
+</span><span class='cpp00'>
+
+
+
+</span><span class='cpp09'># As you live out your school life here, you will be given free time at certain points. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># During your free time, you can spend time with your fellow classmates to deepen your friendships.
+</span><span class='cpp00'>
+</span><span class='cpp09'># You can also give them presents, which can potentially give them an even better impression of you! 
+</span><span class='cpp00'>
+</span><span class='cpp09'># You can get these presents from the MonoMono Machine in the school store. Come by early and often!
+</span><span class='cpp00'>
+
+
+
+</span><span class='cpp09'># At certain points, you'll witness intimate events, and new info will be added to each person's report card. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># These events can also open up new skills, which will prove useful as everything plays out. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># We strongly encourage you to develop and deepen as many friendships as you can! 
+</span><span class='cpp00'>
+</span><span class='cpp09'># Also keep in mind that when you talk with a classmate time will pass... When you're finished, you will automatically return to your room.
+</span><span class='cpp00'>
+
+
+
+
+</span><span class='cpp09'># After a certain amount of time passes, your free time will come to an end and the story will progress. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># If you'd prefer not to engage in free time, you can always choose to simply go to sleep to skip it. 
+</span><span class='cpp00'>
+</span><span class='cpp09'># We wouldn't recommend this approach, but if you absolutely MUST press forward with the story, then...
+</span><span class='cpp00'>
+
+
+
+
+
+</span><span class='cpp09'># Anyways, why don't you try it out by spending some time with Miss Sayaka Maizono? She's the ideal partner to begin with, don't you think?
+</span><span class='cpp00'>
+
+
+
+
+
+</span>_____________________________________________________________________________________________________________________________________<span class='cpp00'>
+
+
+
+
+
+
+
+
+</span><span class='cpp02'>// Isometric-like view of Hope's Peak
+// [Fades to black, then shows top of Hope's Peak entrance]
+// [Fades to black]
+// [Fade to black, then shows a computer screen. The screen shows a forum of some kind, with the heading: (5:132) Hope's Peak Academy.
+// [Fade to black, then shows a photo of the &quot;Ultimate Pop Sensation&quot; with her group]
+// [Fade to black, then shows a photo of the &quot;Ultimate Baseball Star&quot; hitting a ball]
+// [Fades to black, then shows some magazines featuring the &quot;Ultimate Fashionista&quot;]
+// [Fades to black, then shows a photo of the &quot;Ultimate Biker Gang Leader&quot; with his gang]
+// [Fades to black, then shows the earlier mentioned computer screen]
+// [Fades to black, then shows acceptance letter and orientation guide]
+// [Fades to black, then shows Hope's Peak panning down to Makoto]
+// [Fade to black, then show the entrance hall]
+// [Screen goes all twirly and spirally]
+// [Sure enough, screen goes black]
+// [Fade from black to Makoto in classroom 1-A]
+// [Fade to the standard game view]
+// [The note reads: &quot;Hey there new kid! The next semester is about to start. Starting today, this school will be your entire world.&quot;]
+// [Fades to black, exit to hallway]
+// [Everyone but Kiyotaka, Toko, Sayaka, Leon and Hifumi disappears]
+// [Fade to black, shows a picture of Leon hitting a ball. Same picture as before]
+// [Fades back to computer from early prologue; Thread: Hope's Peak Academy]
+// [Flash of white, showing the iron bolted windows in a classroom]
+// [Flash of white, return to the Entrance Hall]
+// [Fades to monitor. Green static in the background, Completely black bear in the foreground]
+// [Shows cutscene with everyone in the gym, then zooms up to the stage, with a monochrome teddy bear appearing]
+// [Fades to a pseudo-3D picture of Monokuma's Head]
+// [Fades back to the gym]
+// [Fades to animated scene; Mondo's picking up Monokuma as he's flailing wildly]
+// [Fades to animated scene; Mondo picks up Monokuma and throws him, with Monokuma exploding]
+// [White flash, then returns to the gym]
+// [Fades to show a picture of everyone looking around confused. From the top left, moving across: (Names here)]
+// [Fades to picture of everyone meeting in the dining hall, at the table.]
+// [Flashback to Monokuma talking in the Gym]
+// [Fades to black, then back to Naegi's Room]
+// [Fades to school monitor]
+// [Fades back to Naegi's Room]
+// [Fade to black screen with words on it] LOOK FOR THE ANSWER AFTER GRADUATION [Fades back to the A/V Room]
+// [Fade to picture of Sayaka in the shower, sitting down, blood strewn everywhere, a knife sticking out of her stomach]
+// [Flashes to show the crime scene for a second]
+// [Flash to Sayaka's corpse at the crime scene]
+// [Fades to closeup of Monokuma's Face]
+// [Flash to picture of Junko standing on top of Monokuma]
+// [Flash to white, as spears stab through Junko, and pink blood splatters across the screen]
+// [Flashes to picture of Junko with several spears stabbed through her, as she twitches]
+// [Fade to picture of Sayaka with her girl band]
+// [Screen crackles]
+// [Shows image of the stage as seen before, but the screen is mostly red and all the girls are dead. Sayaka is missing]
+// [Screen pans down slightly, Monokuma's face appears on the screen in the background]
+// [Screen goes red]
+// [FIND OUT AFTER GRADUATION appears onscreen]
+// [Screen goes black]
+// [Fades to Rule 6]
+// [Fades to school monitor]
+// [Flash to Sayaka's Corpse]
+// [Flashes back to the room]
+// [Fade to school monitor]
+// [Fades to the elevator, with everyone that's still alive on it]
+// [Fades to horizontal picture of the circle, with Byakuya, Celeste and Leon on the far side, and Sakura, Kyoko and Mondo on the close side]
+// [Fades to top up photo of Toko, Hifumi, Makoto and the picture of Sayaka]
+</span><span class='cpp00'>
+
+
+
+
+
+ </span></pre>
+</body>
+</html>
