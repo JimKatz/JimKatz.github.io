@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    </style>
+  </head>
+  <body>
+  <br />
+  <body>
+<p><strong style="background-color: rgb(0, 0, 0); color: rgb(255, 0, 0);"><span style="font-size: 72px;"><span style="font-family: &quot;Edwardian Script ITC&quot;, sans-serif;"><iframe frameborder="0" height="68" scrolling="no" src="https://jimkatz.github.io/menupage.html" width="777"></iframe></span></span></strong><br />
+<span style="color:#FF0000;"><span style="font-family:arial,helvetica,sans-serif;"><strong><span style="font-size:48px;">Riivolution Memory Patch Generator</span></strong></span></span></p>
+</body>
+    <form action="test" method="get">Memory Patch Type 1: <br />
+      <br /> Enter An Address in Memory: <input type="text" maxlength="8" name="mname" id="mname" />
+      <br /> Enter the value you want to insert at that address: <input type="text" name="fname" id="fname" />
+      <br /> Riivotion Patch Output: <span id="result"></span>
+      <br />
+      <input type="button" value="Submit" onclick="pr()" />
+    </form>
+&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+<hr />
+<p><br />
+<br />
+Memory Patch Type 2: (Branch to 0x80002388)<br />
+<br />
+Enter an Address in memory:&nbsp;<input id="mname2" maxlength="8" name="2388Patch" type="text" /><br />
+<span style="color:#B22222;"><strong># 0x80002388 - Inputted Address Above</strong></span><br />
+Branch Instruction Output:<br />
+<p id = "result2"></p>
+<input onclick="pr2()" type="button" value="Submit" /><br />
+<br />
+<br />
+<hr />
+ASM GENERATOR: (04 to Memory Patch - 1 Line)<br />
+<br />
+Enter the Address that holds the value you want to replace: <input id="in_3_1" maxlength="8" name="Memory04" type="text" /><br />
+Enter the value you want to insert at said Address: <input id="in_3_2" maxlength="8" name="Memory04Address" type="text" /><br />
+Enter an empty register for said Address:&nbsp;<input id="in_3_3" maxlength="3" name="Memory04Reg1" type="text" /><br />
+Enter another empty register for the value you want to insert at said Address:&nbsp;<input id="in_3_4" maxlength="3" name="Mem04Reg2" type="text" /><br />
+ASM Output:<br />
+<p id="result3"></p>
+
+<input onclick="pr3()" type="button" value="Submit" /></p>
+</form>
+
+<p>EXAMPLE:</p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">Enter the Address that holds the value you want to replace:&nbsp;<span style="font-size:24px;"><span style="color:#000000;"><strong>802c9210</strong></span></span><br />
+Enter the value you want to insert at said Address:&nbsp;<span style="font-size:24px;"><strong><span style="color:#000000;">2C1811FF</span></strong></span><br />
+Enter an empty register for said Address:&nbsp;<strong style="font-size: 24px; background-color: rgb(238, 238, 238);">r14</strong><br />
+Enter another empty register for the value you want to replace at said Address:&nbsp;<span style="font-size:24px;"><strong>r15</strong></span></div>
+    <script>
+      function pr() {
+        document.getElementById("result").innerHTML = "&lt;memory value=&quot;" + document.getElementById('fname').value + "&quot; offset=&quot;0x" + document.getElementById('mname').value + "&quot; /&gt;";
+      }
+
+      function pr2() {
+        let result = document.getElementById("result2");
+        let to = 0x80002388;
+        let from = parseInt(document.getElementById("mname2").value, 16);
+        let diff = 0x1000000 + to - from;
+        if(diff > 0x1000000){
+          result.innerText = "Jump dist must be below 0x1000000";
+          return;
+        }
+        if(from <= to){
+          result.innerText = "From addr must be > to addr";
+          return;
+        } else if (diff % 4 != 0){
+          result.innerText = "Jump dist is not divisible by 4";
+          return;
+        }
+        result.innerText = "0x4B" + diff.toString(16).toUpperCase().padStart(6, '0');
+      }
+
+      function pr3() {
+        let result = document.getElementById("result3");
+        let inputs = ['1', '2', '3', '4'].map(x => document.getElementById("in_3_" + x).value);
+        let out = "";
+        out += "lis " + inputs[2] + ", 0x" + inputs[0].substring(0, 4) + '\n';
+        out += "ori " + inputs[2] + ", " + inputs[2] + ", 0x" + inputs[0].substring(4, 8) + '\n';
+        out += "lwz " + inputs[2] + ", 0x0(" + inputs[2] + ")\n";
+        out += "lis " + inputs[3] + ", 0x" + inputs[1].substring(0, 4) + '\n';
+        out += "ori " + inputs[3] + ", " + inputs[3] + ", 0x" + inputs[1].substring(4, 8) + '\n';
+        out += "stw " + inputs[3] + ", 0x0(" + inputs[2] + ")\n";
+        out += "blr";
+        result.innerText = out;
+      }
+    </script>
+    <script type="text/javascript"></script>
+  </body>
+</html>
+
+
+
+<p>Coded by&nbsp;LlamaTrauma and JimmyKazakhstan</p>
