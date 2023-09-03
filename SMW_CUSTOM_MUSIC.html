@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>JimmyKazakhstan&#39;s 5 Minute Custom Song Tutorial - Trash Can - SMW Central</title>
+	<meta charset="UTF-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="Kieran Menor, p4plus2, wye, Ersanio, DaxterSpeed, Telinc1" name="author" /><script>!function(){var e=new Date;e.setTime(e.getTime()+1296e6),document.cookie="tz_offset="+e.getTimezoneOffset()+"; expires="+e.toGMTString()+"; path=/"}();</script>
+	<link href="/assets/css/default.css?v=1692528818" rel="stylesheet" type="text/css" />
+</head>
+<body id="viewthread-body">
+<p><strong style="background-color: rgb(0, 0, 0); color: rgb(255, 0, 0);"><span style="font-size: 72px;"><span style="font-family: &quot;Edwardian Script ITC&quot;, sans-serif;"><iframe frameborder="0" height="68" scrolling="no" src="https://jimkatz.github.io/menupage.html" width="777"></iframe></span></span></strong></p>
+
+<div id="main">
+<div id="viewthread-content">
+<article class="box post" id="p1606599">
+<div class="content">
+<center><b><span style="font-size: 50pt;"><span style="color: #670033;">JimmyKazakhstan&#39;s</span> <span style="color: #330099;">5 Minute</span> <span style="color: #6600cc;">Custom Music Tutorial for </span><span style="color:#FF0000;">Super</span><span style="color: #6600cc;"> </span><span style="color:#00FF00;">Mario</span><span style="color: #6600cc;"> </span><span style="color:#FFFF00;">World</span></span></b><br />
+<br />
+<br />
+<b><span style="font-size: 60pt;">Intro</span></b><br />
+<br />
+<br />
+<span style="font-size: 24pt;">I&#39;ve always wanted to make custom music for this game, but the process for doing so (at least the default one) has always confused me. But after trying various different methods, I&#39;ve managed to find a quick and simple way to do it. I tried to simplify the process to the best of my ability so that you can easily follow along.<br />
+<br />
+Unfortunately, the site rules prevent me from adding images to this tutorial which complicates things, so I will try my best to explain the process using only text.<br />
+<br />
+I apologize if some of my sentences aren&#39;t grammatically correct, I often have trouble finding the right wording needed to describe complex processes.</span><br />
+<br />
+<br />
+<br />
+<b><span style="font-size: 60pt;">What You Need</span></b><br />
+<br />
+- <span style="color:#DAA520;">OpenMPT</span> - <a href="https://openmpt.org/download_file.php?file=OpenMPT-1.30.05.00-Setup.exe">Download</a><br />
+- <span style="color:#DAA520;">IT2AMK </span>- <a href="https://github.com/jyosh1/it2amk/releases/download/v1.0.1-alpha/it2amk.Alpha.1.0.1.zip">Download</a><br />
+- <span style="color:#DAA520;">midi2smw </span>- <a href="https://github.com/HaydenBL/midi2smw/releases/download/1.1.0/midi2smw.zip">Download</a><br />
+- <span style="color:#DAA520;">AddmusicK (AMK)</span> - <a href="https://www.smwcentral.net/?p=section&amp;a=details&amp;id=14717">Download</a><br />
+-<span style="color:#DAA520;"> SNES SPC700 Player </span>- <a href="https://www.smwcentral.net/?p=section&amp;a=details&amp;id=15205">Download</a><br />
+- A midi file with 8 channels or less.<br />
+- A soundfont (SF2/DLS).<br />
+<br />
+<br />
+<b><span style="font-size: 60pt;">One Time Setup</span></b><br />
+<br />
+<span style="font-size: 16pt;">Before you start this tutorial, you will need to complete the following steps:</span><br />
+<br />
+<span style="font-size: 12pt;">1. Extract the contents of <span style="color:#DAA520;">IT2AMK </span>into your <span style="color:#DAA520;">AddMusicK </span>folder.<br />
+<br />
+2. Edit the it2amk.bat file to the following:</span>
+
+<div class="code"><span style="font-size: 12pt;"><span class="boxhead">Code</span></span>
+
+<div class="box filter-noemote filter-nobr" style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><span style="font-size: 12pt;">for /f &quot;tokens=1,* delims= &quot; %%a in (&quot;%*&quot;) do set ALL_BUT_FIRST=%%b<br />
+set file=&quot;test.it&quot;<br />
+start /b /wait python it2amk.py %file% %ALL_BUT_FIRST%<br />
+start /b /wait AddMusicK music.smc<br />
+cd C:\<span style="color: #ff0000;">(AddMusicK folder path)</span>\music<br />
+del test.txt<br />
+ren *.mml *.txt</span></div>
+</div>
+<br />
+<br />
+<span style="font-size: 12pt;">3. Extract the contents of <span style="color:#DAA520;">midi2smw </span>to a folder of your choice.<br />
+<br />
+4. Download and install <span style="color:#DAA520;">OpenMPT</span><span style="color: #ffff00;">.</span></span><br />
+<br />
+<br />
+<br />
+<span style="font-size: 24pt;"><span style="color: #ffffff;">The name of the song I will be using for this tutorial is simply &quot;test.&quot;</span></span><br />
+<br />
+<br />
+<b><span style="color: #000099;"><span style="font-size: 62pt;">Part 0: Info</span></span></b><br />
+<br />
+<br />
+<span style="font-size: 24pt;">This is simply a tutorial on how to create a custom song.<br />
+<br />
+<span style="color: #ffcc00;">midi2smw </span>only converts Note On/Off events, so I could not make a point of reference to study how things like Pitch Bends, Panning Events, and Portamento Slides work. So nothing of the sort will be covered in this tutorial. </span><br />
+<br />
+<br />
+<b><span style="color: #0066ff;"><span style="font-size: 58pt;">Part 1: The Midi</span></span></b><br />
+<br />
+<span style="font-size: 15pt;">This tutorial requires a midi to be used. It can be one of your own creation if you want. I&#39;m considering writing a section on sampled audio for this tutorial in the future. This tutorial makes use of sampled audio, but not as extensively as it would be in the hypothetical section of the tutorial.<br />
+<br />
+The midi must be 8 channels or less. If it isn&#39;t, you may have to delete some parts of it.<br />
+<br />
+The less drum parts, the better.</span><br />
+<br />
+<span style="color: #cc3300;"><span style="font-size: 26pt;">I&#39;m aware that multiple samples can be played on the same channel, but the process of doing so was too complex for me to understand, I couldn&#39;t manage to get it to work, so in this tutorial, each drum track will be on its own channel.<br />
+<br />
+ex: Snare on Channel 1, Hi-hat on Channel 2, etc.</span></span><br />
+<br />
+<br />
+<span style="color: #00cc66;"><span style="font-size: 58pt;"><b>Part 2: Song Setup</b></span></span><br />
+<br />
+<span style="font-size: 16pt;">Drag the midi you want to use into OpenMPT, it will create a sequence and split each instrument.<br />
+<br />
+After you do that, click the &quot;General&quot; tab and look for a property box labeled <b>&quot;MPTM (OpenMPT)&quot;</b><br />
+<br />
+Click on it and change the type to &quot;Impulse Tracker IT&quot;. Make sure to set it to 8 Channels.<br />
+<br />
+After completing the previous step, press F6.</span><br />
+<br />
+<br />
+<br />
+<br />
+<span style="font-size: 58pt;"><span style="color: #ff9900;"><b>Part 3: Soundfonts</b></span></span><br />
+<br />
+<span style="font-size: 16pt;">When you&#39;ve found a soundfont that you wish to use (a sf2 or dls file), drag it into the top left window of OpenMPT.<br />
+<br />
+You can do this for multiple different soundfonts if you want.<br />
+<br />
+<b><span style="color: #ff3366;"><span style="font-size: 58pt;">Part 4: Replacing Instruments</span></span></b><br />
+<br />
+<span style="font-size: 16pt;">Go into the instruments tab.<br />
+<br />
+Find an instrument that you want to change.<br />
+(To change the instrument number, increase the value in the small box on the left of the instrument name.)<br />
+<br />
+Open the &quot;Melodic&quot; folder of the soundfont(s) you dragged into the top left window.<br />
+<br />
+Click on every listed instrument and press the space bar, this will play it back to you. Do this for each instrument until you find one that you like.<br />
+<br />
+When you find an instrument that you want to use for the song, drag it to the bottom of the instruments window, this will replace the old instrument with the new one from your soundfont.<br />
+<br />
+Press F6 to hear the result.</span><br />
+<br />
+<br />
+<br />
+<span style="color: #cc0000;"><span style="font-size: 58pt;"><b>Part 5: Sample Assignment</b></span></span><br />
+<br />
+This part is required due to the reason listed in Part 1<br />
+<br />
+<span style="font-size: 16pt;">In the patterns tab, find channel that uses the instrument that you just replaced and find the very first note that it plays.</span></span><br />
+&nbsp;
+<div class="code">&nbsp;
+<pre class="box filter-noemote filter-nobr">
+<span class="marker"><span style="font-size: 16pt;"><span style="font-size: 16pt;">example : |G-5|01|v64</span></span></span></pre>
+</div>
+<br />
+<span style="font-size: 16pt;"><span style="font-size: 16pt;">The 1st value is the pitch of the note.<br />
+The 2nd value is the instrument number.<br />
+The 3rd value is the volume at which the note is played.<br />
+<br />
+For this example, the very first note that the instrument plays is <b>&quot;G-5&quot;</b><br />
+<br />
+Go into the instruments tab and find the &quot;Sample Map&quot; on the far right.<br />
+<br />
+Since the first note the example instrument plays is <b>&quot;G-5,&quot;</b> I would find <b>&quot;G-5&quot;</b> in the sample map.<br />
+<br />
+Once you do, right click on it and select &quot;Map all notes to sample XX&quot;.<br />
+<br />
+Do this for all of your instruments unless they only have 1 sample.</span><br />
+<br />
+<br />
+<br />
+<b><span style="color: #cc0033;"><span style="font-size: 58pt;">Part 6: Drums</span></span></b><br />
+<br />
+Repeat all of the steps from Part 4, except this time, you will need to open the &quot;Drum Kits&quot; folder.<br />
+<br />
+<span style="color: #ff0000;"><b>MAKE SURE THAT ONLY ONE DRUM INSTRUMENT IS USED PER CHANNEL!</b></span><br />
+<br />
+<br />
+<br />
+<span style="color: #ff0033;"><b><span style="font-size: 58pt;">Part 6.5</span></b></span><br />
+<span style="font-size: 19pt;">Once you&#39;ve finished replacing all of the instruments to your liking, click on all of the following:<br />
+<br />
+Edit &gt; Cleanup &gt; Remove all unused stuff &gt; Rearrange &gt; OK &gt; Yes (if it pops up)<br />
+<br />
+File &gt; Automatic Sample Trimmer.<br />
+(If any samples can be trimmed, answer the prompts with &quot;Yes&quot;).</span><br />
+<br />
+<br />
+<br />
+<br />
+<span style="color: #9900f0;"><b><span style="font-size: 58pt;">Part 7: Downsampling</span></b></span><br />
+<br />
+<span style="font-size: 16pt;">Open the folder with your song name. It will be at the very top of the top left window.<br />
+<br />
+Open the &quot;Samples&quot; folder.<br />
+<br />
+<span style="color: #ff0000;"><span style="font-size: 18pt;">COMPLETE THIS STEP FOR EVERY LISTED SAMPLE:</span></span><br />
+<br />
+Click on the sample. It will take you to the &quot;Samples&quot; tab.<br />
+<br />
+In the Samples tab, Press Ctrl+R.<br />
+<br />
+Select &quot;Downsample&quot;<br />
+<br />
+Set &quot;Filter&quot; to &quot;Linear (2 taps)&quot;<br />
+<br />
+Press &quot;OK&quot;<br />
+<br />
+(Only do this once, unless you get an error later on, in which case, repeat this process a second time.)<br />
+<br />
+<b><span style="font-size: 58pt;"><span style="color: #6600ff;">Part 8: Sample Ordering</span></span></b><br />
+<br />
+<span style="color: #ff0000;"><span style="font-size: 19pt;">THIS STEP IS VERY IMPORTANT!</span></span><br />
+<br />
+Rename all of the samples in your song&#39;s &quot;Samples&quot; folder to match the name of the instrument they&#39;re linked to.<br />
+<br />
+Open the &quot;Instruments&quot; folder.<br />
+<br />
+Adjust the instruments so they match sample order by dragging them on top of one another.<br />
+<br />
+ex:<br />
+Samples:<br />
+Sample 1 - Instrument Name 1<br />
+Sample 2 - Instrument Name 2<br />
+Sample 3 - Instrument Name 3<br />
+<br />
+Instruments:<br />
+Instrument 1 - Instrument Name 1<br />
+Instrument 2 - Instrument Name 2<br />
+Instrument 3 - Instrument Name 3<br />
+<br />
+<br />
+<span style="font-size: 58pt;"><b><span style="color: #330066;">Part 9: Exporting</span></b></span><br />
+<br />
+Save As &gt; .it (Save your song as a .it file in your <span style="color: #ffff00;">AddmusicK </span>folder and name it &quot;test.it&quot;).<br />
+<br />
+File &gt; Export as Midi (Save it into your <span style="color: #ffff00;">midi2smw </span>folder and name it &quot;test.mid&quot;).<br />
+<br />
+In your <span style="color: #ffff00;">AddmusicK</span> folder, launch &quot;it2amk.bat&quot; and press the Enter key after the operation finishes.<br />
+<br />
+<br />
+<span style="color: #ffff56;"><span style="font-size: 58pt;"><b>Part 10: Editing</b></span></span><br />
+<br />
+Open the &quot;test.txt&quot; file located in <b>/AddmusicK/music</b> in Notepad++ (or whatever text editing program you use).<br />
+<br />
+Highlight everything after &quot;w255&quot; (Don&#39;t highlight &quot;w255&quot; itself) all the way to the end of the file and delete it.<br />
+<br />
+Open your midi2smw folder.<br />
+<br />
+Edit the contents of the .bat file within to the following: </span></span>
+
+<div class="code">&nbsp;
+<div class="box filter-noemote filter-nobr" style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><span style="font-size: 16pt;"><span style="font-size: 16pt;"><span style="font-size: 17pt;">midi2smw_x64 -samples test.mid</span></span></span></div>
+</div>
+<br />
+<span style="font-size: 16pt;"><span style="font-size: 16pt;">then save.<br />
+<br />
+Run the .bat file<br />
+<br />
+When the program asks for samples, enter the number &quot;30&quot; and increase the value by 1 each time until the prompts stop, after which, press q.<br />
+<br />
+Open the &quot;output.txt&quot; file in the midi2smw folder in Notepad++ (or your preferred text editing program).<br />
+<br />
+Highlight &quot;w255&quot; and everything after it (Including &quot;w255&quot; itself) all the way to the end of the file and copy it.<br />
+<br />
+Then go back into text.txt and Highlight everything starting from &quot;w255&quot; to the end of the file and paste the data you copied, then save the file.<br />
+<br />
+Add the following text to the top of the file. Fill in the fields to match your song:</span></span><br />
+&nbsp;
+<div class="code">&nbsp;
+<div class="box filter-noemote filter-nobr" style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><span style="font-size: 16pt;"><span style="font-size: 16pt;"><span style="font-size: 16pt;">#amk 2</span></span></span><br />
+#SPC<br />
+{<br />
+&nbsp;&nbsp;&nbsp; #author&nbsp; &quot;&quot;<br />
+&nbsp;&nbsp;&nbsp; #title&nbsp;&nbsp; &quot;&quot;<br />
+&nbsp;&nbsp;&nbsp; #game&nbsp;&nbsp;&nbsp; &quot;&quot;<br />
+&nbsp;&nbsp;&nbsp; #comment &quot;&quot;<br />
+}</div>
+</div>
+<br />
+<br />
+<br />
+<span style="font-size: 16pt;"><span style="font-size: 16pt;">Above &quot;w255&quot; in &quot;test.txt&quot;, add the following line:</span></span><br />
+&nbsp;
+<div class="code">
+<div class="box filter-noemote filter-nobr" style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><span style="font-size: 16pt;"><span style="font-size: 16pt;"><span style="font-size: 16pt;">#option TempoImmunity</span></span></span></div>
+</div>
+<br />
+<br />
+<span style="font-size: 16pt;"><span style="font-size: 16pt;">Add</span></span><br />
+&nbsp;
+<div class="code">
+<div class="box filter-noemote filter-nobr" style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><span style="font-size: 16pt;"><span style="font-size: 16pt;"><span style="font-size: 16pt;">#option NoLoop</span></span></span></div>
+</div>
+<br />
+<span style="font-size: 16pt;"><span style="font-size: 16pt;">in addition if you do not want the song to repeat.<br />
+<br />
+<b><span style="font-size: 66pt;">Finale</span></b><br />
+<br />
+<br />
+Launch AMKGUI (or any of the other variants of AddMusicK), select &quot;Add new song&quot;, and select the .txt file of your song in the &quot;music&quot; folder.<br />
+<br />
+Select &quot;Run&quot; and select your rom.<br />
+<br />
+If it worked, you&#39;ll get a message saying it was a success.<br />
+<br />
+Open the SPC folder and find the .spc of your song and load it into the SPC Player to see if it worked!<br />
+<br />
+<br />
+<span style="color: #ff0000;"><span style="font-size: 70pt;">ISSUES</span></span><br />
+<br />
+<br />
+<span style="font-size: 27pt;"><span style="color: #ff0000;">Issue: Notes/Samples cut off before another plays.</span><br />
+<span style="color: #ff9900;">Example: <a class="spc-preview" href="https://bin.smwcentral.net/u/51923/DC_1_CH.spc">https://bin.smwcentral.net/u/51923/DC_1_CH.spc</a></span></span><br />
+<br />
+<b><span style="font-size: 24pt;"><span style="color: #b60066;">Explanation: This will occur if you put multiple samples that are meant to naturally transition between one another into a single channel.</span><br />
+<br />
+<span style="font-size: 21pt;"><span style="color: #009900;">Solution:</span><br />
+You will need to create a new channel for this, if your song already has 8 channels, this solution will unfortunately not work.<br />
+<br />
+In OpenMPT, right click on the channel that houses the instrument that is causing this problem and select Add Channel &gt; After this channel.<br />
+<br />
+Here is a visualization. This is how the pattern in the Example SPC looks. Everything is all on one channel, causing the note to cut off just before playing the next sample.</span></span></b></span></span>
+
+<div class="code">
+<pre class="box filter-noemote filter-nobr">
+<span style="font-size: 16pt;"><span style="font-size: 16pt;"><b><span style="font-size: 24pt;"><span style="font-size: 21pt;"><span style="font-size: 08pt;">
+|C-5|01|v64|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|C-5|02|v64|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|C-5|03|v64|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|C-5|04|v64|...........
+</span></span></span></b></span></span></pre>
+</div>
+<br />
+<br />
+<span style="font-size: 16pt;"><span style="font-size: 16pt;"><b><span style="font-size: 24pt;"><span style="font-size: 21pt;">In order for the song to play properly, you need to make the pattern look like this:</span></span></b></span></span>
+
+<div class="code">
+<pre class="box filter-noemote filter-nobr">
+<span style="font-size: 16pt;"><span style="font-size: 16pt;"><b><span style="font-size: 24pt;"><span style="font-size: 21pt;"><span style="font-size: 08pt;">
+|C-5|01|v64|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|C-5|02|v64.
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|C-5|03|v64|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|...........
+|..........|C-5|04|v64.
+</span></span></span></b></span></span></pre>
+</div>
+<br />
+<br />
+<span style="font-size: 16pt;"><span style="font-size: 16pt;"><b><span style="font-size: 24pt;"><span style="font-size: 21pt;">To move the notes, highlight the entire row and drag it onto the next channel.<br />
+<br />
+This will cause the notes to properly transition.<br />
+<br />
+<span style="font-size: 21pt;"><span style="color: #ff9900;">Result SPC: <a class="spc-preview" href="https://bin.smwcentral.net/u/51923/DC_2_CH.spc">https://bin.smwcentral.net/u/51923/DC_2_CH.spc</a></span></span></span></span><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<span style="font-size: 27pt;"><span style="color: #ff0000;">Issue: Echo buffer exceeded total space in ARAM by 0xXXXX bytes.</span><br />
+<br />
+<b><span style="font-size: 24pt;"><span style="color: #b60066;">Explanation: This means that your song is too big in size to be inserted into the rom due to the sample sizes.</span><br />
+<br />
+<span style="font-size: 21pt;"><span style="color: #009900;">Solution:</span><br />
+Open your test.txt file in Notepad++ and then Repeat the steps in Part 7 for all of your samples and save the .it file.<br />
+<br />
+After doing so, run it2amk.bat again, but click &quot;No&quot; when Notepad++ asks you if you want to update test.txt<br />
+<br />
+After that, make an edit to test.txt, revert it, then save the file.<br />
+<br />
+Once that is complete, repeat the steps in the Finale<br />
+<br />
+If that still throws an error, repeat this process again.</span></span></b></span></b></span></span></center>
+</div>
+</article>
+</div>
+</div>
+
+<footer id="footer">
+<div id="footer-box">
+<p class="affiliates">&nbsp;</p>
+</div>
+</footer>
+<script defer src="/assets/js/page.js"></script><script defer src="/assets/js/pages/viewthread.js"></script></body>
+</html>
