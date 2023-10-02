@@ -1,52 +1,146 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-    </style>
-  </head>
-  <body>
-  <br />
-  <body>
+<head>
+	<style type="text/css">
+	</style>
+</head>
+<body>
 <p><strong style="background-color: rgb(0, 0, 0); color: rgb(255, 0, 0);"><span style="font-size: 72px;"><span style="font-family: &quot;Edwardian Script ITC&quot;, sans-serif;"><iframe frameborder="0" height="68" scrolling="no" src="https://jimkatz.github.io/menupage.html" width="777"></iframe></span></span></strong><br />
-<span style="color:#FF0000;"><span style="font-family:arial,helvetica,sans-serif;"><strong><span style="font-size:48px;">Riivolution Memory Patch Generator</span></strong></span></span></p>
-</body>
-    <form action="test" method="get">Memory Patch Type 1: <br />
-      <br /> Enter An Address in Memory: <input type="text" maxlength="8" name="mname" id="mname" />
-      <br /> Enter the value you want to insert at that address: <input type="text" name="fname" id="fname" />
-      <br /> Riivotion Patch Output: <span id="result"></span>
-      <br />
-      <input type="button" value="Submit" onclick="pr()" />
-    </form>
-&nbsp;</p>
+<span style="font-size:48px;"><span style="color:#FF0000;"><span style="font-family:arial,helvetica,sans-serif;"><strong>Riivolution Memory Patch Generator</strong></span></span></span><br />
+Quick and simple Riivoution Patch and Gecko Code generators (this description is a work in progress)</p>
+
+<pre class="result notranslate" style="box-sizing: border-box; margin-top: 1rem; margin-bottom: 1rem; padding: 15px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 15px; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; overflow: auto; border: 0px; width: 581.609px; border-radius: 8px; background: rgb(238, 238, 238) !important;">
+<span style="font-size:16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="font-family:arial,helvetica,sans-serif;"><strong><span style="color:#FF0000;">Riivolution</span></strong></span>
+<span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">1. </span><a href="#XMLPTCH"><span style="color:#FF0000;">XML Memory Patch Generator
+</span></a><span style="color:#FF0000;">2. </span></span></span><a href="#B2-CODEBASE"><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">Branch to 0x80002388</span>
+</span></a><span style="font-family:arial,helvetica,sans-serif;">3.<strong><span style="color:#FF0000;"> </span></strong><a href="#b-anywhere"><span style="color:#FF0000;">Branch Anywhere</span></a></span><a href="#B2-CODEBASE"><span style="color:#FF0000;">
+</span></a></span>
+<span style="font-size:16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="color:#DAA520;"><span style="font-family: arial, helvetica, sans-serif;"><strong>ASM (PowerPC)</strong></span></span><a href="#XMLPTCH">
+</a><span style="color:#DAA520;">1.</span></span><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#DAA520;">&nbsp;</span><span style="text-align: justify;"><a href="#ASM-GEN"><span style="color:#DAA520;">ASM Generator</span></a></span></span>
+</span>
+<span style="font-size:16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="color:#00cc00;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Gecko Codes</strong></span></span>
+<span style="font-family:arial,helvetica,sans-serif;"><span style="color:#009900;">1. </span><a href="#VPCMENT"><span style="color:#009900;">C2 and 04 Code Generator</span></a><a href="#VPCMENT"><span style="color:#009900;">
+</span></a><span style="color:#009900;">2. </span></span></span><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:18px;"><a href="#CONCODE"><span style="color:#009900;">Conditional Code</span></a></span><span style="color:#009900;">
+</span><span style="text-align: justify;"><span style="color:#009900;">3. </span><a href="#button-activator"><span style="color:#009900;">Button Activator</span>
+
+</a><span style="color:#800080;"><strong>Other</strong>
+</span><a href="#C2-RII"><span style="color:#800080;"><strong>1. C2 Code to Riivolution Patch Generator</strong></span></a><span style="color:#800080;">
+</span></span></span></span>
+</pre>
+
+<p style="box-sizing: border-box; margin: 1rem 0px; padding: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 15px; line-height: 24px; font-family: Verdana, sans-serif; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; text-align: justify; overflow-wrap: break-word;">-----</p>
+
+<form action="test" method="get"><a id="XMLPTCH" name="XMLPTCH"><br />
+<span style="font-family:arial,helvetica,sans-serif;"><strong><span style="font-size:26px;">Memory Patch Type 1:</span></strong></span></a><br />
+<br />
+Enter An Address in Memory: <input id="mname" maxlength="8" name="mname" type="text" /><br />
+Enter the value you want to insert at that address: <input id="fname" name="fname" type="text" /><br />
+Riivotion Patch Output:<br />
+<input onclick="pr()" type="button" value="Submit" />&nbsp;</form>
+
+<p id="result">&nbsp;</p>
+
+<p>EXAMPLE:</p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">Enter An Address in Memory:&nbsp;<span style="font-size: 24px;"><strong>80000004</strong></span><br />
+Enter the value you want to insert at that Address:&nbsp;<span style="font-size: 24px;"><strong>FFFFFFFF</strong></span><br />
+<br />
+Output:<br />
+&lt;memory value=&quot;ffffffff&quot; offset=&quot;0x80000004&quot; /&gt;</div>
 
 <p>&nbsp;</p>
 
-
 <hr />
 <p><br />
-<br />
-Memory Patch Type 2: (Branch to 0x80002388)<br />
+<a id="B2-CODEBASE" name="B2-CODEBASE"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:26px;"><strong>Memory Patch Type 2: (Branch to 0x80002388)</strong></span></span></a><br />
 <br />
 Enter an Address in memory:&nbsp;<input id="mname2" maxlength="8" name="2388Patch" type="text" /><br />
 <span style="color:#B22222;"><strong># 0x80002388 - Inputted Address Above</strong></span><br />
-Branch Instruction Output:<br />
-<p id = "result2"></p>
-<input onclick="pr2()" type="button" value="Submit" /><br />
-<br />
-<br />
+Branch Instruction Output:</p>
+
+<p id="result2">&nbsp;</p>
+
+<p><input onclick="pr2()" type="button" value="Submit" /></p>
+
+<p><br />
+&nbsp;</p>
+
 <hr />
-ASM GENERATOR: (04 to Memory Patch - 1 Line)<br />
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><a id="b-anywhere" name="b-anywhere" style="background-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 26px;"><strong>Memory Patch Type 3: (Branch Anywhere)</strong></span></span></a></p>
+
+<form action="" method="get"><br />
+Enter the address you want to branch from:&nbsp;<input id="branchsrc" maxlength="8" name="mname" type="text" /><br />
+Enter the destination address:&nbsp;<input id="branchdest" name="fname" type="text" /><br />
+Riivotion Patch Output:
+<p id="branchoutput">&nbsp;</p>
+<input onclick="branchclick()" type="button" value="Submit" />&nbsp;</form>
+
+<p id="result">&nbsp;</p>
+
+<p>EXAMPLE:</p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><br />
+<span style="font-size: 48px; background-color: rgb(238, 238, 238);">Example #1</span><br />
+<br />
+Enter the address you want to branch from:&nbsp;<span style="font-size: 24px;"><strong>80000000</strong></span><br />
+Enter the destination address:&nbsp;<strong style="font-size: 24px; background-color: rgb(238, 238, 238);">80000064</strong><br />
+<br />
+<span style="font-size: 24px;"><strong>output:</strong></span><br />
+<span style="color:#FF0000;"><strong><span style="font-size:72px;"><span style="font-size:48px;">48000064</span></span></strong></span>
+
+<hr /><br />
+<span style="font-size:48px;">Example #2</span><br />
+<span style="background-color: rgb(238, 238, 238);">Enter the address you want to branch from:&nbsp;</span><span style="font-size: 24px;"><strong>80000064</strong></span><br />
+<span style="background-color: rgb(238, 238, 238);">Enter the destination address:&nbsp;</span><strong style="background-color: rgb(238, 238, 238); font-size: 24px;">80000000</strong><br />
+<br />
+<span style="font-size: 24px;"><strong>output:</strong></span><br />
+<font color="#ff0000"><span style="font-size: 48px;"><b>4BFFFF9C</b></span></font><br />
+<br />
+<br />
+&nbsp;</div>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+<br />
+<br />
+<br />
+&nbsp;</p>
+
+<hr />
+<p><a id="ASM-GEN" name="ASM-GEN"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:26px;"><strong>ASM GENERATOR: (04 to Memory Patch - 1 Line)</strong></span></span></a><br />
 <br />
 Enter the Address that holds the value you want to replace: <input id="in_3_1" maxlength="8" name="Memory04" type="text" /><br />
 Enter the value you want to insert at said Address: <input id="in_3_2" maxlength="8" name="Memory04Address" type="text" /><br />
 Enter an empty register for said Address:&nbsp;<input id="in_3_3" maxlength="3" name="Memory04Reg1" type="text" /><br />
 Enter another empty register for the value you want to insert at said Address:&nbsp;<input id="in_3_4" maxlength="3" name="Mem04Reg2" type="text" /><br />
-ASM Output:<br />
-<p id="result3"></p>
+ASM Output:</p>
 
-<input onclick="pr3()" type="button" value="Submit" /></p>
-</form>
+<p id="result3">&nbsp;</p>
+
+<p><input onclick="pr3_1()" type="button" value="Submit" /></p>
+
+<p>&nbsp;</p>
 
 <p>EXAMPLE:</p>
 
@@ -54,7 +148,7 @@ ASM Output:<br />
 Enter the value you want to insert at said Address:&nbsp;<span style="font-size:24px;"><strong><span style="color:#000000;">2C1811FF</span></strong></span><br />
 Enter an empty register for said Address:&nbsp;<strong style="font-size: 24px; background-color: rgb(238, 238, 238);">r14</strong><br />
 Enter another empty register for the value you want to replace at said Address:&nbsp;<span style="font-size:24px;"><strong>r15</strong></span></div>
-    <script>
+<script>
       function pr() {
         document.getElementById("result").innerHTML = "&lt;memory value=&quot;" + document.getElementById('fname').value + "&quot; offset=&quot;0x" + document.getElementById('mname').value + "&quot; /&gt;";
       }
@@ -78,7 +172,7 @@ Enter another empty register for the value you want to replace at said Address:&
         result.innerText = "0x4B" + diff.toString(16).toUpperCase().padStart(6, '0');
       }
 
-      function pr3() {
+      function pr3_1() {
         let result = document.getElementById("result3");
         let inputs = ['1', '2', '3', '4'].map(x => document.getElementById("in_3_" + x).value);
         let out = "";
@@ -92,10 +186,400 @@ Enter another empty register for the value you want to replace at said Address:&
         result.innerText = out;
       }
     </script>
-    <script type="text/javascript"></script>
-  </body>
+
+<p>&nbsp;</p>
+
+<hr /></body>
 </html>
+<title></title>
+<style type="text/css">
+</style>
+<p>&nbsp;</p>
 
+<p><span style="color:#00FF00;"><font face="arial, helvetica, sans-serif"><span style="font-size: 72px;"><b>Gecko Code Generators</b></span></font></span><br />
+<br />
+<a id="VPCMENT" name="VPCMENT"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:26px;"><strong>Value Replacement</strong></span></span></a></p>
 
+<p>Enter the Address that holds the value you want to replace:&nbsp;<input id="in_4_1" maxlength="10" name="Memory4GeckoAddr" type="text" /><br />
+Enter the value you want to insert at said Address:&nbsp;<input id="in_4_2" maxlength="10" name="Geck0value" type="text" /><br />
+Code Type:&nbsp;<select id="in_4_3" name="TYPE-OF-CODE"><option value="C2">Default (C2)</option><option value="04">Force the game to replace the value (04)</option></select></p>
 
-<p>Coded by&nbsp;LlamaTrauma and JimmyKazakhstan</p>
+<p><input onclick="pr3()" type="button" value="Submit" /></p>
+
+<p><strong>Output:</strong></p>
+
+<p id="out_4_1">&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><strong>EXAMPLE (For C2 codes)</strong></p>
+
+<p>&nbsp;</p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">Enter the Address that holds the value you want to replace:&nbsp;<span style="font-size: 24px;"><strong>80456780</strong></span><br />
+Enter the value you want to insert at said Address:&nbsp;<span style="font-size:22px;"><strong>4E800020</strong></span><br />
+<span style="background-color: rgb(238, 238, 238);">Code Type: <span style="font-size:20px;"><strong>Default (C2)</strong></span></span><br />
+<br />
+The output would be:<br />
+<br />
+<strong>C2456780 00000001<br />
+4E800020 00000000</strong></div>
+
+<p>&nbsp;</p>
+
+<p><strong>EXAMPLE (For 04&nbsp;codes)</strong></p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">Enter the Address that holds the value you want to replace:&nbsp;<span style="font-size: 24px;"><strong>80456780</strong></span><br />
+Enter the value you want to insert at said Address:&nbsp;<span style="font-size: 22px;"><strong>4E800020</strong></span><br />
+Code Type:&nbsp;<span style="font-size:20px;"><strong>Force the game to replace the value (04)</strong></span><br />
+<br />
+The output would be:<br />
+<br />
+<strong><span style="font-size:22px;">04456780 4E800020</span></strong>
+
+<hr /><br />
+<br />
+<strong><span style="color:#00FF00;"><span style="font-size:28px;">If the user enters an address starting with &quot;90&quot; the output would be:</span></span><br />
+<br />
+<span style="font-size:22px;">42000000 90000000</span></strong><br />
+<span style="font-size:22px;"><span style="background-color: rgb(238, 238, 238);">​</span><strong>04456780 4E800020</strong></span><br />
+<br />
+<br />
+<strong><span style="color:#00FF00;"><span style="font-size: 28px;">If the user enters an address starting with &quot;91&quot; the output would be:</span></span><br />
+<br />
+<span style="font-size: 22px;">42000000 90000000</span></strong><br />
+<span style="font-size: 22px;"><span style="background-color: rgb(238, 238, 238);">​</span><strong>05456780 4E800020</strong></span><br />
+<br />
+<strong><span style="color:#00FF00;"><span style="font-size: 28px;">If the user enters an address starting with &quot;92&quot; the output would be:</span></span><br />
+<br />
+<span style="font-size:22px;">42000000 92000000</span></strong><br />
+<span style="font-size: 22px;"><span style="background-color: rgb(238, 238, 238);">​</span><strong>04456780 4E800020</strong></span><br />
+<br />
+<strong><span style="color:#00FF00;"><span style="font-size: 28px;">If the user enters an address starting with &quot;93&quot; the output would be:</span></span><br />
+<br />
+<span style="font-size: 22px;">42000000 92000000</span></strong><br />
+<span style="font-size: 22px;"><span style="background-color: rgb(238, 238, 238);">​</span><strong>05456780 4E800020</strong></span><br />
+&nbsp;</div>
+
+<p>&nbsp;</p>
+
+<hr />
+<p><a id="CONCODE" name="CONCODE"><strong style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 48px;">Conditional Code</span></strong></a><br />
+<br />
+<span style="font-size:26px;">If <input id="conaddr" maxlength="10" name="Address4CON" type="text" />&nbsp;is equal to&nbsp;<input id="conval" maxlength="10" name="ValueEQ" type="text" />...</span></p>
+
+<p><input onclick="conbtn()" type="button" value="Submit" /></p>
+
+<p><strong>Output:</strong></p>
+
+<p>&nbsp;</p>
+
+<p id="conout">&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<hr />
+<p><br />
+<br />
+<a id="button-activator" name="button-activator"><strong style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 48px;">Button Activator</span></strong></a><br />
+<br />
+<span style="font-size: 26px;">Game</span>&nbsp; &nbsp;<select id="btngame"><option value="2040E158">Wii Sports</option><option value="2086E024">Wii Sports Resort</option><option selected="selected" value="20317bb0">Super Mario Sluggers</option></select>&nbsp; &nbsp; &nbsp; <span style="font-size: 26px;">Button&nbsp;</span>&nbsp;&nbsp;&nbsp;<select id="btnselected" name=" ButtonList"><option value="0001">Left</option><option value="0002">Right</option><option value="0004">Down</option><option value="0008">Up</option><option value="0010">+</option><option value="0100">2</option><option value="0200">1</option><option value="0400">B</option><option value="0800">A</option><option value="1000">-</option><option value="8000">Home</option></select><br />
+<br />
+<input onclick="btnbtn()" type="button" value="Submit" /></p>
+
+<p><strong>Output:</strong><br />
+<br />
+&nbsp;</p>
+
+<p id="btnoutput">&nbsp;</p>
+
+<p><strong>EXAMPLE:</strong></p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">
+<p><span style="color:#00FF00;"><span style="font-size: 28px;"><b>The first line of the code will change based on what the user sets the Game to</b></span></span><br />
+<br />
+<span style="font-size:20px;"><b>Wii Sports:&nbsp; </b></span><span style="font-size:26px;">2040E158</span><br />
+<b style="font-size: 20px; background-color: rgb(238, 238, 238);">Super Mario Sluggers:&nbsp;</b><span style="font-size: 26px; background-color: rgb(238, 238, 238);">20</span><span style="font-size:26px;">317bb0</span><br />
+<br />
+<br />
+<span style="color:#00FF00;"><strong style="font-size: 28px; background-color: rgb(238, 238, 238);">(All of the button values are included in the &quot;value&quot; field of the selection box IN THE HTML)</strong></span></p>
+
+<p><span style="font-size: 26px;">If&nbsp; the (A) Button is pressed in Super Mario Sluggers... the output would be</span><br />
+<br />
+<span style="font-size:20px;"><strong>20317BB0&nbsp;00000800<br />
+<span style="color:#808080;"># Your code here (This message is included in the output)</span></strong><br />
+<strong style="font-size: 22px; background-color: rgb(238, 238, 238);">e0000000 80008000</strong></span><br />
+&nbsp;</p>
+</div>
+
+<p><br />
+<br />
+<br />
+&nbsp;</p>
+
+<hr />
+<p><br />
+<b style="color: rgb(128, 0, 128); font-family: arial, helvetica, sans-serif; font-size: 72px;">Other</b><br />
+<a id="C2-RII" name="C2-RII" style="background-size: 16px;"><strong style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 48px;">C2 --&gt; Riivolution Memory Patch</span></strong></a><br />
+<span style="font-size:28px;">Enter a C2 Code:</span><br />
+<br />
+<textarea cols="48" id="c2input" rows="10"></textarea>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+
+<p><input onclick="c2torvlclick()" type="button" value="Submit" /></p>
+
+<p><span style="font-size:22px;">Output:</span><br />
+<br />
+<textarea cols="48" id="rvloutput" rows="8"></textarea>&nbsp; &nbsp; &nbsp;&nbsp;<br />
+<br />
+<br />
+&nbsp;</p>
+
+<p><strong>EXAMPLE:</strong></p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;">
+<p><span style="font-size:26px;"><span style="color:#000000;"><b>The following C2 code will be used as an example:</b></span></span></p>
+
+<p><span style="background-color: rgb(238, 238, 238);">C2000004 00000003</span><br style="background-color: rgb(238, 238, 238);" />
+<span style="background-color: rgb(238, 238, 238);">38A00000 7CC43378</span><br style="background-color: rgb(238, 238, 238);" />
+<span style="background-color: rgb(238, 238, 238);">38A00006 38A00007</span><br style="background-color: rgb(238, 238, 238);" />
+<span style="background-color: rgb(238, 238, 238);">60000000 00000000</span></p>
+
+<hr />
+<p><span style="font-size: 22px; background-color: rgb(238, 238, 238);"><span style="font-size:26px;"><strong>The output would be the following:</strong></span></span></p>
+
+<p>&lt;memory value=&quot;48002334&quot; offset=&quot;0x80000004&quot; /&gt;<br />
+&nbsp;&lt;memory value=&quot;38A00000&quot; offset=&quot;0x80002338&quot; /&gt;<br />
+&lt;memory value=&quot;7CC43378&quot; offset=&quot;0x8000233c&quot; /&gt;<br />
+&lt;memory value=&quot;38A00006&quot; offset=&quot;0x80002340&quot; /&gt;<br />
+&lt;memory value=&quot;38A00007&quot; offset=&quot;0x80002344&quot; /&gt;<br />
+&lt;memory value=&quot;4bffdcc0&quot; offset=&quot;0x80002348&quot; /&gt;</p>
+
+<p>&nbsp;</p>
+
+<hr />
+<p><span style="color:#FF0000;"><strong><span style="font-size:48px;">Explanation</span></strong></span><br />
+C2000004<strong> --&gt; </strong><span style="color:#0000FF;">&lt;memory value=&quot;48002334&quot; offset=&quot;0x80000004&quot; /&gt;</span> --&gt; <strong><span style="color:#FF0000;">The insertio</span></strong><strong><span style="color:#FF0000;">n address. 0x80000004 in this code. This instruction makes it branch to 0x80002338. It will do this for every insertion address</span></strong><strong><span style="color:#FF0000;">.</span></strong></p>
+
+<p>00000002 ---&gt;<span style="color:#FF0000;"> <strong>Number of lines the code has. Not important.</strong></span></p>
+
+<p><br />
+38A00000 ---&gt; <span style="color:#0000FF;">&lt;memory value=&quot;38A00000&quot; offset=&quot;0x80002338&quot; /&gt;</span> ---&gt; <span style="color:#FF0000;"><strong>The first line in the code. Always inserted at 0x<span style="background-color: rgb(238, 238, 238);">80002338</span></strong></span></p>
+
+<p><br />
+7CC43378 ---&gt; <span style="color:#0000FF;">&lt;memory value=&quot;7CC43378&quot; offset=&quot;0x8000233c&quot; /&gt;</span></p>
+
+<p><br />
+38A00006 ---&gt; <span style="color:#0000FF;">&lt;memory value=&quot;38A00006&quot; offset=&quot;0x80002340&quot; /&gt;</span></p>
+
+<p><br />
+38A00007 ---&gt; <span style="color:#0000FF;">&lt;memory value=&quot;38A00007&quot; offset=&quot;0x80002344&quot; /&gt;</span></p>
+
+<p><br />
+60000000 00000000 ---&gt; <strong><span style="color:#FF0000;">If the very next line in the C2 code is &quot;00000000&quot; with nothing after it or &quot;60000000 00000000,&quot; it will not be converted and will be replaced with a branch instruction to the insertion address + 0x4.</span></strong></p>
+
+<p><br />
+<span style="color:#0000FF;">&lt;memory value=&quot;4bffdcc0&quot; offset=&quot;0x80002348&quot; /&gt;</span> <strong><span style="color:#FF0000;">---&gt; Branches from 0x80002348 to 0x80000008 (Insertion address + 0x4)</span></strong><br />
+&nbsp;</p>
+</div>
+
+<p><br />
+<br />
+&nbsp;</p>
+
+<hr />
+<p><br />
+<span style="font-size:26px;">Coded by&nbsp;LlamaTrauma</span></p>
+<script>
+	function fourByteHex (val) {
+		var str = val.toString(16);
+		var len = str.length;
+		if (len > 8) {
+			str = str.substring(len - 8, len);
+		} else {
+			str = '0'.repeat(8 - len) + str;
+		}
+		return str.toUpperCase();
+	}
+	function getValue (elem, type) {
+		var val = elem.value;
+		var out = 0;
+		var newVal = '0';
+		switch (type) {
+			case 'hex':
+				if (val.substring(0, 2) == '0x') {
+					val = val.substring(2);
+				}
+				out = parseInt(val, 16);
+				newVal = '0x' + out.toString(16);
+				break;
+			default:
+				out = 0;
+				newVal = '0';
+		}
+		elem.value = newVal;
+		return out;
+	}
+	var replacement = {
+		address: function () {
+			return getValue(document.getElementById('in_4_1'), 'hex');
+		},
+		value: function () {
+			return getValue(document.getElementById('in_4_2'), 'hex');
+		},
+		writeOutput: function (output) {
+			document.getElementById('out_4_1').innerText = output;
+		},
+		type: function () {
+			return document.getElementById('in_4_3').value;
+		}
+	}
+	var conditional = {
+		address: function () {
+			return getValue(document.getElementById('conaddr'), 'hex');
+		},
+		value: function () {
+			return getValue(document.getElementById('conval'), 'hex');
+		},
+		writeOutput: function (output) {
+			document.getElementById('conout').innerText = output;
+		},
+	}
+	var button = {
+		game: function () {
+			return document.getElementById('btngame').value;
+		},
+		button: function () {
+			return document.getElementById('btnselected').value;
+		},
+		writeOutput: function (output) {
+			document.getElementById('btnoutput').innerText = output;
+		},
+	}
+	var branch = {
+		source: function () {
+			return getValue(document.getElementById('branchsrc'), 'hex');
+		},
+		dest: function () {
+			return getValue(document.getElementById('branchdest'), 'hex');
+		},
+		writeOutput: function (output) {
+			document.getElementById('branchoutput').innerText = output;
+		},
+	}
+	var c2torvl = {
+		input: function () {
+			return document.getElementById('c2input').value;
+		},
+		writeOutput: function (output) {
+			document.getElementById('rvloutput').value = output;
+		}
+	}
+	function addOne (address) {
+		return ((address >> 24) & 0xF) % 2;
+	}
+	function baseAddr (address) {
+		return parseInt(address.toString(16).substring(0, 2) + '000000', 16);
+	}
+		function pr3 () {
+		var address = replacement.address();
+		var value = replacement.value();
+		if (address < 0x80000000 || address >= 0x94000000) {
+			console.log(address);
+			replacement.writeOutput('Address ' + address.toString(16) + ' out of range');
+			return;
+		}
+		var addOne = ((address >> 24) & 0xF) % 2;
+		var baseAddr = parseInt(address.toString(16).substring(0, 2) + '000000', 16);
+		if (baseAddr % 0x02000000 != 0) {
+			baseAddr -= 0x01000000;
+		}
+		var output = '';
+		if (replacement.type() == '04') {
+			if (address >= 0x90000000) {
+				output += '42000000 ' + fourByteHex(baseAddr) + '\n';
+			}
+			var byte1 = '0' + (4 + addOne) + fourByteHex(address).substring(2);
+			var byte2 = fourByteHex(replacement.value()); 
+			output += byte1 + ' ' + byte2;
+		} else if (replacement.type() == 'C2') {
+			if (address >= 0x90000000) {
+				output = 'Invalid address for C2 codes';
+			} else {
+				output += 'C' + (2 + addOne) + fourByteHex(address).substring(2) + ' 00000001\n';
+				output += fourByteHex(value) + ' 00000000';
+			}
+		}
+		replacement.writeOutput(output);
+	}
+	function conbtn () {
+		var address = conditional.address();
+		var value = conditional.value();
+		var code = "";
+		code += '2' + (0 + addOne(address)) + fourByteHex(address).substring(2) + ' ';
+		code += fourByteHex(value) + '\n';
+		code += '# Your code here\n';
+		code += 'e0000000 80008000';
+		conditional.writeOutput(code);
+	}
+	function btnbtn () {
+		var game = button.game();
+		var btn = button.button();
+		var code = "";
+		code += game + ' 0000' + btn + '\n';
+		code += '# Your code here\n';
+		code += 'e0000000 80008000';
+		button.writeOutput(code);
+	}
+	function branchCode (source, dest) {
+		var code = "";
+		var diff = dest - source;
+		var dir = diff >= 0;
+		var prefix;
+		var jump;
+		if (dir) {
+			prefix = '48';
+			jump = fourByteHex(diff).substring(2);
+		} else {
+			prefix = '4B';
+			jump = fourByteHex(0x1000000 + diff).substring(2);
+		}
+		return prefix + jump;
+	};
+	function branchclick () {
+		var source = branch.source();
+		var dest = branch.dest();
+		branch.writeOutput(branchCode(source, dest));
+	}
+	function c2torvlclick () {
+		var input = c2torvl.input();
+		var dwords = input.split(/ |\n/);
+		dwords = dwords.map((x) => parseInt(x, 16));
+		outputs = [];
+		first = dwords.shift();
+		first = first - 0xC2000000 + 0x80000000;
+		outputs.push([branchCode(first, 0x80002338), + first]);
+		dwords.shift();
+		for (var i = 0; i < dwords.length; i ++) {
+			var dword = dwords[i];
+			if (dword == 0 && i == dwords.length - 1) {
+				break;
+			}
+			if (dword == 0x60000000 && i == dwords.length - 2 && dwords[i + 1] == 0) {
+				break;
+			}
+			outputs.push([dword, 0x80002338 + i * 4]);
+		}
+		outputs.push([branchCode(0x80002338 + i * 4, first + 4), 0x80002338 + i * 4]);
+		code = "";
+		for (output of outputs) {
+			code += '<memory value="' + fourByteHex(output[0]) + '" offset="' + fourByteHex(output[1]) + '" />\n';
+		}
+		c2torvl.writeOutput(code);
+	}
+</script>
