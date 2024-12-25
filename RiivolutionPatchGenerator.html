@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -578,7 +579,7 @@ C2000004<strong> --&gt; </strong><span style="color:#0000FF;">&lt;memory value=&
 		outputs.push([branchCode(0x80002338 + i * 4, first + 4), 0x80002338 + i * 4]);
 		code = "";
 		for (output of outputs) {
-			code += '<memory value="' + fourByteHex(output[0]) + '" offset="' + fourByteHex(output[1]) + '" />\n';
+			code += '<memory value="' + fourByteHex(output[0]) + '" offset="0x' + fourByteHex(output[1]) + '" />\n';
 		}
 		c2torvl.writeOutput(code);
 	}
