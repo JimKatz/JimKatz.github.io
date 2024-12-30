@@ -15,7 +15,7 @@
 <p><strong style="color:#f00"><span style="font-size:72px"><span style="font-family:&quot;Edwardian Script ITC&quot;,sans-serif"><iframe frameborder="0" height="68" scrolling="no" src="https://jimkatz.github.io/menupage.html" width="777"></iframe><br />
 PowerPC for Dummies</span></span></strong></p>
 
-<p><span style="color:#FFFFFF"><em><span style="font-size:26px"><strong><span style="font-family:&quot;Bradley Hand ITC&quot;,sans-serif">By&nbsp; &nbsp;Jimmy Kaz</span></strong></span></em></span></p>
+<p><span style="color:#FFFFFF"><em><span style="font-size:26px"><strong><span style="font-family:&quot;Bradley Hand ITC&quot;,sans-serif">By Jimmy Kaz</span></strong></span></em></span></p>
 
 <p>&nbsp;</p>
 
@@ -96,6 +96,8 @@ PowerPC for Dummies</span></span></strong></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size:20px">mtlr</span></font></p>
 
 <p style="text-align:center"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size:20px">mtctr</span></font></p>
+
+<p style="text-align:center"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size:20px">mtdabr and mfdabr</span></font></p>
 
 <p style="text-align:center"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size:20px">mtspr</span></font></p>
 
@@ -1113,6 +1115,97 @@ The new address is stored in Register B</span></span><br />
 <p style="text-align:center"><span style="font-size:36px"><span style="color:#fff">mtctr r0</span></span></p>
 
 <p style="text-align:center"><span style="color:#808080"><span style="font-size:20px;text-align:center">​# The amount of times a certain thing will happen in a code is now &quot;4&quot;</span></span></p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<hr />
+<div style="text-align: center;">&nbsp;</div>
+
+<div style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="mtdabr&amp;mfdabr" name="mtdabr&amp;mfdabr"></a>mtdabr &amp; mfdabr</span></font></div>
+
+<div>
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Move To Data Address Breakpoint Register<br />
+Move From Data Address Breakpoint Regiser</span></span><br />
+&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:20px;"><span style="text-align: center; color: rgb(255, 255, 255);">Found in Riivolution&#39;s codehandler.bin file.<br />
+<br />
+I&#39;m still looking into this, but it seems like it deals with breakpoints.<br />
+This is the only instruction in the file that PyiiASMH3 won&#39;t compile.</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:20px;"><span style="text-align: center; color: rgb(255, 255, 255);">You&#39;ll have to manually write it out as a .long instruction </span><strong><span style="color:#FF8C00;"><span style="text-align: center;">(.long 0xXXXXXXXX)&nbsp;</span></span></strong><span style="text-align: center; color: rgb(255, 255, 255);">to get it to compile.<br />
+<br />
+The values are as follows:</span></span><br />
+&nbsp;</p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;">7C15FBA6 = mtdabr r0<br />
+7C35FBA6 = mtdabr r1<br />
+7C55FBA6 = mtdabr r2<br />
+7C75FBA6 = mtdabr r3<br />
+7C95FBA6 = mtdabr r4<br />
+7CB5FBA6 = mtdabr r5<br />
+7CD5FBA6 = mtdabr r6<br />
+7CF5FBA6 = mtdabr r7<br />
+7D15FBA6 = mtdabr r8<br />
+7D35FBA6 = mtdabr r9<br />
+7D55FBA6 = mtdabr r10<br />
+7D75FBA6 = mtdabr r11<br />
+7D95FBA6 = mtdabr r12<br />
+7DB5FBA6 = mtdabr r13<br />
+7DD5FBA6 = mtdabr r14<br />
+7DF5FBA6 = mtdabr r15<br />
+7E15FBA6 = mtdabr r16<br />
+7E35FBA6 = mtdabr r17<br />
+7E55FBA6 = mtdabr r18<br />
+7E75FBA6 = mtdabr r19<br />
+7E95FBA6 = mtdabr r20<br />
+7EB5FBA6 = mtdabr r21<br />
+7ED5FBA6 = mtdabr r22<br />
+7EF5FBA6 = mtdabr r23<br />
+7F15FBA6 = mtdabr r24<br />
+7F35FBA6 = mtdabr r25<br />
+7F55FBA6 = mtdabr r26<br />
+7F75FBA6 = mtdabr r27<br />
+7F95FBA6 = mtdabr r28<br />
+7FB5FBA6 = mtdabr r29<br />
+7FD5FBA6 = mtdabr r30<br />
+7Ff5FBA6 = mtdabr r31</span></p>
+
+<p style="text-align: center;"><span style="color:#FFFFFF;">7C15FAA6 = mfdabr r0<br />
+7C35FAA6 = mfdabr r1<br />
+7C55FAA6 = mfdabr r2<br />
+7C75FAA6 = mfdabr r3<br />
+7C95FAA6 = mfdabr r4<br />
+7CB5FAA6 = mfdabr r5<br />
+7CD5FAA6 = mfdabr r6<br />
+7CF5FAA6 = mfdabr r7<br />
+7D15FAA6 = mfdabr r8<br />
+7D35FAA6 = mfdabr r9<br />
+7D55FAA6 = mfdabr r10<br />
+7D75FAA6 = mfdabr r11<br />
+7D95FAA6 = mfdabr r12<br />
+7DB5FAA6 = mfdabr r13<br />
+7DD5FAA6 = mfdabr r14<br />
+7DF5FAA6 = mfdabr r15<br />
+7E15FAA6 = mfdabr r16<br />
+7E35FAA6 = mfdabr r17<br />
+7E55FAA6 = mfdabr r18<br />
+7E75FAA6 = mfdabr r19<br />
+7E95FAA6 = mfdabr r20<br />
+7EB5FAA6 = mfdabr r21<br />
+7ED5FAA6 = mfdabr r22<br />
+7EF5FAA6 = mfdabr r23<br />
+7F15FAA6 = mfdabr r24<br />
+7F35FAA6 = mfdabr r25<br />
+7F55FAA6 = mfdabr r26<br />
+7F75FAA6 = mfdabr r27<br />
+7F95FAA6 = mfdabr r28<br />
+7FB5FAA6 = mfdabr r29<br />
+7FD5FAA6 = mfdabr r30<br />
+7Ff5FAA6 = mfdabr r31</span></p>
+</div>
 
 <p style="text-align:center">&nbsp;</p>
 
