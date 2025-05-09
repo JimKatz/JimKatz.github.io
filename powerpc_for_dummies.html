@@ -13,9 +13,10 @@
 </head>
 <body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.1017.0" style="background-color:black">
 <p><strong style="color:#f00"><span style="font-size:72px"><span style="font-family:&quot;Edwardian Script ITC&quot;,sans-serif"><iframe frameborder="0" height="68" scrolling="no" src="https://jimkatz.github.io/menupage.html" width="777"></iframe><br />
-PowerPC for Dummies</span></span></strong></p>
-
-<p><span style="color:#FFFFFF"><em><span style="font-size:26px"><strong><span style="font-family:&quot;Bradley Hand ITC&quot;,sans-serif">By Jimmy Kaz</span></strong></span></em></span></p>
+PowerPC for Dummies</span></span></strong><br />
+<span style="font-size:36px;"><span style="color:#FFFFFF;">An oversimplification of the PowerPC instruction set.<br />
+Hopefully, it will help people in creating new Gecko and Assembly codes for<br />
+Wii Games!</span></span></p>
 
 <p>&nbsp;</p>
 
@@ -114,6 +115,8 @@ PowerPC for Dummies</span></span></strong></p>
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style="font-size:20px"><font color="#ffffff" face="Rage Italic, sans-serif">slwi</font></span></p>
 
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style="font-size:20px"><font color="#ffffff" face="Rage Italic, sans-serif">sraw</font></span></p>
+
+<p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style="font-size:20px"><font color="#ffffff" face="Rage Italic, sans-serif">stw</font></span></p>
 
 <p style="font-family:&quot;Times New Roman&quot;font-size:medium;text-align:center"><span style="font-size:20px"><font color="#ffffff" face="Rage Italic, sans-serif">stwu</font></span></p>
 
@@ -286,7 +289,51 @@ EXAMPLES PAGE</span></a></strong></span></p>
 <hr />
 <p style="text-align:center">&nbsp;</p>
 
-<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:72px;"><span style="text-align: center;"><span style="color: rgb(255, 255, 255);"><strong><a id="pointers" name="pointers"></a>Pointers</strong></span></span></span></span><br />
+&nbsp;</p>
+
+<p style="text-align: center; margin-left: 40px;"><span style="color:#FFFFFF;"><span style="font-size:28px;"><span style="text-align: center;">For a few i</span>nstructions<span style="text-align: center;">, I wrote <strong>&quot;The middle value is a pointer that adds onto the address.&quot;</strong></span></span></span></p>
+
+<p style="text-align: center; margin-left: 40px;"><span style="color:#FFFFFF;"><span style="font-size:28px;"><span style="text-align: center;">It&#39;s difficult to explain in words so I&#39;ll put an example of what a pointer is:</span></span></span><br />
+<br />
+<span style="color:#A9A9A9;"><span style="font-size:48px;"><span style="text-align: center;"><strong><span style="font-size:36px;"><span style="font-family:tahoma,geneva,sans-serif;">stw r0, 0x0(r1)</span></span></strong></span></span></span><br />
+<br />
+<span style="color: rgb(255, 255, 255); font-size: 28px; text-align: center;">This instruction will write whatever value is held in r0 into the address held in r1.<br />
+<strong><span style="font-size:48px;">&quot;0x0&quot; is the pointer.</span></strong></span><br />
+&nbsp;</p>
+
+<p style="text-align: center; margin-left: 40px;"><span style="color: rgb(255, 255, 255); font-size: 28px; text-align: center;">Let&#39;s assume that r0 holds the value &quot;8&quot;<br />
+and that r1 holds the address &quot;80000004&quot;<br />
+<br />
+The instruction would write the value &quot;0x8&quot; into &quot;0x80000004&quot; in memory.<br />
+The pointer was set to 0.</span><br />
+&nbsp;</p>
+
+<p style="text-align: center; margin-left: 40px;"><br />
+<br />
+<span style="color: rgb(255, 255, 255); font-size: 28px; text-align: center;">But what if it the pointer was changed?</span></p>
+
+<p style="text-align: center; margin-left: 40px;"><br />
+<br />
+<strong style="color: rgb(169, 169, 169); font-size: 48px; text-align: center;"><span style="font-size: 36px;"><span style="font-family: tahoma, geneva, sans-serif;">stw r0, 0x4(r1)</span></span></strong><br />
+<br />
+<span style="color: rgb(255, 255, 255); font-size: 28px; text-align: center;">Assume that r0 still holds the value &quot;8&quot;<br />
+<br />
+This instruction&nbsp;would write the value &quot;0x8&quot; into &quot;0x80000008&quot; in memory.</span><br style="color: rgb(255, 255, 255); font-size: 28px; text-align: center;" />
+<span style="color: rgb(255, 255, 255); font-size: 28px; text-align: center;">The pointer was set to 0x4.<br />
+<br />
+Since the pointer was set to &quot;0x4&quot;, it tells the instruction to change the destination address by 0x4<br />
+<br />
+If you wanted to change the address to&nbsp;&quot;0x8000000C&quot; you would need the following instruction:</span><br />
+<br />
+<strong style="text-align: center; color: rgb(169, 169, 169); font-size: 48px;"><span style="font-size: 36px;"><span style="font-family: tahoma, geneva, sans-serif;">stw r0, 0x8(r1)</span></span></strong><br />
+<br />
+<span style="color: rgb(255, 255, 255); font-size: 28px; text-align: center;">I think you get the idea now.</span><br />
+<br />
+&nbsp;</p>
+
+<hr />
+<p style="text-align: center; margin-left: 40px;">&nbsp;</p>
 
 <p style="text-align:center"><span style="color:#fff;font-family:&quot;Rage Italic&quot;,sans-serif;font-size:72px">Instruction List:</span></p>
 
@@ -1492,6 +1539,54 @@ The values are as follows:</span></span><br />
 	<li style="text-align:center">&nbsp;</li>
 	<li style="text-align:center">&nbsp;</li>
 </ul>
+
+<hr />
+<p style="text-align: center;"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size: 72px;"><a id="stw" name="stw"></a>stw</span></font></p>
+
+<p style="text-align: center;"><span style="font-size: 26px;"><span style="color: rgb(255, 255, 255);">Store Word</span></span></p>
+
+<p style="text-align: center;"><span style="font-size:20px;"><span style="font-size:22px;"><span style="color:#FFFFFF;">The value in Register A is written to whatever address is held in Register B. The middle value is a pointer that adds onto the address.</span></span></span><br />
+&nbsp;</p>
+
+<p style="text-align: center;text-align: center;"><span style="font-size: 20px;"><span style="color: rgb(255, 255, 255);">EXAMPLE :</span></span></p>
+
+<p style="text-align: center;text-align: center;"><span style="color: rgb(255, 255, 255); font-size: 20px; text-align: center;">stw r0, 0x0(r1)</span></p>
+
+<p style="text-align: center;text-align: center;"><span style="font-size: 12px;"><span style="color: rgb(255, 255, 255);">BEOFRE EXECUTION OF INSTRUCTION:</span></span></p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="text-align: center;height: 5px; width: 113px;" summary="r0 = 0x00000005">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">r0</span></td>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">00000000</span></td>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255);">00000001</span></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><span style="color: rgb(255, 255, 255); text-align: center;">r1</span></td>
+			<td style="text-align: center;"><span style="color:#FFFFFF;">80000000</span></td>
+			<td style="text-align: center;"><span style="color:#FFFFFF;">00000000</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align: center;text-align: center;"><span style="font-size: 12px;"><span style="color: rgb(255, 255, 255);">AFTER EXECUTION OF INSTRUCTION:</span></span></p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="text-align: center; height: 5px; width: 113px;" summary="r0 = 0x00000005">
+	<tbody>
+		<tr>
+			<td><span style="color: rgb(255, 255, 255);">r0</span></td>
+			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
+			<td><span style="color: rgb(255, 255, 255);">00000001</span></td>
+		</tr>
+		<tr>
+			<td><span style="color: rgb(255, 255, 255);">r1</span></td>
+			<td><span style="color: rgb(255, 255, 255);">80000000</span></td>
+			<td><span style="color: rgb(255, 255, 255);">00000001</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align: center;">&nbsp;</p>
 
 <hr />
 <p style="text-align:center"><font color="#ffffff" face="Rage Italic, sans-serif"><span style="font-size:72px"><a id="stwu" name="stwu"></a>stwu</span></font></p>
