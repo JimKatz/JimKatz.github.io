@@ -113,19 +113,49 @@ Enter the destination address:&nbsp;<strong style="font-size: 24px; background-c
 <hr />
 <p><a id="UniversalMemoryPatch" name="UniversalMemoryPatch" style="background-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 26px;"><strong>Memory Patch Type 4: &quot;Universal&quot; Memory Patch</strong></span></span></a></p>
 
-<p>Enter the hex value of at least 5&nbsp;consecutive instructions (without spaces)&nbsp;<input name="OriginalInstructions" size="88" type="text" /><br />
-Enter the hex value of the instructions that you want to patch in (without spaces)&nbsp;<input name="NewBytes" size="88" type="text" /></p>
+<p>Enter the hex value of at least 5&nbsp;consecutive instructions (hex values, without spaces)&nbsp;<input name="OriginalInstructions" size="88" type="text" /><br />
+Enter the hex value of the instructions that you want to patch in (hex values, without spaces)&nbsp;<input name="NewBytes" size="88" type="text" /></p>
 
 <p><input onclick="UniOutput()" type="button" value="Submit" /></p>
 
 <p>Output:<br />
 <textarea cols="99" name="UniOutput_area" rows="8"></textarea></p>
 
+<p><span style="font-size:22px;">Regular Riivolution memory patches work by directly replacing an instruction<br />
+in the game&#39;s code <strong>(although they won&#39;t work if the game writes a value to the<br />
+address they replace the value of after boot. You&#39;ll need a 04 RAM Write code<br />
+to keep that from happening).</strong></span></p>
+
+<p><span style="font-size:22px;">The thing with memory patches is that you have to enter a memory address specific<br />
+to the region of the game you&#39;re working with. This means that if you made a patch<br />
+to replace the value at an address in the NTSC version of a game, it won&#39;t work on<br />
+the PAL version since the addresses are different.&nbsp;</span></p>
+
+<p><span style="font-size:22px;">Riivolution memory patches have a &quot;search&quot; feature. A &quot;search patch&quot; scans the game&#39;s<br />
+memory for a specific set of bytes and replaces them with custom bytes if found, rather<br />
+than directly replacing an instruction at an address. It can search for any sequence of bytes.<br />
+This includes the bytes that make up the hex values of instructions in the game&#39;s code.<br />
+This generator takes full advantage of that.</span></p>
+
+<p><span style="font-size:22px;">The generator creates a search patch for you. You need to enter the exact sequence of bytes<br />
+corresponding to the instructions surrounding the target instruction <strong>(&quot;target instruction&quot; refers<br />
+to the memory address you want to alter the value of, so start by entering the original hex<br />
+value of that)</strong>. The generated search patch will search the game&#39;s memory for the specific<br />
+sequence of bytes you entered to locate the correct function containing the target instruction.<br />
+Once found, the patch replaces the instruction(s) with the custom bytes provided.<br />
+This allows the memory patch to be &quot;universal&quot; and work across all regions. It works<br />
+because the game&#39;s actual code is pretty much unchanged between regions, which means<br />
+that the byte sequences that make up its code are too.</span></p>
+
+<p><span style="font-size:22px;">The only issue with this type of patch is that it sometimes has trouble finding the byte<br />
+values of instructions that load specific addresses into registers. It also doesn&#39;t work<br />
+with function callers (&quot;bl&quot; instructions), but apart from that, it works perfectly!</span></p>
+
 <p>&nbsp;</p>
 
-<p><br />
-<br />
-&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
 
 <hr />
 <p><a id="ASM-GEN" name="ASM-GEN"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:26px;"><strong>ASM GENERATOR: (04 to Memory Patch - 1 Line)</strong></span></span></a><br />
