@@ -13,7 +13,8 @@ Quick and simple Riivoution Patch and Gecko Code generators (this description is
 <span style="font-size:16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="font-family:arial,helvetica,sans-serif;"><strong><span style="color:#FF0000;">Riivolution</span></strong></span>
 <span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">1. </span><a href="#XMLPTCH"><span style="color:#FF0000;">XML Memory Patch Generator
 </span></a><span style="color:#FF0000;">2. </span></span></span><a href="#B2-CODEBASE"><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">Branch to 0x80002388</span>
-</span></a><span style="font-family:arial,helvetica,sans-serif;">3.<strong><span style="color:#FF0000;"> </span></strong><a href="#b-anywhere"><span style="color:#FF0000;">Branch Anywhere</span></a></span><a href="#B2-CODEBASE"><span style="color:#FF0000;">
+</span></a><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">3.</span><strong><span style="color:#FF0000;"> </span></strong><a href="#b-anywhere"><span style="color:#FF0000;">Branch Anywhere
+</span></a><span style="color:#FF0000;">4. </span><a href="#UniversalMemoryPatch"><span style="color:#FF0000;">Universal Memory Patch</span></a></span><a href="#UniversalMemoryPatch"><span style="color:#FF0000;">
 </span></a></span>
 <span style="font-size:16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="color:#DAA520;"><span style="font-family: arial, helvetica, sans-serif;"><strong>ASM (PowerPC)</strong></span></span><a href="#XMLPTCH">
 </a><span style="color:#DAA520;">1.</span></span><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#DAA520;">&nbsp;</span><span style="text-align: justify;"><a href="#ASM-GEN"><span style="color:#DAA520;">ASM Generator</span></a></span></span>
@@ -109,21 +110,20 @@ Enter the destination address:&nbsp;<strong style="font-size: 24px; background-c
 
 <p>&nbsp;</p>
 
-<p>&nbsp;</p>
+<hr />
+<p><a id="UniversalMemoryPatch" name="UniversalMemoryPatch" style="background-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 26px;"><strong>Memory Patch Type 4: &quot;Universal&quot; Memory Patch</strong></span></span></a></p>
 
-<p>&nbsp;</p>
+<p>Enter the hex value of at least 5&nbsp;consecutive instructions (without spaces)&nbsp;<input name="OriginalInstructions" size="88" type="text" /><br />
+Enter the hex value of the instructions that you want to patch in (without spaces)&nbsp;<input name="NewBytes" size="88" type="text" /></p>
 
-<p>&nbsp;</p>
+<p><input onclick="UniOutput()" type="button" value="Submit" /></p>
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
+<p>Output:<br />
+<textarea cols="99" name="UniOutput_area" rows="8"></textarea></p>
 
 <p>&nbsp;</p>
 
 <p><br />
-<br />
-<br />
 <br />
 &nbsp;</p>
 
@@ -581,5 +581,15 @@ C2000004<strong> --&gt; </strong><span style="color:#0000FF;">&lt;memory value=&
 			code += '<memory value="' + fourByteHex(output[0]) + '" offset="0x' + fourByteHex(output[1]) + '" />\n';
 		}
 		c2torvl.writeOutput(code);
+	}
+    function UniOutput() {
+		
+            const og_bytes = document.getElementsByName('OriginalInstructions')[0].value;
+            
+            const new_bytes = document.getElementsByName('NewBytes')[0].value;
+
+			const outputText = `<memory value="${og_bytes}" original="${new_bytes}" offset="" align="4" search="true" />`;
+			
+            document.getElementsByName('UniOutput_area')[0].value = outputText;
 	}
 </script>
