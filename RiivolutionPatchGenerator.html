@@ -113,8 +113,8 @@ Enter the destination address:&nbsp;<strong style="font-size: 24px; background-c
 <hr />
 <p><a id="UniversalMemoryPatch" name="UniversalMemoryPatch" style="background-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 26px;"><strong>Memory Patch Type 4: &quot;Universal&quot; Memory Patch</strong></span></span></a></p>
 
-<p>Enter the hex value of at least 5&nbsp;consecutive instructions (hex values, without spaces)&nbsp;<input name="OriginalInstructions" size="88" type="text" /><br />
-Enter the hex value of the instructions that you want to patch in (hex values, without spaces)&nbsp;<input name="NewBytes" size="88" type="text" /></p>
+<p>Enter the hex value of the instructions that you want to patch in (hex values, without spaces)&nbsp;<input name="OriginalInstructions" size="88" type="text" /><br />
+Enter the hex value of at least 5 consecutive instructions (hex values, without spaces)&nbsp;<input name="NewBytes" size="88" type="text" /></p>
 
 <p><input onclick="UniOutput()" type="button" value="Submit" /></p>
 
@@ -132,10 +132,9 @@ to replace the value at an address in the NTSC version of a game, it won&#39;t w
 the PAL version since the addresses are different.&nbsp;</span></p>
 
 <p><span style="font-size:22px;">Riivolution memory patches have a &quot;search&quot; feature. A &quot;search patch&quot; scans the game&#39;s<br />
-memory for a specific set of bytes and replaces them with custom bytes if found, rather<br />
-than directly replacing an instruction at an address. It can search for any sequence of bytes.<br />
-This includes the bytes that make up the hex values of instructions in the game&#39;s code.<br />
-This generator takes full advantage of that.</span></p>
+memory for a specific set of bytes and replaces them with custom bytes if found.<br />
+It can search for any sequence of bytes. This includes the bytes that make up the hex<br />
+values of instructions in the game&#39;s code. This generator takes full advantage of that.</span></p>
 
 <p><span style="font-size:22px;">The generator creates a search patch for you. You need to enter the exact sequence of bytes<br />
 corresponding to the instructions surrounding the target instruction <strong>(&quot;target instruction&quot; refers<br />
@@ -143,15 +142,132 @@ to the memory address you want to alter the value of, so start by entering the o
 value of that)</strong>. The generated search patch will search the game&#39;s memory for the specific<br />
 sequence of bytes you entered to locate the correct function containing the target instruction.<br />
 Once found, the patch replaces the instruction(s) with the custom bytes provided.<br />
-This allows the memory patch to be &quot;universal&quot; and work across all regions. It works<br />
-because the game&#39;s actual code is pretty much unchanged between regions, which means<br />
-that the byte sequences that make up its code are too.</span></p>
+This allows the memory patch to be &quot;universal&quot; and work across all regions. </span></p>
+
+<p><span style="font-size:28px;"><span style="font-family:arial,helvetica,sans-serif;"><strong><span style="color:#FF0000;">It works because the game&#39;s actual code is pretty much unchanged between<br />
+regions, which means that the byte sequences that make up its code are too.</span></strong></span></span></p>
 
 <p><span style="font-size:22px;">The only issue with this type of patch is that it sometimes has trouble finding the byte<br />
 values of instructions that load specific addresses into registers. It also doesn&#39;t work<br />
 with function callers (&quot;bl&quot; instructions), but apart from that, it works perfectly!</span></p>
 
 <p>&nbsp;</p>
+
+<p><strong><span style="font-size:26px;">EXAMPLE:</span></strong></p>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><span style="font-size:22px;">In Wii Sports Resort there&#39;s a function at (NTSC) 0x8063358C that updates the time of day<br />
+in Swordplay Showdown after you complete a stage. This is what it looks like in the code<br />
+<span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:18px;"><strong><span style="color:#800000;">(I explained how this function works in the &quot;developer&#39;s commentary&quot; of&nbsp;<a href="https://gamebanana.com/mods/598288">The&nbsp;</a></span><a href="https://gamebanana.com/mods/598288"><span style="color:#0000FF;">Swordplay<br />
+Showdown: Service and Shenanigans Pack</span></a>&nbsp;<span style="color:#800000;">so I&#39;m going to refrain from doing so here)</span>:</strong></span></span></span>
+
+<hr /><span style="font-size:18px;"><strong>NTSC_0x8063358C:&nbsp;</strong><br />
+&nbsp;</span><strong>8063358c:</strong><span style="font-size:18px;"> lwz&nbsp; &nbsp; &nbsp; &nbsp;r3, -0x20E0(r13)<br />
+<strong>&nbsp;</strong></span><strong>80633590:</strong>&nbsp;<span style="font-size:18px;">addi&nbsp; &nbsp; &nbsp; r0, r3, 0x1<br />
+&nbsp;</span><strong>80633594:</strong><span style="font-size:18px;"> stw&nbsp; &nbsp; &nbsp; &nbsp;r0, -0x20E0(r13)<br />
+<strong>&nbsp;</strong></span><strong>80633598:</strong><span style="font-size:18px;"> cmpwi&nbsp; &nbsp; &nbsp;r0, 0x3<br />
+&nbsp;</span><strong>8063359c:</strong><span style="font-size:18px;"> bltlr-&nbsp; &nbsp;&nbsp;<br />
+&nbsp;</span><strong>806335a0:</strong><span style="font-size:18px;"> li&nbsp; &nbsp; &nbsp; &nbsp; r0, 0<br />
+&nbsp;</span><strong>806335a4:</strong>&nbsp;<span style="font-size:18px;">stw&nbsp; &nbsp; &nbsp; &nbsp;r0, -0x20E0(r13)<br />
+&nbsp;</span><strong>806335a8:</strong>&nbsp;<span style="font-size:18px;">blr&nbsp;</span></div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><span style="font-size:22px;">Let&#39;s say I wanted to replace the <strong>&quot;</strong><span style="background-color: rgb(238, 238, 238);"><strong>bltlr-&quot;</strong> instruction with <strong>&quot;nop&quot;</strong> (no </span>operation<span style="background-color: rgb(238, 238, 238);">)<br />
+and the <strong>&quot;li r0, 0&quot;</strong> instruction with <strong>&quot;li r0, 1&quot;</strong></span></span><br />
+<br />
+<span style="font-size:22px;"><span style="background-color: rgb(238, 238, 238);">The hex value for &quot;nop&quot; is &quot;</span>60000000&quot;<br />
+The hex value for &quot;li r0, 1&quot; is &quot;38000001&quot;<br />
+<br />
+<span style="background-color: rgb(238, 238, 238);">So normally, I&#39;d just make a memory patch to replace the instructions. Like this:</span></span><br />
+<br />
+<span style="color:#4B0082;"><strong><span style="font-size:24px;">&lt;memory value=&quot;60000000&quot; offset=&quot;0x8063359C&quot; /&gt;<br />
+&lt;memory value=&quot;38000001&quot; offset=&quot;0x806335A0&quot; /&gt;</span></strong></span><br />
+<br />
+<span style="font-size:24px;">This would work perfectly fine on the NTSC version of the game, but not the<br />
+PAL version since the memory addresses are different between them.</span><br />
+&nbsp;</div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><span style="font-size:24px;">With a search patch, you can&#39;t search for one specific instruction since there&#39;s no<br />
+way to narrow things down. However, you CAN use it to search for a specific function.<br />
+<br />
+Here&#39;s how:</span><br />
+&nbsp;</div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><span style="font-size:24px;">The function I mentioned earlier that updates the time of day... let&#39;s have a closer look at it.<br />
+The values on the left are hex values. On the right are the instructions that value translates to:</span><br />
+<br />
+<span style="font-size:20px;"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:18px;">806DDF20&nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;lwz r3, -0x20E0(r13)<br />
+38030001&nbsp; &nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;addi r0, r3, 0x1<br />
+900DDF20&nbsp; &nbsp; &nbsp;&nbsp;=&nbsp; &nbsp; &nbsp;stw r0, -0x20E0(r13)<br />
+2C000003&nbsp; &nbsp; &nbsp; &nbsp;=&nbsp; &nbsp; &nbsp;cmpwi r0, 0x3<br />
+4D800020&nbsp; &nbsp; &nbsp; &nbsp;=&nbsp; &nbsp; &nbsp;bltlr-<br />
+38000000&nbsp; &nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;li r0, 0<br />
+900DDF20&nbsp; &nbsp; &nbsp; &nbsp;=&nbsp; &nbsp; &nbsp;stw r0, -0x20E0(r13)<br />
+4E800020&nbsp; &nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;blr</span></span></span><br />
+<br />
+<span style="font-size:24px;">To search for this function in a search patch, I&#39;d have to copy all the hex values of its<br />
+instructions and arrange them in sequence without spaces.<br />
+<br />
+Doing so gives me this series of bytes:</span><br />
+<br />
+<strong><span style="font-size:28px;">806DDF2038030001900DDF202C0000034D80002038000000900DDF204E800020</span></strong><br />
+<br />
+<span style="font-size:24px;">This is the &quot;original&quot; value. It&#39;s the series of bytes the game has to check it&#39;s&nbsp;memory for.<br />
+This is what you&#39;d need to enter into the 2nd textbox.<br />
+<br />
+Right about now, the patch should look like this:<br />
+<br />
+<span style="font-size:28px;"><span style="font-size:26px;"><strong><span style="color:#4B0082;">&lt;memory value=&quot;&quot; original=&quot;806DDF2038030001900DDF202C0000034D80002038000000900DDF204E800020&quot; offset=&quot;&quot; align=&quot;4&quot; search=&quot;true&quot; /&gt;</span></strong></span></span></span><br />
+<br />
+<span style="font-size: 24px; background-color: rgb(238, 238, 238);">Next, let&#39;s enter the new bytes the game has to patch in...</span><br />
+<br />
+&nbsp;</div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><span style="font-size: 24px; background-color: rgb(238, 238, 238);">Let&#39;s look at the function again, this time with the hex values of the instructions<br />
+I want to patch in.</span><br />
+<br />
+<span style="font-size:18px;"><span style="font-family:arial,helvetica,sans-serif;">806DDF20&nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;lwz r3, -0x20E0(r13)<br />
+38030001&nbsp; &nbsp; &nbsp; &nbsp;=&nbsp; &nbsp; &nbsp;addi r0, r3, 0x1<br />
+900DDF20&nbsp; &nbsp;&nbsp; =&nbsp; &nbsp; &nbsp;stw r0, -0x20E0(r13)<br />
+2C000003&nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;cmpwi r0, 0x3<br />
+<span style="background-color:#FFA07A;">60000000&nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;nop</span><br />
+<span style="background-color:#FFA07A;">38000001&nbsp; &nbsp; &nbsp; =&nbsp; &nbsp; &nbsp;li r0, 1</span><br />
+900DDF20&nbsp; &nbsp;&nbsp;=&nbsp; &nbsp; &nbsp;stw r0, -0x20E0(r13)<br />
+4E800020&nbsp; &nbsp; &nbsp;=&nbsp; &nbsp; &nbsp;blr</span></span><br />
+<br />
+<span style="font-size:24px;">At this point, addresses don&#39;t matter, as the game will only be patching in<br />
+the &quot;new&quot; bytes after it finds the original.<br />
+<br />
+The highlighted lines above are the new instructions I want to patch in. The same process of<br />
+copying all the hex values and arranging them in sequence without spaces has to be repeated,<br />
+which will then give me the following bytes:<br />
+<br />
+<strong><span style="font-size:28px;">806DDF2038030001900DDF202C000003<span style="background-color:#FFA07A;">6000000038000001</span>900DDF204E800020</span></strong></span><br />
+<br />
+<span style="font-size:24px;">Now, I have to put this value into the 1st textbox and make the patch.</span><br />
+<br />
+&nbsp;</div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><span style="font-size:24px;">This is the final patch:</span><br />
+<br />
+<strong><span style="font-size:28px;"><span style="color:#4B0082;">&lt;memory value=&quot;806DDF2038030001900DDF202C0000036000000038000001900DDF204E800020&quot; original=&quot;806DDF2038030001900DDF202C0000034D80002038000000900DDF204E800020&quot; offset=&quot;&quot; align=&quot;4&quot; search=&quot;true&quot; /&gt;</span></span></strong><br />
+<br />
+&nbsp;</div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><span style="font-size:24px;">What this patch does is search the game&#39;s memory for a specific set of bytes, which in this case is <strong>&quot;806DDF2038030001900DDF202C0000034D80002038000000900DDF204E800020.&quot;</strong> Once those bytes are found, they&#39;re immediately replaced with <strong>&quot;806DDF2038030001900DDF202C00000360000038000001900DDF204E800020.&quot;</strong> This patches my new instructions into the game&#39;s code.</span><br />
+<br />
+&nbsp;</div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px;"><br />
+<br />
+<span style="font-size:24px;"><strong><span style="font-size:36px;">This memory patch works on both&nbsp;NTSC and PAL&nbsp;because the<br />
+original source code in the function I modified is exactly the same<br />
+across both regions, meaning that <span style="color:#FF0000;">the exact set of bytes this patch<br />
+searches for and replaces exists in both the NTSC and PAL version<br />
+of the game.</span></span></strong></span><br />
+&nbsp;
+<hr /><br />
+<span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:48px;"><span style="color:#008000;"><strong>Hopefully, all of that made sense to you!</strong></span></span></span><br />
+<br />
+&nbsp;</div>
 
 <p>&nbsp;</p>
 
