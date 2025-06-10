@@ -1735,9 +1735,30 @@ The values are as follows:</span></span><br />
 
 <p style="text-align:center"><span style="color:#FFFFFF"><span style="font-size:24px"><span style="font-family:arial,helvetica,sans-serif">Rotate Left Word Immediate Then AND With Mask</span></span></span></p>
 
-<p style="text-align:center"><span style="color:#A9A9A9;"><span style="font-size:48px;">I don&#39;t even know how I could explain this.</span></span></p>
+<p style="text-align:center"><span style="color:#A9A9A9;"><span style="font-size:48px;">I don&#39;t even know how I could explain this.</span></span><br />
+<br />
+<span style="text-align: center; font-size: 36px;"><span style="color: rgb(255, 255, 255);">syntax:</span></span><br />
+<span style="font-size:36px;"><span style="text-align: center; color: rgb(255, 0, 0);">rlwinm r1, r2,</span><span style="text-align: center; color: rgb(255, 160, 122);">&nbsp;RotationValue,</span><span style="text-align: center; color: rgb(255, 255, 255);">&nbsp;</span><span style="text-align: center; color: rgb(255, 255, 0);">ValueA,</span></span><span style="text-align: center; color: rgb(255, 165, 0);"><span style="font-size: 24px;"><span style="font-size:36px;">&nbsp;ValueB</span></span></span><br />
+<br />
+&nbsp;</p>
 
-<p style="text-align:center">&nbsp;</p>
+<p style="text-align:center"><span style="color:#FFFFFF;"><span style="font-size:36px;">The value in Register B is &quot;rotated&quot;</span></span><br />
+<span style="color:#FF0000;"><span style="font-size:36px;"><span style="font-size:28px;"><span style="font-family:arial,helvetica,sans-serif;"><strong>(multiplied by 2 to the power of the rotation value)</strong></span></span></span></span><br />
+<span style="color:#FFFFFF;"><span style="font-size:36px;">by the amount specified by the rotation value.<br />
+As for the rest, I have no idea...</span></span><br />
+<br />
+<span style="font-size:48px;"><span style="color:#A9A9A9;">This instruction has all the functionality&nbsp;of: </span><br />
+<span style="font-size:24px;"><span style="color:#FFFFFF;">- extlwi (Extract and Left Justify Immediate)<br />
+-&nbsp;extrwi (Extract and Right Justify Immediate)<br />
+-&nbsp;inslwi (Insert From Left Word Immediate)<br />
+-&nbsp;insrwi (Insert From Right Word Immediate)<br />
+-&nbsp;rotlwi (Rotate Left Word Immediate)<br />
+-&nbsp;rotrwi (Rotate Right Word Immediate)<br />
+-&nbsp;rotlw (Rotate Left Word)<br />
+- slwi (Shift Left Word Immediate)<br />
+-&nbsp;srwi (Shift Right Word Immediate)<br />
+-&nbsp;clrlwi (Clear Left Word Immediate)<br />
+- clrlslwi (Clear Left and Shift Left Word Immediate)</span></span></span></p>
 
 <p style="text-align:center">&nbsp;</p>
 
@@ -2077,13 +2098,10 @@ The values are as follows:</span></span><br />
 			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
 			<td><span style="color: rgb(255, 255, 255);">00000008</span></td>
 		</tr>
-		<tr>
-			<td><span style="color: rgb(255, 255, 255);">r3</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000003</span></td>
-		</tr>
 	</tbody>
 </table>
+
+<p style="text-align: center;"><span style="font-size:28px;"><span style="color:#FFFFFF;"><span style="text-align: center;"><span style="background-color:#B22222;">r2 value - 0x3</span></span></span></span></p>
 
 <p style="text-align: center;"><span style="font-size: 12px;"><span style="color: rgb(255, 255, 255);">AFTER EXECUTION OF INSTRUCTION:</span></span></p>
 
@@ -2098,11 +2116,6 @@ The values are as follows:</span></span><br />
 			<td><font color="#ffffff">r2</font></td>
 			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
 			<td><span style="color: rgb(255, 255, 255);">00000008</span></td>
-		</tr>
-		<tr>
-			<td><span style="color: rgb(255, 255, 255);">r3</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000003</span></td>
 		</tr>
 	</tbody>
 </table>
@@ -2136,11 +2149,6 @@ The result is stored in Register A.</span></span></p>
 			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
 			<td><span style="color: rgb(255, 255, 255);">12345678</span></td>
 		</tr>
-		<tr>
-			<td><span style="color: rgb(255, 255, 255);">r3</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
-		</tr>
 	</tbody>
 </table>
 
@@ -2157,11 +2165,6 @@ The result is stored in Register A.</span></span></p>
 			<td><font color="#ffffff">r2</font></td>
 			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
 			<td><span style="color: rgb(255, 255, 255); text-align: center;">12345678</span></td>
-		</tr>
-		<tr>
-			<td><span style="color: rgb(255, 255, 255);">r3</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
-			<td><span style="color: rgb(255, 255, 255);">00000000</span></td>
 		</tr>
 	</tbody>
 </table>
