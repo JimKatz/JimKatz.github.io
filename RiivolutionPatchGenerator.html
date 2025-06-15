@@ -14,8 +14,8 @@ Quick and simple Riivoution Memory Patch, PowerPC and Gecko Code generators (thi
 <span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">1. </span><a href="#XMLPTCH"><span style="color:#FF0000;">XML Memory Patch Generator
 </span></a><span style="color:#FF0000;">2. </span></span></span><a href="#B2-CODEBASE"><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">Branch to 0x80002388</span>
 </span></a><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">3.</span><strong><span style="color:#FF0000;"> </span></strong><a href="#b-anywhere"><span style="color:#FF0000;">Branch Anywhere
-</span></a><span style="color:#FF0000;">4. </span><a href="#UniversalMemoryPatch"><span style="color:#FF0000;">Universal Memory Patch</span></a></span><a href="#UniversalMemoryPatch"><span style="color:#FF0000;">
-</span></a></span>
+</span></a><span style="color:#FF0000;">4. </span><a href="#UniversalMemoryPatch"><span style="color:#FF0000;">Universal Memory Patch</span></a></span></span>
+
 <span style="font-size:16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="color:#DAA520;"><span style="font-family: arial, helvetica, sans-serif;"><strong>ASM (PowerPC)</strong></span></span><a href="#XMLPTCH">
 </a><span style="color:#DAA520;">1.</span></span><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#DAA520;">&nbsp;</span><span style="text-align: justify;"><a href="#ASM-GEN"><span style="color:#DAA520;">ASM Generator</span></a></span></span>
 </span>
@@ -30,7 +30,8 @@ Quick and simple Riivoution Memory Patch, PowerPC and Gecko Code generators (thi
 <span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;"><span style="text-align: justify;"><span style="color:#800080;"><strong>Other</strong>
 </span><a href="#C2-RII"><span style="color:#800080;"><strong>1. C2 Code to Riivolution Patch Generator</strong></span></a><span style="color:#800080;">
 </span></span></span></span>
-</pre>
+<span style="font-size: 16px;"><strong><span style="font-family: arial, helvetica, sans-serif;">Regional Things</span></strong></span>
+<a href="#FindAPALAddress"><span style="color:#000000;"><span style="font-size: 16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">1. How To find a PAL address</span></span></span></span></a></pre>
 
 <p style="box-sizing: border-box; margin: 1rem 0px; padding: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-stretch: inherit; font-size: 15px; line-height: 24px; font-family: Verdana, sans-serif; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; text-align: justify; overflow-wrap: break-word;">-----</p>
 
@@ -565,6 +566,99 @@ C2000004<strong> --&gt; </strong><span style="color:#0000FF;">&lt;memory value=&
 </div>
 
 <p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<hr />
+<p><b style="color: rgb(128, 0, 128); font-family: arial, helvetica, sans-serif; font-size: 72px;"><span style="color:#000000;">Regional Things</span></b><br />
+<a id="FindAPALAddress" name="FindAPALAddress"><span style="font-size:36px;"><strong style="font-family: arial, helvetica, sans-serif;">How to find a PAL address</strong></span></a></p>
+
+<p><span style="font-size:28px;"><span style="font-family:times new roman,times,serif;"><strong>First, I&#39;d like to mention that this method will only work if<br />
+you&#39;re making C2 codes or memory patches. It also won&#39;t<br />
+work correctly if the instruction at the address you want to port<br />
+is in between&nbsp;&quot;bl&quot; instructions.</strong></span><br />
+<br />
+<span style="font-size:18px;"><span style="font-size:20px;">Let&#39;s assume that I wanted to make the following memory patch:</span></span></span><br />
+<br />
+<span style="font-size:36px;"><span style="color:#4B0082;"><strong>&lt;memory value=&quot;12345678&quot; offset=&quot;0x8056ED38&quot; /&gt;</strong></span></span><br />
+<br />
+<span style="font-size: 20px;">This memory patch replaces the value at<strong> 0x8056ED38&nbsp;</strong>with <strong>&quot;12345678&quot;</strong></span><br />
+&nbsp;</p>
+
+<p><span style="font-size: 20px;">But that&#39;s only the NTSC Address. This wouldn&#39;t work on the PAL version<br />
+of the game I&#39;m working with.<br />
+<br />
+That means I&#39;d have to find the PAL address and make a seperate patch for it.<br />
+<br />
+<span style="font-size:36px;">So here&#39;s how I&#39;d go about doing it...</span></span><br />
+<br />
+<br />
+<span style="font-size:20px;"><span style="font-family:arial,helvetica,sans-serif;"><strong><span style="font-size:48px;">1. FINDING THE ORIGINAL INSTRUCTION:</span></strong><br />
+<br />
+In dolphin debug mode, I&#39;d enter <strong>&quot;</strong></span><strong>8056ED38</strong></span><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:20px;"><strong>&quot;</strong> in the &quot;code&quot; tab.<br />
+This will highlight exactly what instruction is at that address.<br />
+<br />
+In the game I&#39;m working with, the instruction is <strong><span style="font-size:36px;">&quot;</span></strong></span><strong><span style="font-size:36px;">stw<span style="white-space:pre"> </span>r29, 0x01A8 (r31)&quot;</span></strong></span><br />
+<span style="font-family: arial, helvetica, sans-serif; font-size: 20px;">Here&#39;s a small snippet of what that area of memory looks like:</span><br />
+<br />
+<span style="font-family:tahoma,geneva,sans-serif;"><span style="font-size:18px;">8056ed38: stw r29, 0x01A8 (r31)<br />
+8056ed3c: lwz r5, -0x25A8 (r13)<br />
+8056ed40: mtctr r0<br />
+8056ed44: addi r4, r6, 1<br />
+8056ed48: addi r6, r6, 1</span></span></p>
+
+<p><strong style="font-family: arial, helvetica, sans-serif; font-size: 20px;"><span style="font-size: 48px;">2. COPYING THE HEX VALUES</span></strong></p>
+
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 20px;">I&#39;d then right click on the&nbsp;<strong><span style="font-size: 36px;">&quot;</span></strong></span><strong style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 36px;">stw<span style="white-space: pre;"> </span>r29, 0x01A8 (r31)&quot; </span></strong><span style="font-family: arial, helvetica, sans-serif; font-size: 20px;">instruction<br />
+and select &quot;copy hex&quot; which would give me the value <strong><span style="font-size:22px;">&quot;</span></strong></span><strong><span style="font-size:22px;">93BF01A8.&quot;</span></strong><br />
+<br />
+<span style="font-size:22px;"><span style="font-family:arial,helvetica,sans-serif;">I&#39;ll have to repeat this process 4 more times (sometimes it&#39;s less if the function<br />
+is unique).<br />
+<br />
+The hex values for each instruction would be the following:</span></span><br />
+<br />
+<span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:26px;">stw r29, 0x01A8 (r31)&nbsp; &nbsp; &nbsp;= <strong>93BF01A8</strong><br />
+lwz r5, -0x25A8 (r13)&nbsp; &nbsp; &nbsp; = <strong>80ADDA58</strong><br />
+mtctr r0&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= <strong>7C0903A6</strong><br />
+addi r4, r6, 1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = <strong>38860001</strong><br />
+addi r6, r6, 1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= <strong>38C60001</strong></span></span></p>
+
+<p><strong style="font-family: arial, helvetica, sans-serif; font-size: 20px;"><span style="font-size: 48px;">3. PUTTING THE VALUES TOGETHER</span></strong></p>
+
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 22px;">Next, I have to put all those values together and remove the spaces.<br />
+Doing so gives me the following set of bytes:</span><br />
+<br />
+<span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;"><strong><span style="font-size:36px;">&quot;93BF01A880ADDA587C0903A63886000138C60001&quot;</span></strong></span></span><br />
+<br />
+<span style="font-size:22px;"><span style="font-family:arial,helvetica,sans-serif;">I&#39;d copy this and then open the PAL version of the game.</span></span><br />
+<br />
+<strong style="font-family: arial, helvetica, sans-serif; font-size: 20px;"><span style="font-size: 48px;">4. FINALE</span></strong></p>
+
+<p><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:22px;">In the PAL version of the game, I&#39;d go into the &quot;Memory&quot; tab in Dolphin,<br />
+look for the &quot;Value&quot; textbox, and then paste in the long set of bytes I copied.<br />
+Then I&#39;d hit &quot;Find Next.&quot;<br />
+<br />
+This would bring up a match in Memory. It&#39;ll be highlighted in blue.<br />
+<br />
+Right Clicking on it and selecting &quot;view in code&quot; would show me<br />
+that the PAL address of the original instruction I was searching for<br />
+is&nbsp;<span style="color:#FF0000;"><span style="font-size:48px;"><span style="background-color:#FFA07A;">0x8056F058</span></span></span></span></span><br />
+<br />
+<span style="font-family: arial, helvetica, sans-serif; font-size: 22px;">&nbsp;So now I have the address needed to make a PAL version of the memory patch</span><br />
+<strong style="color: rgb(75, 0, 130); font-size: 36px;">&lt;memory value=&quot;12345678&quot; offset=<span style="background-color:#FFA07A;">&quot;0x8056F058&quot; </span>/&gt;</strong><br />
+<br />
+<br />
+<br />
+<strong><span style="font-size:48px;"><span style="font-family:arial,helvetica,sans-serif;">THE REASON THIS METHOD WORKS<br />
+IS BECAUSE THE ACTUAL CODE OF<br />
+THE GAME IS ALMOST ENTIRELY<br />
+THE SAME BETWEEN REGIONS.<br />
+<br />
+MEANING THAT THE BYTE SEQUENCES<br />
+MAKING UP ITS CODE ARE AS WELL.</span></span></strong></p>
+
+<p><br />
+&nbsp;</p>
 
 <hr />
 <p><br />
