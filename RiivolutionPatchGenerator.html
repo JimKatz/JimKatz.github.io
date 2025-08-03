@@ -14,8 +14,9 @@ Quick and simple Riivoution Memory Patch, PowerPC and Gecko Code generators (thi
 <span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">1. </span><a href="#XMLPTCH"><span style="color:#FF0000;">XML Memory Patch Generator
 </span></a><span style="color:#FF0000;">2. </span></span></span><a href="#B2-CODEBASE"><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">Branch to 0x80002388</span>
 </span></a><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#FF0000;">3.</span><strong><span style="color:#FF0000;"> </span></strong><a href="#b-anywhere"><span style="color:#FF0000;">Branch Anywhere
-</span></a><span style="color:#FF0000;">4. </span><a href="#UniversalMemoryPatch"><span style="color:#FF0000;">Universal Memory Patch</span></a></span></span>
-
+</span></a><span style="color:#FF0000;">4. </span><a href="#UniversalMemoryPatch"><span style="color:#FF0000;">Universal Memory Patch
+</span></a><span style="color:#FF0000;">5. </span><a href="#FULLXMLGEN"><span style="color:#FF0000;">Full XML Generator</span></a>
+</span></span>
 <span style="font-size:16px;"><span style="font-family: Verdana, sans-serif; text-align: justify;"><span style="color:#DAA520;"><span style="font-family: arial, helvetica, sans-serif;"><strong>ASM (PowerPC)</strong></span></span><a href="#XMLPTCH">
 </a><span style="color:#DAA520;">1.</span></span><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#DAA520;">&nbsp;</span><span style="text-align: justify;"><a href="#ASM-GEN"><span style="color:#DAA520;">ASM Generator</span></a></span></span>
 </span>
@@ -272,6 +273,51 @@ of the game.</span></span></strong></span><br />
 <span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:48px;"><span style="color:#008000;"><strong>Hopefully, all of that made sense to you!</strong></span></span></span><br />
 <br />
 &nbsp;</div>
+
+<p>&nbsp;</p>
+
+<hr />
+<p><span style="font-family: arial, helvetica, sans-serif;"><span style="font-size: 26px;"><strong><a id="FULLXMLGEN" name="FULLXMLGEN"></a>FULL XML GENERATOR</strong></span></span></p>
+
+<p>Enter a Title ID (at least 3 characters of are needed): <input id="inputID" type="text" /><br />
+Enter the name of your mod:<input id="inputMODNAME" type="text" /><br />
+Enter an option name:<input id="inputOptionName" type="text" /><br />
+Enter a patch ID:<input id="patchID" type="text" /></p>
+
+<p><button onclick="generateMODxml()">Generate XML</button></p>
+
+<p>Output:</p>
+
+<p><textarea cols="44" id="outputXML" readonly="readonly" rows="30"></textarea></p>
+
+<h1>&nbsp;</h1>
+<script>
+	
+function generateMODxml() {
+    const inputID = document.getElementById('inputID').value;
+    const inputMODNAME = document.getElementById('inputMODNAME').value;
+    const inputOptionName = document.getElementById('inputOptionName').value;
+    const patchID = document.getElementById('patchID').value;
+
+    let outputXML = `<wiidisc version="1" root="">\n`;
+    outputXML += `  <id game="${inputID}" />\n`;
+    outputXML += `  <options>\n`;
+    outputXML += `    <section name="${inputMODNAME}">\n`;
+    outputXML += `      <option name="${inputOptionName}">\n`;
+    outputXML += `        <choice name="Enabled">\n`;
+    outputXML += `          <patch id="${patchID}" />\n`;
+    outputXML += `        </choice>\n`;
+    outputXML += `      </option>\n`;
+    outputXML += `    </section>\n`;
+    outputXML += `  </options>\n`;
+    outputXML += `  <patch id="${patchID}">\n`;
+    outputXML += `  <!--  ADD YOUR FILE/FOLDER PATCHES HERE  -->\n`;
+    outputXML += `  </patch>\n`;
+    outputXML += `</wiidisc>`;
+
+    document.getElementById('outputXML').value = outputXML;
+}
+</script>
 
 <p>&nbsp;</p>
 
