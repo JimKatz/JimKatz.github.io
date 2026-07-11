@@ -44,11 +44,223 @@
 
 <p style="text-shadow: rgb(255, 255, 255) 0px -1px 0px, rgb(46, 46, 46) 0px 1px 0px, rgb(44, 44, 44) 0px 2px 0px, rgb(42, 42, 42) 0px 3px 0px, rgb(40, 40, 40) 0px 4px 0px, rgb(38, 38, 38) 0px 5px 0px, rgb(36, 36, 36) 0px 6px 0px, rgb(34, 34, 34) 0px 7px 0px, rgb(32, 32, 32) 0px 8px 0px, rgb(30, 30, 30) 0px 9px 0px, rgb(28, 28, 28) 0px 10px 0px, rgb(26, 26, 26) 0px 11px 0px, rgb(24, 24, 24) 0px 12px 0px, rgb(22, 22, 22) 0px 13px 0px, rgb(20, 20, 20) 0px 14px 0px, rgb(18, 18, 18) 0px 15px 0px, rgba(0, 0, 0, 0.9) 0px 22px 30px, rgba(206, 89, 55, 0) 2px 2px 2px; text-align: center;"><span style="color:#808080;"><span style="font-size: 72px;">TOOLS BY KILL043</span></span></p>
 
-<h1>&nbsp;</h1>
-
 <p>&nbsp;</p>
 
 <hr />
+<h2 style="color: rgb(16, 20, 24); font-weight: normal; margin: 1em 0px 0.25em; padding: 0px; display: flow-root; word-break: break-word; border-bottom: 1px solid rgb(162, 169, 177); font-family: &quot;Linux Libertine&quot;, Georgia, Times, &quot;Source Serif Pro&quot;, serif; line-height: 1.375; background-color: rgb(255, 255, 255);"><span style="font-family:arial,helvetica,sans-serif;"><strong style="background-color: rgb(0, 0, 0); color: rgb(255, 0, 0);"><span style="font-size: 72px;"><a id="PMPFILEFORMAT" name="PMPFILEFORMAT"><span style="background-color: rgb(255, 255, 255);">PMP FILE FORMAT</span></a></span></strong></span><br />
+<span class="mw-headline">Overview</span></h2>
+
+<p style="margin: 0.5em 0px; color: rgb(32, 33, 34); font-family: sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);">PMP (<b>P</b>ack <b>M</b>a<b>P</b>) is a file format similar to KMP which appears in various games<br />
+in the Wii series (Wii Sports, Wii Sports Resort, Wii Fit Plus, etc.). It contains object<br />
+positions, routes, object parameters, and various other things.</p>
+
+<h2 style="color: rgb(16, 20, 24); font-weight: normal; margin: 1em 0px 0.25em; padding: 0px; display: flow-root; word-break: break-word; border-bottom: 1px solid rgb(162, 169, 177); font-family: &quot;Linux Libertine&quot;, Georgia, Times, &quot;Source Serif Pro&quot;, serif; line-height: 1.375; background-color: rgb(255, 255, 255);"><span class="mw-headline" id="File_Format">File Format</span></h2>
+
+<h3 style="color: rgb(16, 20, 24); margin: 0.3em 0px 0px; padding-top: 0.5em; padding-bottom: 0px; display: flow-root; word-break: break-word; font-size: 1.2em; line-height: 1.6; font-family: sans-serif; background-color: rgb(255, 255, 255);"><span class="mw-headline" id="Header">Header</span></h3>
+
+<table class="wikitable" style="font-size: 14px; background-color: rgb(248, 249, 250); color: rgb(32, 33, 34); margin: 1em 0px; border: 1px solid rgb(162, 169, 177); border-collapse: collapse; font-family: sans-serif;">
+	<tbody>
+		<tr>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Offset</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Type</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Usage</th>
+		</tr>
+	</tbody>
+	<caption style="font-weight: bold; background-color: rgb(208, 208, 224); color: rgb(0, 0, 0);">File header of a PMP file</caption>
+	<tbody>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x00</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">String</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;"><b>File magic</b>. Always <i>PMPF</i> in ASCII.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x10</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Object count.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x12</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Route count.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x14</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Point count.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x40</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt32</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Object data offset.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x44</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt32</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Route data offset.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x48</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt32</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Point data offset.</td>
+		</tr>
+		<tr>
+			<td class="td-unknown" colspan="2" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">0x4C</td>
+			<td class="td-unknown" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">End of this file header.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3 style="color: rgb(16, 20, 24); margin: 0.3em 0px 0px; padding-top: 0.5em; padding-bottom: 0px; display: flow-root; word-break: break-word; font-size: 1.2em; line-height: 1.6; font-family: sans-serif; background-color: rgb(255, 255, 255);"><span class="mw-headline" id="Object_Data">Object Data</span></h3>
+
+<table class="wikitable" style="font-size: 14px; background-color: rgb(248, 249, 250); color: rgb(32, 33, 34); margin: 1em 0px; border: 1px solid rgb(162, 169, 177); border-collapse: collapse; font-family: sans-serif;">
+	<tbody>
+		<tr>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Offset</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Type</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Usage</th>
+		</tr>
+	</tbody>
+	<caption style="font-weight: bold; background-color: rgb(208, 208, 224); color: rgb(0, 0, 0);">Layout of PMP object</caption>
+	<tbody>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x00</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Object group ID.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x02</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Object ID.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x04</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt32</td>
+			<td class="td-unknown left" style="color: rgb(0, 0, 0); padding: 0.2em 0.4em; border: 1px solid rgb(162, 169, 177); background-color: rgb(208, 208, 208) !important;"><b>Unknown</b>.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x08</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Single[3]</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Position vector.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x14</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Single[3]</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Scaling vector.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x20</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Single[3]</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Transformation matrix (first column).</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x2C</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Single[3]</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Transformation matrix (second column).</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x38</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Single[3]</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Transformation matrix (third column).</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x44</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt32</td>
+			<td class="td-unknown left" style="color: rgb(0, 0, 0); padding: 0.2em 0.4em; border: 1px solid rgb(162, 169, 177); background-color: rgb(208, 208, 208) !important;"><b>Unknown</b>.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x48</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Varies</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; text-align: center;">Object-specific parameters.<br />
+			<strong>(16 settings)</strong></td>
+		</tr>
+		<tr>
+			<td class="td-unknown" colspan="2" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">0x58</td>
+			<td class="td-unknown" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">End of object data.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3 style="color: rgb(16, 20, 24); margin: 0.3em 0px 0px; padding-top: 0.5em; padding-bottom: 0px; display: flow-root; word-break: break-word; font-size: 1.2em; line-height: 1.6; font-family: sans-serif; background-color: rgb(255, 255, 255);"><span class="mw-headline" id="Route_Data">Route Data</span></h3>
+
+<table class="wikitable" style="font-size: 14px; background-color: rgb(248, 249, 250); color: rgb(32, 33, 34); margin: 1em 0px; border: 1px solid rgb(162, 169, 177); border-collapse: collapse; font-family: sans-serif;">
+	<tbody>
+		<tr>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Offset</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Type</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Usage</th>
+		</tr>
+	</tbody>
+	<caption style="font-weight: bold; background-color: rgb(208, 208, 224); color: rgb(0, 0, 0);">Layout of PMP route</caption>
+	<tbody>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x00</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Point count.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x02</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt32</td>
+			<td class="td-unknown left" style="color: rgb(0, 0, 0); padding: 0.2em 0.4em; border: 1px solid rgb(162, 169, 177); background-color: rgb(208, 208, 208) !important;"><b>Unknown</b>.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x06</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Route group ID.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x08</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">String</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Internal route name (if applicable).</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x1A</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt16</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Route point index.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x1C</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">UInt32</td>
+			<td class="td-unknown left" style="color: rgb(0, 0, 0); padding: 0.2em 0.4em; border: 1px solid rgb(162, 169, 177); background-color: rgb(208, 208, 208) !important;"><b>Unknown</b>.</td>
+		</tr>
+		<tr>
+			<td class="td-unknown" colspan="2" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">0x20</td>
+			<td class="td-unknown" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">End of route data.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3 style="color: rgb(16, 20, 24); margin: 0.3em 0px 0px; padding-top: 0.5em; padding-bottom: 0px; display: flow-root; word-break: break-word; font-size: 1.2em; line-height: 1.6; font-family: sans-serif; background-color: rgb(255, 255, 255);"><span class="mw-headline" id="Point_Data">Route Point Data</span></h3>
+
+<table class="wikitable" style="font-size: 14px; background-color: rgb(248, 249, 250); color: rgb(32, 33, 34); margin: 1em 0px; border: 1px solid rgb(162, 169, 177); border-collapse: collapse; font-family: sans-serif;">
+	<tbody>
+		<tr>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Offset</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Type</th>
+			<th style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; background-color: rgb(234, 236, 240); text-align: center;">Usage</th>
+		</tr>
+	</tbody>
+	<caption style="font-weight: bold; background-color: rgb(208, 208, 224); color: rgb(0, 0, 0);">Layout of PMP point</caption>
+	<tbody>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x00</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Single[3]</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Position vector.</td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">0x0C</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em;">Varies</td>
+			<td style="border: 1px solid rgb(162, 169, 177); padding: 0.2em 0.4em; text-align: center;">Additional parameters<br />
+			<strong>(8 settings)</strong></td>
+		</tr>
+		<tr>
+			<td class="td-unknown" colspan="2" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">0x13</td>
+			<td class="td-unknown" style="color: rgb(0, 0, 0); text-align: center; padding: 0.2em 0.4em; background-color: rgb(208, 208, 208) !important; border: 1px solid rgb(162, 169, 177);">End of point data.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2 style="color: rgb(16, 20, 24); font-weight: normal; margin: 1em 0px 0.25em; padding: 0px; display: flow-root; word-break: break-word; border-bottom: 1px solid rgb(162, 169, 177); font-family: &quot;Linux Libertine&quot;, Georgia, Times, &quot;Source Serif Pro&quot;, serif; line-height: 1.375; background-color: rgb(255, 255, 255);">&nbsp;</h2>
+
 <h1><br />
 <strong style="background-color: rgb(0, 0, 0); color: rgb(255, 0, 0);"><span style="font-size: 72px;"><span style="font-family: &quot;Edwardian Script ITC&quot;, sans-serif;"><a id="PMPVALUES" name="PMPVALUES"><span style="background-color:#FFFFFF;">PMP VALUES</span></a></span></span></strong><br />
 <br />
